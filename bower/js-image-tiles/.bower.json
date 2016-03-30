@@ -1,0 +1,23 @@
+{
+  "name": "js-image-tiles",
+  "dependencies": {
+    "qunit": "~1.12.0",
+    "jquery": "latest",
+    "bootstrap": "~3.3.1"
+  },
+  "main": [
+    "src/image-grid.js",
+    "src/css/image-grid.css"
+  ],
+  "devDependencies": {},
+  "homepage": "https://github.com/toddnestor/js-image-grid",
+  "_release": "33c380226f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "33c380226f8e88d69109fe39d5f8141a3bd9e52d"
+  },
+  "_source": "https://github.com/toddnestor/js-image-grid.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/toddnestor/js-image-grid.git"
+}

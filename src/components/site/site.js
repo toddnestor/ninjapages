@@ -10,6 +10,4 @@ app.config(function($stateProvider){
 
 app.controller("SiteController", function ($scope, $rootScope, $state, $stateParams, Herc) {
 
-//All your code goes here
-
 });

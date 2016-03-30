@@ -100,7 +100,7 @@ gulp.task( 'add', function()
     fs.mkdirSync( dir );
     fs.writeFileSync( dir + "/" + url + ".js", 'var app = angular.module("app");\n\napp.config(function($stateProvider){\n\t$stateProvider\n\t\t.state("' + name + '",{\n\t\t\turl: "/' + url + '",\n\t\t\tdata: { pageTitle: \'' + page_title + '\' },\n\t\t\ttemplateUrl: "/templates/' + abs_path + '/' + url + '.html",\n\t\t\tcontroller: "' + controllerName + 'Controller"\n\t\t})\n}); \n\napp.controller("' + controllerName + 'Controller", function ($scope, $rootScope, $state, $stateParams, Herc) {\n\t\/\/All your code goes here\n});' );
     fs.writeFileSync( dir + "/" + url + ".html", '<div class="' + className + '">\n\t<!-- put all the view stuff in here-->\n\t<ui-view></ui-view>\n</div>' );
-    fs.writeFileSync( dir + "/" + url + ".less", className + ' {\n\n\/*less/css stuff can go in here*\/\n\n}' );
+    fs.writeFileSync( dir + "/" + url + ".less", '.' + className + ' {\n\n\/*less/css stuff can go in here*\/\n\n}' );
 } );
 
 gulp.task( 'compile', [ 'bower', 'templates', 'css', 'js' ] );
