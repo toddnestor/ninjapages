@@ -1,0 +1,5 @@
+.idea/*
+compiled/*
+www/templates/*
+www/assets/css/main.min.css
+www/assets/js/main.min.js

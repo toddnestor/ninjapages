@@ -1,0 +1,16 @@
+<ifModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{HTTP_USER_AGENT} (facebook(.*)$) [NC]
+	RewriteRule ^(.*)$ facebook.php [L]
+</ifModule>
+
+RewriteEngine On
+
+RewriteBase /
+RewriteRule ^index\.html - [L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^(.*\.html)$ $1 [L]
+RewriteRule . index.php [L]
