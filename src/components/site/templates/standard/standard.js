@@ -11,5 +11,22 @@ app.config(function($stateProvider){
 }); 
 
 app.controller("SiteTemplatesStandardController", function ($scope, $rootScope, $state, $stateParams, Herc) {
-	//All your code goes here
+	$scope.sections = [
+        'header',
+        'leftImage',
+        'logoStrip',
+        'codeSample',
+        'quote',
+        'codeSample',
+        'logoStrip',
+        'codeSample',
+        'features',
+        'logoStrip',
+        'features',
+        'header',
+        'pricing',
+        'logoStrip',
+        'pricing',
+        'footer'
+    ];
 });
