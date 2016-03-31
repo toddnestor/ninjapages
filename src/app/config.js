@@ -4,7 +4,8 @@ var app = angular.module('app', [
     'restangular',
     'restful-herc',
     'xeditable',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngDragDrop'
 ]);
 
 app.config(function($stateProvider, $locationProvider){

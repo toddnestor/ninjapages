@@ -1,0 +1,65 @@
+<div class="builder">
+    <div class="wrapper">
+        <!-- START Top Navbar-->
+        <nav role="navigation" class="navbar navbar-default navbar-top navbar-fixed-top">
+            <!-- START navbar header-->
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand" style="height:100%;">
+                    <div class="brand-logo">
+                        <img src="assets/img/startup-8.svg" alt="App Logo" class="img-responsive">
+                    </div>
+                    <div class="brand-logo-collapsed">
+                        <img src="assets/img/startup-8.svg" alt="App Logo" class="img-responsive">
+                    </div>
+                </a>
+            </div>
+            <!-- END navbar header-->
+        </nav>
+        <!-- END Top Navbar-->
+        <!-- START aside-->
+        <aside class="aside">
+            <!-- START Sidebar (left)-->
+            <nav class="sidebar">
+                <!-- START user info-->
+                <div class="item user-block">
+                    <!-- User picture-->
+                    <div class="user-block-picture">
+                        <div class="user-block-status">
+                            <img src="app/img/user/02.jpg" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle">
+                            <div class="circle circle-success circle-lg"></div>
+                        </div>
+                        <!-- Status when collapsed-->
+                    </div>
+                    <!-- Name and Role-->
+                    <div class="user-block-info">
+                        <span class="user-block-name item-text">Welcome User</span>
+                        <span class="user-block-role">UX-Dev</span>
+                    </div>
+                </div>
+                <!-- END user info-->
+                <ul class="nav">
+                    <li ng-repeat="section in currentSectionOptions track by $index" ng-click="addSection( section )" style="cursor:move !important;">
+                        <a title="{{section.type}}" data-drag="true" ng-model="section" data-jqyoui-options="{revert: 'invalid', appendTo: '.builder', helper: 'clone'}" jqyoui-draggable="{index: {{$index}},animate:true, placeholder: 'keep'}" class="no-submenu" style="cursor:move !important;">
+                            <em class="fa fa-cube"></em>
+                            <span class="item-text">{{section.type}}</span>
+                        </a>
+                    </li>
+                    <!-- END Menu-->
+                </ul>
+            </nav>
+            <!-- END Sidebar (left)-->
+        </aside>
+        <!-- End aside-->
+        <!-- START Main section-->
+        <section style="min-height: 995px;">
+            <!-- START Page content-->
+            <div class="content-wrapper site-templates-standard">
+                <div data-drop="true" data-jqyoui-options="{accept: 'a'}" ng-model="sections" jqyoui-droppable="{multiple:true}" style="min-height: 150px;width:100%;border: 3px dashed blue;" class="stage">
+                    <ng-include src="'/templates/site/templates/standard/section/' + section.type + '/'  + section.type + '.html'" ng-repeat="section in sections track by $index" />
+                </div>
+            </div>
+            <!-- END Page content-->
+        </section>
+        <!-- END Main section-->
+    </div>
+</div>

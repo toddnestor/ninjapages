@@ -5,9 +5,9 @@ app.directive('pageTitle', function pageTitle($rootScope, $timeout) {
         link: function(scope, element) {
             var listener = function(event, toState, toParams, fromState, fromParams) {
                 // Default title - load on Dashboard 1
-                var title = 'Your Social Network | Responsive Admin Theme';
+                var title = 'Ninja Pages | Build like a Ninja';
                 // Create your own title pattern
-                if (toState.data && toState.data.pageTitle) title = 'INSPINIA | ' + toState.data.pageTitle;
+                if (toState.data && toState.data.pageTitle) title = 'Ninja Pages | ' + toState.data.pageTitle;
                 $timeout(function() {
                     element.text(title);
                 });
