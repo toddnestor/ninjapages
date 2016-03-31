@@ -14,6 +14,19 @@
                 </a>
             </div>
             <!-- END navbar header-->
+            <div class="nav-wrapper">
+                <ul class="nav navbar-nav">
+                    <li>
+                        Title: <input class="form-control" ng-model="content.title" />
+                    </li>
+                    <li>
+                        Permalink: <input class="form-control" ng-model="content.permalink" />
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <!-- END Top Navbar-->
         <!-- START aside-->
@@ -38,7 +51,7 @@
                 </div>
                 <!-- END user info-->
                 <ul class="nav">
-                    <li ng-repeat="section in currentSectionOptions track by $index" ng-click="addSection( section )" style="cursor:move !important;">
+                    <li ng-repeat="section in currentSectionOptions track by $index" style="cursor:move !important;">
                         <a title="{{section.type}}" data-drag="true" ng-model="section" data-jqyoui-options="{revert: 'invalid', appendTo: '.builder', helper: 'clone'}" jqyoui-draggable="{index: {{$index}},animate:true, placeholder: 'keep'}" class="no-submenu" style="cursor:move !important;">
                             <em class="fa fa-cube"></em>
                             <span class="item-text">{{section.type}}</span>
@@ -54,8 +67,8 @@
         <section style="min-height: 995px;">
             <!-- START Page content-->
             <div class="content-wrapper site-templates-standard">
-                <div data-drop="true" data-jqyoui-options="{accept: 'a'}" ng-model="sections" jqyoui-droppable="{multiple:true}" style="min-height: 150px;width:100%;border: 3px dashed blue;" class="stage">
-                    <ng-include src="'/templates/site/templates/standard/section/' + section.type + '/'  + section.type + '.html'" ng-repeat="section in sections track by $index" />
+                <div data-drop="true" data-jqyoui-options="{accept: 'a'}" ng-model="content.sections" jqyoui-droppable="{multiple:true}" style="min-height: 150px;width:100%;border: 3px dashed blue;" class="stage">
+                    <ng-include src="'/templates/site/templates/standard/section/' + section.type + '/configure.html'" ng-repeat="section in content.sections track by $index" />
                 </div>
             </div>
             <!-- END Page content-->

@@ -13,7 +13,15 @@ app.config(function($stateProvider){
 app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc) {
 	$scope.templates = {
             'standard': [
-                {type: 'header'},
+                {
+                    type: 'header',
+                    settings: {
+                        button_text: 'go',
+                        header_text: 'Analytics on demand.',
+                        description: 'Stop installing bloated scripts that all track the exact same things. Install one that does everything.',
+                        cta_text: 'Try it now'
+                    }
+                },
                 {type: 'codeSample'},
                 {type: 'features'},
                 {type: 'footer'},
@@ -32,16 +40,22 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
         $scope.currentSectionOptions = $scope.templates[ $scope.currentTemplate ];
     }
 
-    $scope.sections = [];
-
     $scope.addSection = function( section ) {
-        $scope.sections.push( section );
-        console.log('what are our sections now? ', $scope.sections );
+        //$scope.sections.push( section );
     }
 
     $scope.setCurrentSectionOptions();
 
-    $scope.stopFunction = function() {
-        console.log('do we get any arguments? ', arguments );
+    $scope.content = {
+        title: '',
+        permalink: '',
+        theme: $scope.currentTemplate,
+        sections: []
+    };
+
+    $scope.save = function() {
+        Herc.all('Content').post( $scope.content ).then( function( response ) {
+
+        } );
     }
 });

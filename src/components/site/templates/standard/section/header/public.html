@@ -1,4 +1,4 @@
-<div ng-controller="SiteTemplatesStandardSectionHeaderController" class="block block-inverse block-fill-height app-header"
+<div ng-controller="SiteTemplatesStandardSectionHeaderController" class="site-templates-standard-section-header block block-inverse block-fill-height app-header"
      style="background-image: url(assets/img/startup-1.jpg);">
 
     <nav class="navbar navbar-transparent navbar-fixed-top navbar-padded app-navbar p-t-md">
@@ -13,7 +13,7 @@
                 </button>
                 <a class="navbar-brand" href="">
                     <strong style="background: #fff; padding: 12px; border-radius: 4px; color: #28669F;">
-                        go
+                        {{section.settings.button_text}}
                     </strong>
                 </a>
             </div>
@@ -40,9 +40,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-md-6">
-                    <h1 class="block-title m-b-sm">Analytics on demand.</h1>
-                    <p class="lead m-b-md text-muted">Stop installing bloated scripts that all track the exact same things. Install one that does everything.</p>
-                    <button class="btn btn-primary btn-lg">Try it now</button>
+                    <h1 class="block-title m-b-sm">{{section.settings.header_text}}</h1>
+                    <p class="lead m-b-md text-muted">{{section.settings.description}}</p>
+                    <button class="btn btn-primary btn-lg">{{section.settings.cta_text}}</button>
                 </div>
             </div>
         </div>

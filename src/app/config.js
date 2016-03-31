@@ -41,8 +41,10 @@ app.factory('httpRequestInterceptor', function ($localStorage, $location, $q) {
 });
 
 app.run(function(editableOptions) {
-    editableOptions.theme = 'default'; // bootstrap3 theme. Can be also 'bs2', 'default'
+    editableOptions.theme = 'bs2'; // bootstrap3 theme. Can be also 'bs2', 'default'
     editableOptions.mode = 'inline';
+    editableOptions.onblur = 'submit';
+    editableOptions.showbuttons = false;
 });
 
 app.config(function($httpProvider,$urlRouterProvider){
