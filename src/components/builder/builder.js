@@ -10,7 +10,7 @@ app.config(function($stateProvider){
 		})
 }); 
 
-app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc) {
+app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify) {
 	$scope.templates = {
             'standard': [
                 {
@@ -55,7 +55,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 
     $scope.save = function() {
         Herc.all('Content').post( $scope.content ).then( function( response ) {
-
+            notify('Your content saved successfully!');
+            //$state.go('site.pages');
         } );
     }
 });

@@ -5,7 +5,8 @@ var app = angular.module('app', [
     'restful-herc',
     'xeditable',
     'ui.bootstrap',
-    'ngDragDrop'
+    'ngDragDrop',
+    'cgNotify'
 ]);
 
 app.config(function($stateProvider, $locationProvider){

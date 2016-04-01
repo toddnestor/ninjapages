@@ -4,7 +4,7 @@ app.config(function ($stateProvider) {
     $stateProvider
         .state("site.home", {
             url: "/",
-            templateUrl: "/templates/site/home/home.html",
+            templateUrl: "/templates/site/aaa-home/home.html",
             controller: "HomeController"
         })
 });
