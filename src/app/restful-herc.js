@@ -5,7 +5,7 @@
     {
         //var api_url = 'http://homestead.app';
         var api_url = 'https://api.hercdev.io';
-        var api_key = '644bee87a93175e8f6a8d9a8061dd41f51e4c9d575bab20a2ea1c838c94b';
+        var api_key = 'a62d34e343718057b0787e1b3f1d542abcab35fe3f942d886e666fab824c';
 
         var Herc = Restangular.withConfig( function( RestangularConfigurer )
         {
