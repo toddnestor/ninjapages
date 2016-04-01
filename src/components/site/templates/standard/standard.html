@@ -1,28 +1,5 @@
-<div class="site-templates-standard">
-    <div class="stage-shelf stage-shelf-right hidden" id="sidebar">
-        <ul class="nav nav-bordered nav-stacked">
-            <li class="nav-header">Examples</li>
-            <li class="active">
-                <a href="/standard">Startup</a>
-            </li>
-            <li>
-                <a href="/minimal">Minimal</a>
-            </li>
-            <li>
-                <a href="/bold">Bold</a>
-            </li>
-            <li class="nav-divider"></li>
-            <li class="nav-header">Docs</li>
-            <li>
-                <a href="docs/index.html">Toolkit</a>
-            </li>
-            <li>
-                <a href="http://getbootstrap.com">Bootstrap</a>
-            </li>
-        </ul>
-    </div>
-
+<div class="site-templates-standard" ng-controller="SiteTemplatesStandardController">
     <div class="stage" id="stage">
-        <ng-include src="'/templates/site/templates/standard/section/' + section + '/public.html'" ng-repeat="section in sections track by $index" />
+        <ng-include src="'/templates/site/templates/standard/section/' + section.type + '/public.html'" ng-repeat="section in content.sections track by $index" />
     </div>
 </div>
