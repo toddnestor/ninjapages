@@ -16,14 +16,18 @@
             <!-- END navbar header-->
             <div class="nav-wrapper">
                 <ul class="nav navbar-nav">
-                    <li>
-                        Title: <input class="form-control" ng-model="content.title" />
-                    </li>
-                    <li>
-                        Permalink: <input class="form-control" ng-model="content.permalink" />
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+                    <li style="padding-top:10px;padding-left:10px;">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="exampleInputName2" style="padding-right: 20px;">Title</label>
+                                <input type="text" class="form-control" id="exampleInputName2" ng-model="content.title" placeholder="Title goes here" />
+                            </div>
+                            <div class="form-group" style="padding-left:20px;padding-right:20px;">
+                                <label for="exampleInputEmail2" style="padding-right: 20px;">Permalink</label>
+                                <input type="text" class="form-control" id="exampleInputEmail2" ng-model="content.permalink" placeholder="url-goes-here">
+                            </div>
+                            <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+                        </form>
                     </li>
                 </ul>
             </div>

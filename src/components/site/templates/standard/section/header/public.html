@@ -19,14 +19,8 @@
             </div>
             <div class="navbar-collapse collapse text-uppercase">
                 <ul class="nav navbar-nav navbar-right">
-                    <li >
-                        <a href="/standard">StartUp</a>
-                    </li>
-                    <li >
-                        <a href="/minimal">Minimal</a>
-                    </li>
-                    <li >
-                        <a href="/bold">Bold</a>
+                    <li ng-repeat="item in section.settings.menu_items" class="menu-item">
+                        <a ng-if="item.type == 'url'" href="{{item.destination}}">{{item.text}}</a>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->

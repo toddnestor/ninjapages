@@ -19,14 +19,11 @@
             </div>
             <div class="navbar-collapse collapse text-uppercase">
                 <ul class="nav navbar-nav navbar-right">
-                    <li >
-                        <a href="/standard">StartUp</a>
+                    <li ng-repeat="item in section.settings.menu_items" class="menu-item">
+                        <a ng-if="item.type == 'url'" buttons="no" blur="submit" editable-text="item.text">{{item.text}}<span style="color: red;display:none;" class="delete-button" ng-click="removeMenuItem( item )"> &times;</span></a>
                     </li>
-                    <li >
-                        <a href="/minimal">Minimal</a>
-                    </li>
-                    <li >
-                        <a href="/bold">Bold</a>
+                    <li style="display:none;" class="add-menu-item">
+                        <a ng-click="addMenuItem()" style="font-size:24px;cursor:pointer;">&plus;</a>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->
