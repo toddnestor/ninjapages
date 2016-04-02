@@ -5273,9 +5273,15 @@
     font-size: 20px !important;
     border-bottom-left-radius: 10px !important;
     display: none;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
   }
 
   .template-section:hover .section-settings {
     display: block !important;
+  }
+
+  .template-section.ui-sortable-helper .section-settings {
+    display: none !important;
   }
 }

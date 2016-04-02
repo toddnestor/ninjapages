@@ -8,7 +8,8 @@ var app = angular.module('app', [
     'ngDragDrop',
     'cgNotify',
     'angularSpectrumColorpicker',
-    'ui.sortable'
+    'ui.sortable',
+    'ngFileUpload'
 ]);
 
 app.config(function($stateProvider, $locationProvider){

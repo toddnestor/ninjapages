@@ -10,7 +10,7 @@ app.config(function($stateProvider){
 		})
 }); 
 
-app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal) {
+app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal, Upload, $timeout) {
 	$scope.templates = {
             'standard': [
                 {
@@ -119,7 +119,9 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
     };
 
     $scope.addSection = function( section ) {
-        $scope.content.sections.push( section );
+        var new_section = angular.copy( section );
+
+        $scope.content.sections.push( new_section );
     }
 
     $scope.save = function() {
@@ -151,4 +153,61 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 
         });
     }
+
+    $scope.copy = function( section, index ) {
+        var new_section = angular.copy( section );
+
+        $scope.content.sections.splice( index, 0, new_section )
+    }
+
+    $scope.moveUp = function( section, index ) {
+        $scope.remove( section );
+
+        $scope.content.sections.splice( index - 1, 0, section )
+    }
+
+    $scope.moveDown = function( section, index ) {
+        $scope.remove( section );
+
+        $scope.content.sections.splice( index + 1, 0, section )
+    }
+
+    $scope.$watch('files', function () {
+        $scope.upload($scope.files);
+    });
+    $scope.$watch('file', function () {
+        if ($scope.file != null) {
+            $scope.files = [$scope.file];
+        }
+    });
+    $scope.log = '';
+
+    $scope.upload = function (files) {
+        if (files && files.length) {
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                if (!file.$error) {
+                    Upload.upload({
+                        url: 'http://api.hercdev.dev/upload?api_key=a62d34e343718057b0787e1b3f1d542abcab35fe3f942d886e666fab824c',
+                        data: {
+                            file: file
+                        }
+                    }).then(function (resp) {
+                        $timeout(function() {
+                            $scope.log = 'file: ' +
+                                resp.config.data.file.name +
+                                ', Response: ' + JSON.stringify(resp.data) +
+                                '\n' + $scope.log;
+                        });
+                    }, null, function (evt) {
+                        var progressPercentage = parseInt(100.0 *
+                            evt.loaded / evt.total);
+                        $scope.log = 'progress: ' + progressPercentage +
+                            '% ' + evt.config.data.file.name + '\n' +
+                            $scope.log;
+                    });
+                }
+            }
+        }
+    };
 });

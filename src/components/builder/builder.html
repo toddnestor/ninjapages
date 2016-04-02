@@ -56,13 +56,29 @@
                 <!-- END user info-->
                 <ul class="nav">
                     <li ng-repeat="section in currentSectionOptions track by $index" style="cursor:move !important;">
-                        <a title="{{section.type}}" data-drag="true" ng-model="section" data-jqyoui-options="{revert: 'invalid', appendTo: '.builder', helper: 'clone'}" jqyoui-draggable="{index: {{$index}},animate:true, placeholder: 'keep'}" class="no-submenu" style="cursor:move !important;" ng-click="addSection( section )">
+                        <a title="{{section.type}}" data-drag="true" ng-model="section" data-jqyoui-options="{revert: 'invalid', appendTo: '.builder', helper: 'clone'}" jqyoui-draggable="{index: {{$index}},animate:true, placeholder: 'keep', deepCopy: true}" class="no-submenu" style="cursor:move !important;" ng-click="addSection( section )">
                             <em class="fa fa-cube"></em>
                             <span class="item-text">{{section.type}}</span>
                         </a>
                     </li>
                     <!-- END Menu-->
                 </ul>
+                watching model:
+                <div class="button" ngf-select ng-model="file" ngf-multiple="false">Select File</div>
+                on file change multiple:
+                <div class="button" ngf-select="upload($files)" ngf-multiple="true">Select File</div>
+                Drop File:
+                <div ngf-drop ngf-select ng-model="files" class="drop-box"
+                     ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+                     accept="image/*,application/pdf"
+                     ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                Files:
+                <ul>
+                    <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+                </ul>
+                Upload Log:
+                <pre>{{log}}</pre>
             </nav>
             <!-- END Sidebar (left)-->
         </aside>
@@ -76,8 +92,9 @@
                         <div class="section-settings">
                             <span class="fa fa-trash pull-right" style="cursor:pointer;" ng-click="remove( section )"></span>
                             <span class="fa fa-gear pull-right" style="cursor:pointer;" ng-click="sectionSettings( section, section.options )"></span>
-                            <span class="fa fa-arrow-down pull-right" ng-if="$index + 1 < $parent.content.sections.length" style="cursor:pointer;"></span>
-                            <span class="fa fa-arrow-up pull-right" ng-if="$index > 0" style="cursor:pointer;"></span>
+                            <span class="fa fa-copy pull-right" style="cursor:pointer;" ng-click="copy( section, $index )"></span>
+                            <span class="fa fa-arrow-down pull-right" ng-if="$index + 1 < $parent.content.sections.length" ng-click="moveDown( section, $index )" style="cursor:pointer;"></span>
+                            <span class="fa fa-arrow-up pull-right" ng-if="$index > 0" ng-click="moveUp( section, $index )" style="cursor:pointer;"></span>
                         </div>
                         <ng-include src="'/templates/site/templates/standard/section/' + section.type + '/configure.html'" />
                     </div>
