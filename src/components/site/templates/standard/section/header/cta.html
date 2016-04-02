@@ -12,15 +12,15 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Button Background Color</label>
-                <spectrum-colorpicker ng-model="thing.settings.cta_background_color"></spectrum-colorpicker>
+                <spectrum-colorpicker ng-model="thing.settings.cta_background_color" options="{showInput: true, showAlpha: true}"></spectrum-colorpicker>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Button Border Color</label>
-                <spectrum-colorpicker ng-model="thing.settings.cta_border_color"></spectrum-colorpicker>
+                <spectrum-colorpicker ng-model="thing.settings.cta_border_color" options="{showInput: true, showAlpha: true}"></spectrum-colorpicker>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Button Font Color</label>
-                <spectrum-colorpicker ng-model="thing.settings.cta_font_color"></spectrum-colorpicker>
+                <spectrum-colorpicker ng-model="thing.settings.cta_font_color" options="{showInput: true, showAlpha: true}"></spectrum-colorpicker>
             </div>
             <button type="button" ng-click="ok()" class="btn btn-default">Save</button>
         </form>

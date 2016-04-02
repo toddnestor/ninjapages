@@ -60,7 +60,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                     type: 'features',
                     options: {},
                     settings: {
-
+                        section_background_color: '#ffffff'
                     }
                 },
                 {
@@ -74,28 +74,28 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                     type: 'leftImage',
                     options: {},
                     settings: {
-
+                        section_background_color: '#ffffff'
                     }
                 },
                 {
                     type: 'logoStrip',
                     options: {},
                     settings: {
-
+                        section_background_color: '#2595FF'
                     }
                 },
                 {
                     type: 'pricing',
                     options: {},
                     settings: {
-
+                        section_background_color: '#F4F5F6'
                     }
                 },
                 {
                     type: 'quote',
                     options: {},
                     settings: {
-
+                        section_background_color: '#ffffff'
                     }
                 }
             ]
@@ -109,10 +109,6 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
         $scope.currentSectionOptions = $scope.templates[ $scope.currentTemplate ];
     }
 
-    $scope.addSection = function( section ) {
-        //$scope.sections.push( section );
-    }
-
     $scope.setCurrentSectionOptions();
 
     $scope.content = {
@@ -121,6 +117,10 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
         theme: $scope.currentTemplate,
         sections: []
     };
+
+    $scope.addSection = function( section ) {
+        $scope.content.sections.push( section );
+    }
 
     $scope.save = function() {
         Herc.all('Content').post( $scope.content ).then( function( response ) {

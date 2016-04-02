@@ -17,13 +17,16 @@ textarea.editable-input {
 }
 
 .site-templates-standard-section-header {
-  .delete-button {
+  .delete-button, .menu-item-settings-button {
     font-weight: bold;
-    font-size: 14px;
     cursor: pointer;
+    font-size: 18px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-left: 4px;
   }
 
-  li.menu-item:hover .delete-button{
+  li.menu-item:hover .delete-button, li.menu-item:hover .menu-item-settings-button {
     display: inline-block !important;
   }
 

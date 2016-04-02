@@ -20,7 +20,11 @@
             <div class="navbar-collapse collapse text-uppercase">
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-repeat="item in section.settings.menu_items" class="menu-item">
-                        <a ng-if="item.type == 'url'" buttons="no" blur="submit" editable-text="item.text">{{item.text}}<span style="color: red;display:none;" class="delete-button" ng-click="removeMenuItem( item )"> &times;</span></a>
+                        <a ng-if="item.type == 'url'" buttons="no" blur="submit" editable-text="item.text">
+                            {{item.text}}
+                            <span style="display:none;" class="delete-button fa fa-times" ng-click="removeMenuItem( item )"></span>
+                            <span style="display:none;" class="menu-item-settings-button fa fa-gear" ng-click="menuItemSettings( item )"></span>
+                        </a>
                     </li>
                     <li style="display:none;" class="add-menu-item">
                         <a ng-click="addMenuItem()" style="font-size:24px;cursor:pointer;">&plus;</a>
