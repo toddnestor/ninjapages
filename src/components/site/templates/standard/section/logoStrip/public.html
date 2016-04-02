@@ -1,5 +1,5 @@
 <div ng-controller="SiteTemplatesStandardSectionLogoStripController" class="block app-ribbon p-y-lg site-templates-standard-section-logoStrip" style="background-color: {{section.settings.section_background_color}};">
     <div class="container text-center">
-        <img herc-upload ng-model="logo.url" src="{{logo.url}}" style="cursor:pointer;{{logo.height ? 'height: ' + logo.height + 'px;' : ''}}{{logo['max-width'] ? 'max-width: ' + logo['max-width'] + 'px;' : ''}}{{logo.width ? 'width: ' + logo.width + 'px;' : ''}}{{logo['max-height'] ? 'max-height: ' + logo['max-height'] + 'px;' : ''}}">
+        <img herc-upload ng-model="logo.url" src="{{logo.url}}" style="cursor:pointer;{{logo.height ? 'height: ' + logo.height + 'px;' : ''}}{{logo['max-width'] ? 'max-width: ' + logo['max-width'] + 'px;' : ''}}{{logo.width ? 'width: ' + logo.width + 'px;' : ''}}{{logo['max-height'] ? 'max-height: ' + logo['max-height'] + 'px;' : ''}}" ng-repeat="logo in section.settings.logos track by $index">
     </div>
 </div>
