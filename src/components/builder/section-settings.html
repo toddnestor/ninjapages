@@ -1,14 +1,33 @@
 
     <div class="modal-header">
         <button type="button" class="close" ng-click="ok()" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Call to Action Button Settings</h4>
+        <h4 class="modal-title">Section Settings</h4>
     </div>
 
     <div class="modal-body p-a-0 js-modalBody">
         <form>
             <div class="form-group">
-                <label for="exampleInputEmail1">Button Background Color</label>
+                <label for="exampleInputEmail1">Background Color</label>
                 <spectrum-colorpicker ng-model="thing.settings.section_background_color" options="{showInput: true, showAlpha: true}"></spectrum-colorpicker>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Background Image (appears in front of color)</label>
+                <br />
+                <button herc-upload ng-model="thing.settings.section_background_image">Choose</button>
+                <br />
+                <img ng-if="thing.settings.section_background_image" src="{{thing.settings.section_background_image}}" style="max-width: 300px;" />
+            </div>
+            <div class="form-group" ng-repeat="setting in settings.settings track by $index">
+                <label>{{setting.label}}</label>
+                <!--<switch ng-if="setting.type=='switch'" ng-model="$parent.thing.settings[ setting.key ]"></switch>-->
+                <div class="builder">
+                    <label class="switch">
+                        <input ng-model="$parent.thing.settings[ setting.key ]" type="checkbox">
+                        <span>
+
+                        </span>
+                    </label>
+                </div>
             </div>
             <button type="button" ng-click="ok()" class="btn btn-default">Save</button>
         </form>

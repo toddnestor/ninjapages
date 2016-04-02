@@ -10,12 +10,20 @@ app.config(function($stateProvider){
 		})
 }); 
 
-app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal, Upload, $timeout) {
+app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal ) {
 	$scope.templates = {
             'standard': [
                 {
                     type: 'header',
-                    options: {},
+                    options: {
+                                settings: [
+                                    {
+                                        key: 'show_graph_overlay',
+                                        type: 'switch',
+                                        label: 'Show Graph Overlay'
+                                    }
+                                ]
+                    },
                     settings: {
                         button_text: 'go',
                         header_text: 'Analytics on demand.',
@@ -25,6 +33,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                         cta_background_color: '#2595ff',
                         cta_border_color: '#0b89ff',
                         cta_font_color: '#ffffff',
+                        section_background_image: 'https://herc.objects.cdn.dream.io/uploads/e315d8528b13ca0c3164dd1a9b45fc06/startup-1.jpg',
+                        show_graph_overlay: true,
                         menu_items: [
                             {
                                 type: 'url',
@@ -46,7 +56,11 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 },
                 {
                     type: 'codeSample',
-                    options: {},
+                    options: {
+                        settings: [
+
+                        ]
+                    },
                     settings: {
                         code: 'goAnalytics "who are the latest 3 users?"\n\n{\n "Dave": {\n   "fullName": "Dave Gamache",\n   "twitterHandle": "@dhg",\n }\n "Mark": {\n   "fullName": "Mark Otto",\n   "twitterHandle": "@mdo",\n }\n "Jacob": {\n   "fullName": "Jacob Thornton",\n   "twitterHandle": "@fat",\n }\n}',
                         tag: 'Easy Development',
@@ -58,42 +72,66 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 },
                 {
                     type: 'features',
-                    options: {},
+                    options: {
+                        settings: [
+
+                        ]
+                    },
                     settings: {
                         section_background_color: '#ffffff'
                     }
                 },
                 {
                     type: 'footer',
-                    options: {},
+                    options: {
+                        settings: [
+
+                        ]
+                    },
                     settings: {
                         section_background_color: '#262F36'
                     }
                 },
                 {
                     type: 'leftImage',
-                    options: {},
+                    options: {
+                        settings: [
+
+                        ]
+                    },
                     settings: {
                         section_background_color: '#ffffff'
                     }
                 },
                 {
                     type: 'logoStrip',
-                    options: {},
+                    options: {
+                        settings: [
+
+                        ]
+                    },
                     settings: {
                         section_background_color: '#2595FF'
                     }
                 },
                 {
                     type: 'pricing',
-                    options: {},
+                    options: {
+                        settings: [
+
+                        ]
+                    },
                     settings: {
                         section_background_color: '#F4F5F6'
                     }
                 },
                 {
                     type: 'quote',
-                    options: {},
+                    options: {
+                        settings: [
+
+                        ]
+                    },
                     settings: {
                         section_background_color: '#ffffff'
                     }
@@ -171,43 +209,4 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 
         $scope.content.sections.splice( index + 1, 0, section )
     }
-
-    $scope.$watch('files', function () {
-        $scope.upload($scope.files);
-    });
-    $scope.$watch('file', function () {
-        if ($scope.file != null) {
-            $scope.files = [$scope.file];
-        }
-    });
-    $scope.log = '';
-
-    $scope.upload = function (files) {
-        if (files && files.length) {
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                if (!file.$error) {
-                    Upload.upload({
-                        url: 'http://api.hercdev.dev/upload?api_key=a62d34e343718057b0787e1b3f1d542abcab35fe3f942d886e666fab824c',
-                        data: {
-                            file: file
-                        }
-                    }).then(function (resp) {
-                        $timeout(function() {
-                            $scope.log = 'file: ' +
-                                resp.config.data.file.name +
-                                ', Response: ' + JSON.stringify(resp.data) +
-                                '\n' + $scope.log;
-                        });
-                    }, null, function (evt) {
-                        var progressPercentage = parseInt(100.0 *
-                            evt.loaded / evt.total);
-                        $scope.log = 'progress: ' + progressPercentage +
-                            '% ' + evt.config.data.file.name + '\n' +
-                            $scope.log;
-                    });
-                }
-            }
-        }
-    };
 });

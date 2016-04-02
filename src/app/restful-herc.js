@@ -71,6 +71,12 @@
                 });
         }
 
+        Herc.uploadUrl = function() {
+            var full_url = api_url + '/upload?api_key=' + api_key;
+
+            return full_url;
+        }
+
         Herc.metaDataCollection = function(items) {
             angular.forEach( items, function(value){
                 value.meta_data = {};

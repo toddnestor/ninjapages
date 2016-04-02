@@ -1,0 +1,21 @@
+
+    <div class="modal-header media-selector">
+        <button type="button" class="close" ng-click="ok()" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Media Upload</h4>
+    </div>
+
+    <div class="modal-body p-a-0 js-modalBody builder">
+        <div ngf-drop ngf-select ng-model="files" class="drop-box box-placeholder text-center"
+             ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+             accept="image/*"
+             ngf-pattern="'image/*">
+            <p>
+                <em class="fa fa-cloud-upload fa-2x"></em>
+            </p>
+            Upload files by dropping them here or
+            <div class="btn-link form-file" ngf-select="upload($files)" ngf-multiple="false">
+                selecting one
+            </div>
+        </div>
+        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+    </div>

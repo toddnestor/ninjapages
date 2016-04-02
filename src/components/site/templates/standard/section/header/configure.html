@@ -1,5 +1,5 @@
 <div ng-controller="SiteTemplatesStandardSectionHeaderController" class="site-templates-standard-section-header block block-inverse block-fill-height app-header"
-     style="background-image: url(assets/img/startup-1.jpg);">
+     style="background-image: url({{section.settings.section_background_image}});">
 
     <nav class="navbar navbar-transparent navbar-fixed-top navbar-padded app-navbar p-t-md">
         <div class="container">
@@ -35,7 +35,7 @@
     </nav>
 
 
-    <img class="app-graph" src="assets/img/startup-0.svg">
+    <img class="app-graph" ng-if="section.settings.show_graph_overlay" src="https://herc.objects.cdn.dream.io/uploads/5fb8b31fe18186f590d1d0e0fa445944/startup-0.svg">
 
     <div class="block-xs-middle p-b-lg">
         <div class="container">
