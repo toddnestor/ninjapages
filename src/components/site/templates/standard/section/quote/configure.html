@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row app-align-center">
             <div class="col-sm-5 col-sm-push-7">
-                <h6 class="text-muted text-uppercase">High Praise</h6>
-                <h3 class="m-t-0 m-b-md">“Go Analytics is amazing. Decisions that used to take weeks, now only takes minutes and is available to everyone on my team.”</h3>
-                <p class="m-b-md text-muted">Cindy Smith, founder of Cool Startup</p>
+                <h6 class="text-muted text-uppercase" buttons="no" blur="submit" editable-text="section.settings.quote_title">{{section.settings.quote_title}}</h6>
+                <h3 class="m-t-0 m-b-md" buttons="no" blur="submit" editable-textarea="section.settings.quote_description">{{section.settings.quote_description}}</h3>
+                <p class="m-b-md text-muted" buttons="no" blur="submit" editable-text="section.settings.quoter">{{section.settings.quoter}}</p>
             </div>
             <div class="col-sm-6 col-sm-pull-5">
                 <img herc-upload ng-model="section.settings.image" src="{{section.settings.image}}" style="cursor:pointer;">

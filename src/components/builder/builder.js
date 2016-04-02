@@ -112,7 +112,44 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                         ]
                     },
                     settings: {
-                        section_background_color: '#2595FF'
+                        section_background_color: '#2595FF',
+                        logos: [
+                            {
+                                height: null,
+                                width: null,
+                                'max-height': null,
+                                'max-width': 218,
+                                url: 'https://herc.objects.cdn.dream.io/uploads/0fc981861e5fdcf83f3fa4de71546678/startup-4.svg'
+                            },
+                            {
+                                height: null,
+                                width: null,
+                                'max-height': null,
+                                'max-width': 95,
+                                url: 'https://herc.objects.cdn.dream.io/uploads/476ab6e32a86e185245a416402d537ee/startup-5.svg'
+                            },
+                            {
+                                height: null,
+                                width: null,
+                                'max-height': null,
+                                'max-width': 211,
+                                url: 'https://herc.objects.cdn.dream.io/uploads/cc5e30b4b2f1a60af3782d02340819db/startup-6.svg'
+                            },
+                            {
+                                height: null,
+                                width: null,
+                                'max-height': null,
+                                'max-width': 193,
+                                url: 'https://herc.objects.cdn.dream.io/uploads/a99826d750cf84b12969e015427dfc80/startup-7.svg'
+                            },
+                            {
+                                height: null,
+                                width: null,
+                                'max-height': null,
+                                'max-width': 167,
+                                url: 'https://herc.objects.cdn.dream.io/uploads/7a22b9d1037c53bd06b0a599a6e9d2da/startup-8.svg'
+                            }
+                        ]
                     }
                 },
                 {
@@ -135,7 +172,10 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                     },
                     settings: {
                         section_background_color: '#ffffff',
-                        image: 'https://herc.objects.cdn.dream.io/uploads/c4a057bf4e5ba552f9f6aef750bd0c54/startup-3.jpg'
+                        image: 'https://herc.objects.cdn.dream.io/uploads/c4a057bf4e5ba552f9f6aef750bd0c54/startup-3.jpg',
+                        quote_title: 'High Praise',
+                        quote_description: '"Go Analytics is amazing. Decisions that used to take weeks, now only takes minutes and is available to everyone on my team."',
+                        quoter: 'Cindy Smith, founder of Cool Startup'
                     }
                 }
             ]

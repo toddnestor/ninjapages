@@ -1,9 +1,5 @@
-<div ng-controller="SiteTemplatesStandardSectionLogoStripController" class="block app-ribbon p-y-lg" style="background-color: {{section.settings.section_background_color}};">
+<div ng-controller="SiteTemplatesStandardSectionLogoStripController" class="block app-ribbon p-y-lg site-templates-standard-section-logoStrip" style="background-color: {{section.settings.section_background_color}};">
     <div class="container text-center">
-        <img src="assets/img/startup-4.svg">
-        <img src="assets/img/startup-5.svg">
-        <img src="assets/img/startup-6.svg">
-        <img src="assets/img/startup-7.svg">
-        <img src="assets/img/startup-8.svg">
+        <img herc-upload ng-model="logo.url" src="{{logo.url}}" style="cursor:pointer;{{logo.height ? 'height: ' + logo.height + 'px;' : ''}}{{logo['max-width'] ? 'max-width: ' + logo['max-width'] + 'px;' : ''}}{{logo.width ? 'width: ' + logo.width + 'px;' : ''}}{{logo['max-height'] ? 'max-height: ' + logo['max-height'] + 'px;' : ''}}">
     </div>
 </div>
