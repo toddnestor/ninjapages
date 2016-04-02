@@ -1,0 +1,15 @@
+
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="ok()" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Call to Action Button Settings</h4>
+    </div>
+
+    <div class="modal-body p-a-0 js-modalBody">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Button Background Color</label>
+                <spectrum-colorpicker ng-model="thing.settings.section_background_color"></spectrum-colorpicker>
+            </div>
+            <button type="button" ng-click="ok()" class="btn btn-default">Save</button>
+        </form>
+    </div>

@@ -5251,4 +5251,31 @@
       overflow: hidden !important;
     }
   }
+
+  .template-section {
+    position: relative !important;
+  }
+
+  .template-section:hover {
+    border: 2px dashed #0f0 !important;
+  }
+
+  .section-settings {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    background: #fff !important;
+    width: 80px !important;
+    height: 30px !important;
+    z-index: 10000 !important;
+    line-height:30px !important;
+    padding: 4px !important;
+    font-size: 20px !important;
+    border-bottom-left-radius: 10px !important;
+    display: none;
+  }
+
+  .template-section:hover .section-settings {
+    display: block !important;
+  }
 }

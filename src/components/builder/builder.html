@@ -4,12 +4,12 @@
         <nav role="navigation" class="navbar navbar-default navbar-top navbar-fixed-top">
             <!-- START navbar header-->
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand" style="height:100%;">
+                <a href="index.html" class="navbar-brand" style="height:100%;padding-bottom:4px;">
                     <div class="brand-logo">
-                        <img src="assets/img/startup-8.svg" alt="App Logo" class="img-responsive">
+                        <img src="assets/img/ninja-pages.svg" alt="App Logo" class="img-responsive" style="max-height:50px; width: auto; float:left; margin-top:-7px;">
                     </div>
                     <div class="brand-logo-collapsed">
-                        <img src="assets/img/startup-8.svg" alt="App Logo" class="img-responsive">
+                        <img src="assets/img/ninja-pages.svg" alt="App Logo" class="img-responsive" style="max-height:50px; width: auto; float:left; margin-top:-7px;">
                     </div>
                 </a>
             </div>
@@ -71,8 +71,18 @@
         <section style="min-height: 995px;">
             <!-- START Page content-->
             <div class="content-wrapper site-templates-standard">
-                <div data-drop="true" data-jqyoui-options="{accept: 'a'}" ng-model="content.sections" jqyoui-droppable="{multiple:true}" style="min-height: 150px;width:100%;border: 3px dashed blue;" class="stage">
-                    <ng-include src="'/templates/site/templates/standard/section/' + section.type + '/configure.html'" ng-repeat="section in content.sections track by $index" />
+                <div ng-if="content.sections && content.sections.length > 0" data-drop="true" data-jqyoui-options="{accept: 'a'}" ng-model="content.sections" jqyoui-droppable="{multiple:true}" style="min-height: 150px;width:100%;" class="stage">
+                    <div ng-repeat="section in content.sections track by $index" data-drag="true" class="template-section" data-jqyoui-options="{insertInline: true, revert: 'invalid', handle: '.my-handle'}" jqyoui-draggable="{index: {{$index}},animate:true}">
+                        <div class="section-settings">
+                            <span class="fa fa-trash pull-right" style="cursor:pointer;" ng-click="remove( section )"></span>
+                            <span class="fa fa-gear pull-right" style="cursor:pointer;" ng-click="sectionSettings( section, section.options )"></span>
+                            <span class="fa fa-arrows pull-right my-handle" style="cursor:pointer;"></span>
+                        </div>
+                        <ng-include src="'/templates/site/templates/standard/section/' + section.type + '/configure.html'" />
+                    </div>
+                </div>
+                <div ng-if="!content.sections || content.sections.length == 0" data-drop="true" data-jqyoui-options="{accept: 'a'}" ng-model="content.sections" jqyoui-droppable="{multiple:true}" style="min-height: 150px;width:100%;border: 3px dashed blue;" class="stage">
+                        <h2 style="width:100%;text-align:center;line-height:150px;margin:0;">Drag sections here to add</h2>
                 </div>
             </div>
             <!-- END Page content-->

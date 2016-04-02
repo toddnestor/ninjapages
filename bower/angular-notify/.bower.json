@@ -40,6 +40,6 @@
     "commit": "4d159b6ebec256409341ba707a9838e93827f523"
   },
   "_source": "git://github.com/cgross/angular-notify.git",
-  "_target": "~2.5.0",
+  "_target": "^2.5.0",
   "_originalSource": "angular-notify"
 }
