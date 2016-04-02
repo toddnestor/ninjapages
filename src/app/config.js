@@ -7,7 +7,8 @@ var app = angular.module('app', [
     'ui.bootstrap',
     'ngDragDrop',
     'cgNotify',
-    'angularSpectrumColorpicker'
+    'angularSpectrumColorpicker',
+    'ui.sortable'
 ]);
 
 app.config(function($stateProvider, $locationProvider){

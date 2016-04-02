@@ -23,7 +23,7 @@ app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope,
             size: size,
             resolve: {
                 thing: $scope.section,
-                settings: settings
+                settings: {}
             }
         });
 

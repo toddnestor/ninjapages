@@ -12,7 +12,7 @@
     "angular-xeditable": "~0.1.9",
     "moment": "~2.10.6",
     "angular-notify": "^2.5.0",
-    "angular-ui-sortable": "~0.13.4",
+    "angular-ui-sortable": "^0.14.0",
     "angular-sweetalert": "latest",
     "clipboard": "~1.5.5",
     "bower": "*",
