@@ -100,7 +100,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                         ]
                     },
                     settings: {
-                        section_background_color: '#ffffff'
+                        section_background_color: '#ffffff',
+                        image: 'https://herc.objects.cdn.dream.io/uploads/5692f0b86b5f6f17647ee155674e6d31/startup-2.jpg'
                     }
                 },
                 {
@@ -133,7 +134,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                         ]
                     },
                     settings: {
-                        section_background_color: '#ffffff'
+                        section_background_color: '#ffffff',
+                        image: 'https://herc.objects.cdn.dream.io/uploads/c4a057bf4e5ba552f9f6aef750bd0c54/startup-3.jpg'
                     }
                 }
             ]

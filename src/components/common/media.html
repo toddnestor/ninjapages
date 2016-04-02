@@ -1,10 +1,10 @@
-
+<span class="builder">
     <div class="modal-header media-selector">
         <button type="button" class="close" ng-click="ok()" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Media Upload</h4>
     </div>
 
-    <div class="modal-body p-a-0 js-modalBody builder">
+    <div ng-if="!loading" class="modal-body p-a-0 js-modalBody">
         <div ngf-drop ngf-select ng-model="files" class="drop-box box-placeholder text-center"
              ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
              accept="image/*"
@@ -19,3 +19,12 @@
         </div>
         <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
     </div>
+    <div ng-if="loading">
+        <div class="drop-box box-placeholder text-center">
+            <p>
+                <em class="fa fa-spinner fa-2x fa-spin"></em>
+            </p>
+            Uploading...
+        </div>
+    </div>
+</span>

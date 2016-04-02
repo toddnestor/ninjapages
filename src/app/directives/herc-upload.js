@@ -55,6 +55,7 @@ app.controller('MediaSelectorCtrl', function ($scope, $uibModalInstance, Upload,
 
     $scope.upload = function (files) {
         if (files && files.length) {
+            $scope.loading = true;
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
                 if (!file.$error) {
