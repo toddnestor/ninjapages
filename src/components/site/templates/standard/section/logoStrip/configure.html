@@ -1,6 +1,6 @@
 <div ng-controller="SiteTemplatesStandardSectionLogoStripController" class="block app-ribbon p-y-lg site-templates-standard-section-logoStrip" style="background-color: {{section.settings.section_background_color}};">
     <div class="container text-center logo-section">
-        <span ng-repeat="logo in section.settings.logos track by $index" class="logo-item" style="position:relative;display:inline-block;" config-settings delete-function="removeMe" settings-function="settings" ng-model="logo">
+        <span ng-repeat="logo in section.settings.logos track by $index" class="logo-item" style="position:relative;display:inline-block;" settings="{'no-show': true}" config-settings delete-function="removeMe" settings-function="settings" ng-model="logo">
             <img herc-upload ng-model="logo.url" src="{{logo.url}}" style="cursor:pointer;{{logo.height ? 'height: ' + logo.height + 'px;' : ''}}{{logo['max-width'] ? 'max-width: ' + logo['max-width'] + 'px;' : ''}}{{logo.width ? 'width: ' + logo.width + 'px;' : ''}}{{logo['max-height'] ? 'max-height: ' + logo['max-height'] + 'px;' : ''}}">
         </span>
         <span class="add-logo-button" style="border: 2px dashed #fff;background: rgba( 255, 255, 255, 0.5 );min-width:150px;min-height:50px;cursor:pointer;display:none;color:white;font-size:18px;font-weight:bold;line-height:50px;" ng-click="addLogo( section.settings.logos )">Add logo</span>

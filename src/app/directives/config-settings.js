@@ -66,8 +66,10 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                 $timeout(function(){
                                     scope.$apply();
                                 })
-                                $(e.currentTarget).hide();
-                                $(e.currentTarget).closest('.config-buttons').find('.fa-eye').show();
+                                if( !settings['no-show'] ) {
+                                    $(e.currentTarget).hide();
+                                    $(e.currentTarget).closest('.config-buttons').find('.fa-eye').show();
+                                }
                             })
                         ).append(
                             $('<span>').addClass('fa').addClass('fa-eye').hide().click(function (e) {
@@ -101,9 +103,10 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                             $timeout(function(){
                                 scope.$apply();
                             })
-
-                            $(e.currentTarget).hide();
-                            $(e.currentTarget).closest('.config-buttons').find('.fa-eye').show();
+                            if( !settings['no-show'] ) {
+                                $(e.currentTarget).hide();
+                                $(e.currentTarget).closest('.config-buttons').find('.fa-eye').show();
+                            }
                         })
                     ).append(
                         $('<span>').addClass('fa').addClass('fa-eye').hide().click(function (e) {
