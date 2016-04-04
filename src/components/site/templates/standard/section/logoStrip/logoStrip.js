@@ -1,8 +1,8 @@
 var app = angular.module("app");
 
 app.controller("SiteTemplatesStandardSectionLogoStripController", function ($scope, $rootScope, $state, $stateParams, Herc, $uibModal ) {
-	$scope.removeMe = function( index, logos ) {
-        logos.splice( index, 1 );
+	$scope.removeMe = function( ctrl ) {
+        $scope.section.settings.logos = _.without( $scope.section.settings.logos, ctrl.$modelValue );
     }
 
     $scope.addLogo = function( logos ) {
@@ -17,14 +17,14 @@ app.controller("SiteTemplatesStandardSectionLogoStripController", function ($sco
         logos.push( new_logo );
     }
 
-    $scope.settings = function( logo ) {
+    $scope.settings = function( ctrl ) {
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: '/templates/site/templates/standard/section/logoStrip/settings.html',
             controller: 'ModalInstanceCtrl',
             size: null,
             resolve: {
-                thing: logo,
+                thing: ctrl.$modelValue,
                 settings: {}
             }
         });
