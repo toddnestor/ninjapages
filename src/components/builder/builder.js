@@ -234,8 +234,16 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
     $scope.save = function() {
         Herc.all('Content').post( $scope.content ).then( function( response ) {
             notify('Your content saved successfully!');
-            //$state.go('site.pages');
+            $scope.content.id = response.id;
+            $scope.content.permalink = response.permalink;
         } );
+    }
+
+    $scope.setPermalink = function() {
+        if( !$scope.content.permalink )
+            $scope.content.permalink = $scope.content.title.toLowerCase().replace(/ /g, '-').replace(/[^a-zA-Z0-9\-]/g, '' );
+        else
+            $scope.content.permalink = $scope.content.permalink.replace(/ /g, '-').replace(/[^a-zA-Z0-9\-]/g, '' );
     }
 
     $scope.remove = function( section ) {
