@@ -57,8 +57,10 @@
                 <ul class="nav">
                     <li ng-repeat="section in currentSectionOptions track by $index" style="cursor:move !important;">
                         <a title="{{section.type}}" data-drag="true" ng-model="section" data-jqyoui-options="{revert: 'invalid', appendTo: '.builder', helper: 'clone'}" jqyoui-draggable="{index: {{$index}},animate:true, placeholder: 'keep', deepCopy: true}" class="no-submenu" style="cursor:move !important;" ng-click="addSection( section )">
-                            <em class="fa fa-cube"></em>
-                            <span class="item-text">{{section.type}}</span>
+                            <span class="item-text" style="width: 100%;text-align: center;display: block;">{{section.name}}</span>
+                            <div style="max-width:300px;">
+                                <img class="img-responsive img-thumbnail" src="{{section.thumbnail}}" />
+                            </div>
                         </a>
                     </li>
                     <!-- END Menu-->

@@ -15,13 +15,11 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
             'standard': [
                 {
                     type: 'header',
+                    name: 'Header',
+                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/ef7b7fc4-546c-493d-a74a-8dd1f81d4810/2016-04-04_1510.png',
                     options: {
                                 settings: [
-                                    {
-                                        key: 'show_graph_overlay',
-                                        type: 'switch',
-                                        label: 'Show Graph Overlay'
-                                    }
+
                                 ]
                     },
                     settings: {
@@ -35,6 +33,10 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                         cta_font_color: '#ffffff',
                         section_background_image: 'https://herc.objects.cdn.dream.io/uploads/e315d8528b13ca0c3164dd1a9b45fc06/startup-1.jpg',
                         show_graph_overlay: true,
+                        display_button: true,
+                        display_header_text: true,
+                        display_description: true,
+                        display_cta: true,
                         menu_items: [
                             {
                                 type: 'url',
@@ -56,6 +58,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 },
                 {
                     type: 'codeSample',
+                    name: 'Code Sample',
+                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/b7f73a9f-b819-4055-bff7-d2cf99549b5c/2016-04-04_1511.png',
                     options: {
                         settings: [
 
@@ -72,6 +76,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 },
                 {
                     type: 'features',
+                    name: 'Features',
+                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/a3371f06-cbc9-4e95-9cab-36745c0c4689/2016-04-04_1513.png',
                     options: {
                         settings: [
 
@@ -83,6 +89,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 },
                 {
                     type: 'footer',
+                    name: 'Footer',
+                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/f5271860-978d-4004-8c02-aeb84980bd26/2016-04-04_1513.png',
                     options: {
                         settings: [
 
@@ -94,6 +102,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 },
                 {
                     type: 'leftImage',
+                    name: 'Left Image',
+                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/e8159c6f-8d7a-4320-b16a-64b8db94cc72/2016-04-04_1511.png',
                     options: {
                         settings: [
 
@@ -106,6 +116,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 },
                 {
                     type: 'logoStrip',
+                    name: 'Logo Strip',
+                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/59b4d54e-ad52-4ec6-864e-6d22506fbc24/2016-04-04_1512.png',
                     options: {
                         settings: [
 
@@ -154,6 +166,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 },
                 {
                     type: 'pricing',
+                    name: 'Pricing',
+                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/365ed855-793b-45b6-944a-63f6540f1608/2016-04-04_1513.png',
                     options: {
                         settings: [
 
@@ -165,6 +179,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 },
                 {
                     type: 'quote',
+                    name: 'Quote',
+                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/6b848822-ae09-4e12-822d-5ca47aaba0f9/2016-04-04_1512.png',
                     options: {
                         settings: [
 

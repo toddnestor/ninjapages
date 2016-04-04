@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="">
-                    <strong style="background: #fff; padding: 12px; border-radius: 4px; color: #28669F;">
+                    <strong style="background: #fff; padding: 12px; border-radius: 4px; color: #28669F;" ng-if="section.settings.display_button && section.settings.display_button != '0'">
                         {{section.settings.button_text}}
                     </strong>
                 </a>
@@ -34,9 +34,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-md-6">
-                    <h1 class="block-title m-b-sm">{{section.settings.header_text}}</h1>
-                    <p class="lead m-b-md text-muted">{{section.settings.description}}</p>
-                    <a href="{{section.settings.cta_url}}" class="btn btn-primary btn-lg" style="background-color: {{section.settings.cta_background_color}};border-color: {{section.settings.cta_border_color}}; color: {{section.settings.cta_font_color}};">{{section.settings.cta_text}}</a>
+                    <h1 ng-if="section.settings.display_header_text && section.settings.display_header_text != '0'" class="block-title m-b-sm">{{section.settings.header_text}}</h1>
+                    <p ng-if="section.settings.display_description && section.settings.display_description != '0'" class="lead m-b-md text-muted">{{section.settings.description}}</p>
+                    <a ng-if="section.settings.display_cta && section.settings.display_cta != '0'" href="{{section.settings.cta_url}}" class="btn btn-primary btn-lg" style="background-color: {{section.settings.cta_background_color}};border-color: {{section.settings.cta_border_color}}; color: {{section.settings.cta_font_color}};">{{section.settings.cta_text}}</a>
                 </div>
             </div>
         </div>

@@ -11,8 +11,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">
-                    <strong buttons="no" blur="submit" editable-text="section.settings.button_text" style="background: #fff; padding: 12px; border-radius: 4px; color: #28669F;">
+                <a class="navbar-brand" config-settings ng-model="section.settings.display_button" delete-function="toggleDisplayButton" show-function="toggleDisplayButton" href="">
+                    <strong ng-if="section.settings.display_button && section.settings.display_button != '0'" buttons="no" blur="submit" editable-text="section.settings.button_text" e-style="background: #fff; padding: 12px; border-radius: 4px; color: #28669F;" style="background: #fff; padding: 12px; border-radius: 4px; color: #28669F;">
                         {{section.settings.button_text}}
                     </strong>
                 </a>
@@ -20,13 +20,11 @@
             <div class="navbar-collapse collapse text-uppercase">
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-repeat="item in section.settings.menu_items" class="menu-item">
-                        <a ng-if="item.type == 'url'" buttons="no" blur="submit" editable-text="item.text">
+                        <a ng-if="item.type == 'url'" buttons="no" blur="submit" editable-text="item.text" config-settings delete-function="removeMenuItem" settings-function="menuItemSettings" ng-model="item">
                             {{item.text}}
-                            <span style="display:none;" class="delete-button fa fa-times" ng-click="removeMenuItem( item )"></span>
-                            <span style="display:none;" class="menu-item-settings-button fa fa-gear" ng-click="menuItemSettings( item )"></span>
                         </a>
                     </li>
-                    <li style="display:none;" class="add-menu-item">
+                    <li style="{{section.settings.menu_items && section.settings.menu_items.length > 0 ? 'display:none;' : ''}}" class="add-menu-item">
                         <a ng-click="addMenuItem()" style="font-size:24px;cursor:pointer;">&plus;</a>
                     </li>
                 </ul>
@@ -34,18 +32,16 @@
         </div>
     </nav>
 
-
-    <img class="app-graph" ng-if="section.settings.show_graph_overlay && section.settings.show_graph_overlay != '0'" src="https://herc.objects.cdn.dream.io/uploads/5fb8b31fe18186f590d1d0e0fa445944/startup-0.svg">
+    <img class="app-graph" ng-if="section.settings.show_graph_overlay && section.settings.show_graph_overlay != '0'" src="https://herc.objects.cdn.dream.io/uploads/5fb8b31fe18186f590d1d0e0fa445944/startup-0.svg" config-settings settings="{'single-element': true}" delete-function="hideGraphImg" ng-model="section.settings.show_graph_overlay" show-function="showGraphImg">
 
     <div class="block-xs-middle p-b-lg">
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-md-6">
-                    <h1 class="block-title m-b-sm" buttons="no" blur="submit" editable-text="section.settings.header_text">{{section.settings.header_text}}</h1>
-                    <p class="lead m-b-md text-muted" buttons="no" blur="submit" editable-textarea="section.settings.description">{{section.settings.description}}</p>
-                    <button class="btn btn-primary btn-lg has-settings-button item-wrapper" style="background-color: {{section.settings.cta_background_color}};border-color: {{section.settings.cta_border_color}};">
+                    <h1 ng-if="section.settings.display_header_text && section.settings.display_header_text != '0'" class="block-title m-b-sm" e-style="font-size: 42px; line-height: 1; color: inherit; margin-top: 21px; margin-bottom: 10.5px;font-weight: 500; 'Work sans','Helvetica Neue',Helvetica,Arial,sans-serif;" buttons="no" blur="submit" editable-text="section.settings.header_text" config-settings delete-function="toggleDisplayHeader" show-function="toggleDisplayHeader" ng-model="section.settings.display_header_text">{{section.settings.header_text}}</h1>
+                    <p ng-if="section.settings.display_description && section.settings.display_description != '0'" class="lead m-b-md text-muted" e-style="font-size: 21px; color: rgba(255,255,255,.7); margin: 0 0 10.5px; margin-bottom:30px !important; line-height:1.6; font-weight: 300;" buttons="no" blur="submit" editable-textarea="section.settings.description" config-settings ng-model="section.settings.display_description" delete-function="toggleDisplayDescription" show-function="toggleDisplayDescription">{{section.settings.description}}</p>
+                    <button ng-if="section.settings.display_cta && section.settings.display_cta != '0'" class="btn btn-primary btn-lg has-settings-button item-wrapper" style="background-color: {{section.settings.cta_background_color}};border-color: {{section.settings.cta_border_color}};" config-settings settings-function="editCta" ng-model="section.settings.display_cta" delete-function="toggleDisplayCta" show-function="toggleDisplayCta">
                         <span buttons="no" blur="submit" editable-text="section.settings.cta_text" style="color:{{section.settings.cta_font_color}};">{{section.settings.cta_text}}</span>
-                        <span class="fa fa-gear settings-button" style="font-size:15px;position:absolute;right:2px;top: 2px;cursor: pointer; display:none; font-style: normal;" ng-click="editCta()"></span>
                     </button>
                 </div>
             </div>

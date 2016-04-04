@@ -1,8 +1,8 @@
 var app = angular.module("app");
 
 app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope, $rootScope, $state, $stateParams, Herc, $uibModal) {
-	$scope.removeMenuItem = function( item ) {
-        $scope.section.settings.menu_items = _.without( $scope.section.settings.menu_items, item );
+	$scope.removeMenuItem = function( ctrl ) {
+        $scope.section.settings.menu_items = _.without( $scope.section.settings.menu_items, ctrl.$modelValue );
     }
 
     $scope.addMenuItem = function() {
@@ -32,6 +32,30 @@ app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope,
         }, function () {
 
         });
+    }
+
+    $scope.hideGraphImg = function() {
+        $scope.section.settings.show_graph_overlay = false;
+    }
+
+    $scope.showGraphImg = function() {
+        $scope.section.settings.show_graph_overlay = true;
+    }
+
+    $scope.toggleDisplayButton = function() {
+        $scope.section.settings.display_button = !$scope.section.settings.display_button;
+    }
+
+    $scope.toggleDisplayHeader = function() {
+        $scope.section.settings.display_header_text = !$scope.section.settings.display_header_text;
+    }
+
+    $scope.toggleDisplayDescription = function() {
+        $scope.section.settings.display_description = !$scope.section.settings.display_description;
+    }
+
+    $scope.toggleDisplayCta = function() {
+        $scope.section.settings.display_cta = !$scope.section.settings.display_cta;
     }
 });
 

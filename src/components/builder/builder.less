@@ -5284,4 +5284,40 @@
   .template-section.ui-sortable-helper .section-settings {
     display: none !important;
   }
+
+  .configurable-section:hover {
+    border: 1px solid #0f0 !important;
+    position: relative !important;
+    margin-right: 30px !important;
+  }
+
+  .config-buttons {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 55px;
+    top: 0;
+    right: -30px;
+    background: #fff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding: 5px;
+    color: #555;
+    margin-top: -1px;
+    border-bottom-left-radius: 10px;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    white-space: normal !important;
+    line-height: 22px !important;
+    z-index:1000 !important;
+  }
+
+  .configurable-section:hover .config-buttons {
+    display: block !important;
+  }
+
+  .absolute-position, .absolute-position:hover {
+    position: absolute !important;
+  }
 }
