@@ -1,0 +1,29 @@
+
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="ok()" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">{{settings.title || 'Settings'}}</h4>
+    </div>
+
+    <div class="modal-body p-a-0 js-modalBody">
+        <form>
+            <div class="form-group" ng-repeat="setting in settings.settings track by $index">
+                <label>{{setting.label}}</label>
+                <div class="builder" ng-if="setting.type == 'switch'">
+                    <label class="switch">
+                        <input ng-model="$parent.thing[ setting.key ]" type="checkbox">
+                        <span>
+
+                        </span>
+                    </label>
+                </div>
+                <spectrum-colorpicker ng-if="setting.type == 'color'" ng-model="$parent.thing[ setting.key ]" options="{showInput: true, showAlpha: true}"></spectrum-colorpicker>
+                <br ng-if="setting.type == 'image'" />
+                <button ng-if="setting.type == 'image'" herc-upload ng-model="$parent.thing[ setting.key ]">Choose</button>
+                <br ng-if="setting.type == 'image'" />
+                <img ng-if="setting.type == 'image' && $parent.thing[ setting.key ]" src="{{$parent.thing[ setting.key ]}}" style="max-width: 300px;" />
+                <input type="text" class="form-control" placeholder="Text" ng-model="$parent.thing[ setting.key ]" ng-if="setting.type == 'text'" />
+                <textarea class="form-control" rows="3" ng-model="$parent.thing[ setting.key ]" ng-if="setting.type == 'textarea'"></textarea>
+            </div>
+            <button type="button" ng-click="ok()" class="btn btn-default">Save</button>
+        </form>
+    </div>

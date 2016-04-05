@@ -16,7 +16,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 {
                     type: 'header',
                     name: 'Header',
-                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/ef7b7fc4-546c-493d-a74a-8dd1f81d4810/2016-04-04_1510.png',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png',
                     options: {
                                 settings: [
 
@@ -41,17 +41,23 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                             {
                                 type: 'url',
                                 destination: '/standard',
-                                text: 'Standard'
+                                text: 'Standard',
+                                color: '#ffffff',
+                                'new-tab': false
                             },
                             {
                                 type: 'url',
                                 destination: '/minimal',
-                                text: 'Minimal'
+                                text: 'Minimal',
+                                color: '#ffffff',
+                                'new-tab': false
                             },
                             {
                                 type: 'url',
                                 destination: '/bold',
-                                text: 'Bold'
+                                text: 'Bold',
+                                color: '#ffffff',
+                                'new-tab': false
                             }
                         ]
                     }
@@ -59,7 +65,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 {
                     type: 'codeSample',
                     name: 'Code Sample',
-                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/b7f73a9f-b819-4055-bff7-d2cf99549b5c/2016-04-04_1511.png',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/7fa4045191c63e0e5589f21edaf92052/code-sample.png',
                     options: {
                         settings: [
 
@@ -77,20 +83,54 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 {
                     type: 'features',
                     name: 'Features',
-                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/a3371f06-cbc9-4e95-9cab-36745c0c4689/2016-04-04_1513.png',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/6587d4b13cf6feb11299c0b2613e970d/features.png',
                     options: {
                         settings: [
 
                         ]
                     },
                     settings: {
-                        section_background_color: '#ffffff'
+                        section_background_color: '#ffffff',
+                        tagline: 'Inside the Machine',
+                        headline: 'It\'s not hard to see how we make your life easier every day.',
+                        features: [
+                            {
+                                image: 'https://herc.objects.cdn.dream.io/uploads/b00ed107c2680d2b22f6a9eab27e241f/startup-9.svg',
+                                name: '24/7 support.',
+                                description: 'We’re always here for you no matter what time of day.'
+                            },
+                            {
+                                image: 'https://herc.objects.cdn.dream.io/uploads/d756545bbc7d99f1d674b9336951ecb0/startup-10.svg',
+                                name: 'E-commerce.',
+                                description: 'We automatically handle all sales analytics.'
+                            },
+                            {
+                                image: 'https://herc.objects.cdn.dream.io/uploads/18c557de784c864b03f8edd6799446e7/startup-11.svg',
+                                name: 'Turnaround.',
+                                description: 'Our data analysis is distributed, so it processes in seconds.'
+                            },
+                            {
+                                image: 'https://herc.objects.cdn.dream.io/uploads/046d2d53322ee4926cb4865af9745223/startup-12.svg',
+                                name: '>Rich calculations.',
+                                description: 'Limitless ways to splice and dice your data.'
+                            },
+                            {
+                                image: 'https://herc.objects.cdn.dream.io/uploads/3889ef8c5acb3317098581ec9631dc5b/startup-13.svg',
+                                name: 'Mobile apps.',
+                                description: 'iOS and Android apps available for monitoring.'
+                            },
+                            {
+                                image: 'https://herc.objects.cdn.dream.io/uploads/7d15184add2d161a19d9b58c8c6019ff/startup-14.svg',
+                                name: 'Secure connections.',
+                                description: 'Every single request is routed through HTTPS.'
+                            }
+                        ]
                     }
                 },
                 {
                     type: 'footer',
                     name: 'Footer',
-                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/f5271860-978d-4004-8c02-aeb84980bd26/2016-04-04_1513.png',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/58d86cbf5f3551d42f8cca4f2a7cc8ff/footer.png',
                     options: {
                         settings: [
 
@@ -103,7 +143,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 {
                     type: 'leftImage',
                     name: 'Left Image',
-                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/e8159c6f-8d7a-4320-b16a-64b8db94cc72/2016-04-04_1511.png',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/29ecf3fe291127857be5d167bd6e6760/left-image.png',
                     options: {
                         settings: [
 
@@ -124,7 +164,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 {
                     type: 'logoStrip',
                     name: 'Logo Strip',
-                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/59b4d54e-ad52-4ec6-864e-6d22506fbc24/2016-04-04_1512.png',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/9a7ee6cdf5d20d1428e97dba266ffc55/logo-strip.png',
                     options: {
                         settings: [
 
@@ -174,7 +214,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 {
                     type: 'pricing',
                     name: 'Pricing',
-                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/365ed855-793b-45b6-944a-63f6540f1608/2016-04-04_1513.png',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/167c50ded8dc379e64a0c7a47087ae4e/pricing.png',
                     options: {
                         settings: [
 
@@ -187,7 +227,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                 {
                     type: 'quote',
                     name: 'Quote',
-                    thumbnail: 'http://content.screencast.com/users/todd_nestor/folders/Jing/media/6b848822-ae09-4e12-822d-5ca47aaba0f9/2016-04-04_1512.png',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/e2877acc91282cb0196f31bd8616c8ba/quote.png',
                     options: {
                         settings: [
 
@@ -237,6 +277,28 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
             $scope.content.id = response.id;
             $scope.content.permalink = response.permalink;
         } );
+    }
+
+    $scope.settingsModal = function( model, settings ) {
+        if( !settings )
+            settings = {};
+
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: '/templates/builder/settings.html',
+            controller: 'ModalInstanceCtrl',
+            size: null,
+            resolve: {
+                thing: model,
+                settings: settings
+            }
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+
+        }, function () {
+
+        });
     }
 
     $scope.setPermalink = function() {

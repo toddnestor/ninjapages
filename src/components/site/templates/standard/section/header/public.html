@@ -20,7 +20,7 @@
             <div class="navbar-collapse collapse text-uppercase">
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-repeat="item in section.settings.menu_items" class="menu-item">
-                        <a ng-if="item.type == 'url'" href="{{item.destination}}">{{item.text}}</a>
+                        <a target="{{item['new-tab'] && item['new-tab'] != '0' ? '_blank' : '_self'}}" style="color: {{item.color}} !important;" ng-if="item.type == 'url'" href="{{item.destination}}">{{item.text}}</a>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->

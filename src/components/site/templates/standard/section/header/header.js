@@ -6,10 +6,19 @@ app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope,
     }
 
     $scope.addMenuItem = function() {
+        var color = '#ffffff';
+
+        if( $scope.section.settings.menu_items && $scope.section.settings.menu_items.length > 0 )
+        {
+            color = $scope.section.settings.menu_items[ $scope.section.settings.menu_items.length - 1].color;
+        }
+
         var menu_item = {
             type: 'url',
             destination: '/',
-            text: 'MENU ITEM'
+            text: 'MENU ITEM',
+            color: color,
+            'new-tab': false
         }
 
         $scope.section.settings.menu_items.push( menu_item );
@@ -32,6 +41,33 @@ app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope,
         }, function () {
 
         });
+    }
+
+    $scope.menuItemSettings = function( ctrl ) {
+        var settings = {
+            title: 'Menu Item Settings',
+            settings: [
+                {
+                    label: 'Url',
+                    key: 'destination',
+                    type: 'text'
+                },
+                {
+                    label: 'Font Color',
+                    key: 'color',
+                    type: 'color'
+                },
+                {
+                    label: 'Open in new tab',
+                    key: 'new-tab',
+                    type: 'switch'
+                }
+            ]
+        }
+
+        console.log('we do have a model of some sort: ', ctrl.$modelValue );
+
+        $scope.settingsModal( ctrl.$modelValue, settings );
     }
 
     $scope.hideGraphImg = function() {

@@ -5285,10 +5285,15 @@
     display: none !important;
   }
 
-  .configurable-section:hover {
+  .configurable-section:not(.top):hover {
     border: 1px solid #0f0 !important;
     position: relative !important;
     margin-right: 30px !important;
+  }
+
+  .configurable-section.top:hover {
+    border: 1px solid #0f0 !important;
+    position: relative !important;
   }
 
   .config-buttons {
@@ -5314,11 +5319,28 @@
     border-left: none;
   }
 
+  .config-buttons.top {
+    width: 55px !important;
+    height: 30px !important;
+    top: -29px !important;
+    right: -1px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 10px !important;
+    border-left: 1px solid #0f0 !important;
+    border-bottom: none !important;
+    margin-top:0 !important;
+  }
+
+  .config-buttons.top .fa {
+    margin: 3px !important;
+  }
+
   .configurable-section:hover .config-buttons {
     display: block !important;
   }
 
-  .absolute-position, .absolute-position:hover {
+  .absolute-position, .absolute-position:hover, .configurable-section.absolute-position:not(.top), .configurable-section.absolute-position:not(.top):hover {
     position: absolute !important;
   }
 }

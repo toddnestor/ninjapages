@@ -3,38 +3,23 @@
 
         <div class="row m-b-lg">
             <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
-                <h6 class="text-muted text-uppercase">Inside the machine</h6>
-                <h3  class="m-t-0 m-b">It’s not hard to see how we make your life easier every day.</h3>
+                <h6 class="text-muted text-uppercase" buttons="no" blur="submit" editable-text="section.settings.tagline" config-settings ng-model="section.settings.tagline" settings="{position:'top'}">{{section.settings.tagline}}</h6>
+                <h3  class="m-t-0 m-b" buttons="no" blur="submit" editable-text="section.settings.headline">{{section.settings.headline}}</h3>
             </div>
         </div>
 
-        <div class="row app-marketing-grid">
-            <div class="col-sm-4 p-x-md m-b-lg">
-                <img class="m-b" src="assets/img/startup-9.svg">
-                <p><strong>24/7 support.</strong> We’re always here for you no matter what time of day.</p>
+        <div class="row app-marketing-grid" ng-repeat="chunk in chunks">
+            <div class="{{chunk.length == 1 ? 'col-sm-offset-1 ' : ''}}col-sm-4 p-x-md m-b-lg" ng-repeat="feature in chunk" config-settings ng-model="feature" settings="{position: 'top', 'no-show': true, 'no-settings': true}" delete-function="removeMe">
+                <img herc-upload ng-model="feature.image" class="m-b" src="{{feature.image}}" style="cursor:pointer;max-width:100%;" />
+                <p><strong buttons="no" blur="submit" editable-text="feature.name">{{feature.name}}</strong> <span blur="submit" editable-text="feature.description" buttons="no">{{feature.description}}</span></p>
             </div>
-            <div class="col-sm-4 p-x-md m-b-lg">
-                <img class="m-b" src="assets/img/startup-10.svg">
-                <p><strong>E-commerce.</strong> We automatically handle all sales analytics.</p>
-            </div>
-            <div class="col-sm-4 p-x-md m-b-lg">
-                <img class="m-b" src="assets/img/startup-11.svg">
-                <p><strong>Turnaround.</strong> Our data analysis is distributed, so it processes in seconds.</p>
+            <div class="{{chunk.length == 1 ? 'col-sm-offset-1 ' : ''}}col-sm-4 p-x-md m-b-lg" ng-if="$index + 1 == $parent.chunks.length && chunk.length < 3" style="cursor:pointer;padding:50px;border: 3px dashed blue; background: #eee;" ng-click="addFeature()">
+                <p><strong>Add Feature</strong></p>
             </div>
         </div>
-
-        <div class="row app-marketing-grid">
-            <div class="col-sm-4 p-x-md m-b-lg">
-                <img class="m-b" src="assets/img/startup-12.svg">
-                <p><strong>Rich calculations.</strong> Limitless ways to splice and dice your data.</p>
-            </div>
-            <div class="col-sm-4 p-x-md m-b-lg">
-                <img class="m-b" src="assets/img/startup-13.svg">
-                <p><strong>Mobile apps.</strong> iOS and Android apps available for monitoring.</p>
-            </div>
-            <div class="col-sm-4 p-x-md m-b-lg">
-                <img class="m-b" src="assets/img/startup-14.svg">
-                <p><strong>Secure connections.</strong> Every single request is routed through HTTPS.</p>
+        <div class="row app-marketing-grid" ng-if="chunks[ chunks.length - 1 ].length == 3 || chunks.length == 0">
+            <div class="col-sm-offset-4 col-sm-4 p-x-md m-b-lg" style="cursor:pointer;padding:50px;border: 3px dashed blue; background: #eee;" ng-click="addFeature()">
+                <p><strong>Add Feature</strong></p>
             </div>
         </div>
     </div>
