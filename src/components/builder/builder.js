@@ -10,7 +10,7 @@ app.config(function($stateProvider){
 		})
 }); 
 
-app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal, $sce ) {
+app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal, $sce, $timeout ) {
 	$scope.templates = {
             'standard': [
                 {
@@ -355,6 +355,16 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
         var new_section = angular.copy( section );
 
         $scope.content.sections.push( new_section );
+
+        $scope.scrollToBottom();
+    }
+
+    $scope.scrollToBottom = function() {
+        $timeout( function() {
+            $('html, body').animate({
+                scrollTop: $('.site-templates-standard').offset().top + $('.site-templates-standard').height()
+            }, 1000);
+        }, 100 )
     }
 
     $scope.save = function() {

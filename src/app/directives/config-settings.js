@@ -77,7 +77,7 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                     if( attrs['settingsCall'] ) {
                                         scope.$eval(attrs['settingsCall'])
                                     }
-                                    
+
                                     settings_function( ctrl );
                                 })
                             ).append(

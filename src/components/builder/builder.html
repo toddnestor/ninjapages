@@ -74,7 +74,7 @@
         <section style="min-height: 995px;">
             <!-- START Page content-->
             <div class="content-wrapper site-templates-standard">
-                <div ng-if="content.sections && content.sections.length > 0" ui-sortable data-drop="true" ng-model="content.sections" jqyoui-droppable="{multiple:true, stack:false}" style="min-height: 150px;width:100%;" class="stage">
+                <div ng-if="content.sections && content.sections.length > 0" ui-sortable data-drop="true" ng-model="content.sections" jqyoui-droppable="{multiple:true, stack:false, onDrop: 'scrollToBottom'}" style="min-height: 150px;width:100%;" class="stage">
                     <div ng-repeat="section in content.sections track by $index" class="template-section">
                         <div class="section-settings">
                             <span class="fa fa-trash pull-right" style="cursor:pointer;" ng-click="remove( section )"></span>
