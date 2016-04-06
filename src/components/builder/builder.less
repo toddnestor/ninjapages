@@ -5336,11 +5336,20 @@
     margin: 3px !important;
   }
 
-  .configurable-section:hover .config-buttons {
+  .configurable-section:hover > .config-buttons {
     display: block !important;
   }
 
   .absolute-position, .absolute-position:hover, .configurable-section.absolute-position:not(.top), .configurable-section.absolute-position:not(.top):hover {
     position: absolute !important;
+  }
+
+  .editable-click, a.editable-click {
+    border-bottom: none;
+    color: inherit;
+  }
+
+  .list-items:hover > .add-item-button {
+    display: block !important;
   }
 }

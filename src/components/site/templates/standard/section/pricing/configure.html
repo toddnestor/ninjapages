@@ -3,66 +3,40 @@
 
         <div class="row m-b-lg">
             <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
-                <h6 class="text-muted text-uppercase">Business Talk</h6>
-                <h3  class="m-t-0">No plans. We just bump your plan whenever you need it.</h3>
+                <h6 class="text-muted text-uppercase" buttons="no" blur="submit" editable-text="section.settings.tagline">{{section.settings.tagline}}</h6>
+                <h3  class="m-t-0" buttons="no" blur="submit" editable-text="section.settings.headline">{{section.settings.headline}}</h3>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-4 p-x m-b-lg">
+        <div class="row" ng-repeat="chunk in chunks">
+            <div class="{{chunk.length == 1 ? 'col-sm-offset-1 ':''}}col-sm-4 p-x m-b-lg" ng-repeat="price in chunk" config-settings ng-model="price" settings="{position:'top'}" delete-call="removePrice( price )">
                 <div class="p-x">
-                    <h6 class="text-muted text-uppercase m-b">Personal</h6>
-                    <img class="m-b" src="assets/img/startup-15.svg">
-                    <p>Plenty of processing power for any personal projects, big or small.</p>
+                    <h6 class="text-muted text-uppercase m-b" style="margin-bottom: 0 !important;" buttons="no" blur="submit" editable-text="price.name">{{price.name}}</h6>
+                    <span style="font-size: 5em;"><sup style="font-size: .3em;top: -1.6em;margin-right: 5px;" buttons="no" blur="submit" editable-text="price.currency_symbol">{{price.currency_symbol}}</sup><span buttons="no" blur="submit" editable-text="price.price">{{price.price}}</span></span><span style="font-weight: bold;" buttons="no" blur="submit" editable-text="price.subtext">{{price.subtext}}</span>
+                    <p>{{price.description}}</p>
                 </div>
 
-                <ul class="list-unstyled list-bordered text-left m-y-md">
-                    <li class="p-y"><strong>10k</strong> monthly requests</li>
-                    <li class="p-y"><strong>9am-5pm</strong> technical supprt</li>
-                    <li class="p-y"><strong>Public</strong> API access</li>
+                <ul class="list-unstyled list-bordered text-left m-y-md list-items">
+                    <li class="p-y" ng-repeat="feature in price.features" config-settings settings="{'no-show': true}" delete-call="removeFeature( feature, price )" ng-model="feature"><strong buttons="no" blur="submit" editable-text="feature.name">{{feature.name}}</strong> <span buttons="no" blur="submit" editable-text="feature.description">{{feature.description}}</span></li>
+                    <li class="p-y add-item-button" style="{{price.features && price.features.length > 0 ? 'display: none;' : ''}}cursor:pointer;text-align:center;color:darkred;" ng-click="addFeature( price )"><strong>Click to Add Feature</strong></li>
                 </ul>
 
-                <button class="btn btn-lg btn-primary btn-block">
-                    Start <span class="visible-lg-inline">a personal account</span>
+                <button class="btn btn-lg btn-primary btn-block" style="color:{{price.button_font_color}} !important; border-color: {{price.button_border_color}} !important; background-color: {{price.button_background_color}} !important;">
+                    <span buttons="no" blur="submit" editable-text="price.button_text">{{price.button_text}}</span>
                 </button>
             </div>
-
-            <div class="col-sm-4 p-x m-b-lg">
-                <div class="p-x">
-                    <h6 class="text-muted text-uppercase m-b">Business</h6>
-                    <img class="m-b" src="assets/img/startup-16.svg">
-                    <p>The perfect sized plan for small businesses to get started.</p>
+            <div class="{{chunk.length == 1 ? 'col-sm-offset-1 ':''}}col-sm-4 p-x m-b-lg" ng-if="chunk.length < section.settings.prices_per_row">
+                <div style="border: 2px dashed blue; background: #eee; cursor: pointer;padding: 30px;font-weight: bold;font-size: 1.5em;" ng-click="addPrice()">
+                    Add Price
                 </div>
-
-                <ul class="list-unstyled list-bordered text-left m-y-md">
-                    <li class="p-y"><strong>100k</strong> monthly requests</li>
-                    <li class="p-y"><strong>24/7</strong> technical supprt</li>
-                    <li class="p-y"><strong>Public</strong> API access</li>
-                </ul>
-
-                <button class="btn btn-lg btn-primary btn-block">
-                    Start <span class="visible-lg-inline">a business account</span>
-                </button>
-            </div>
-
-            <div class="col-sm-4 p-x m-b-lg">
-                <div class="p-x">
-                    <h6 class="text-muted text-uppercase m-b">Corporate</h6>
-                    <img class="m-b" src="assets/img/startup-17.svg">
-                    <p>An unlimited plan that will scale infinitely to any size project.</p>
-                </div>
-
-                <ul class="list-unstyled list-bordered text-left m-y-md">
-                    <li class="p-y"><strong>Unlimited</strong> monthly requests</li>
-                    <li class="p-y"><strong>24/7</strong> technical supprt</li>
-                    <li class="p-y"><strong>Public & Private</strong> API access</li>
-                </ul>
-
-                <button class="btn btn-lg btn-primary btn-block">
-                    Start <span class="visible-lg-inline">a corporate account</span>
-                </button>
             </div>
         </div>
-
+        <div class="row" ng-if="chunks.length == 0 || chunks[ chunks.length - 1 ].length == section.settings.prices_per_row">
+            <div class="col-sm-offset-4 col-sm-4 p-x m-b-lg">
+                <div style="border: 2px dashed blue; background: #eee; cursor: pointer;padding: 30px;font-weight: bold;font-size: 1.5em;" ng-click="addPrice()">
+                    Add Price
+                </div>
+            </div>
+        </div>
     </div>
 </div>

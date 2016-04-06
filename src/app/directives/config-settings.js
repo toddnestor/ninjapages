@@ -27,7 +27,7 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
             }
 
             if( attrs['ngModel'] ) {
-                model = $parse( attrs['ngModel'] );
+                model = scope.$eval( attrs['ngModel'] );
             }
 
             $timeout(function () {
@@ -73,13 +73,23 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                 $('<span>').addClass('fa').addClass('fa-gear').addClass( settings_class ).click(function (e) {
                                     e.preventDefault();
                                     e.stopPropagation();
+
+                                    if( attrs['settingsCall'] ) {
+                                        scope.$eval(attrs['settingsCall'])
+                                    }
+                                    
                                     settings_function( ctrl );
                                 })
                             ).append(
                                 $('<span>').addClass('fa').addClass('fa-trash').click(function (e) {
                                     e.preventDefault();
                                     e.stopPropagation();
+
+                                    if( attrs['deleteCall'] )
+                                        scope.$eval( attrs['deleteCall'] )
+
                                     delete_function( ctrl );
+
                                     $timeout(function(){
                                         scope.$apply();
                                     })
@@ -110,6 +120,11 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                 $('<span>').addClass('fa').addClass('fa-gear').addClass( settings_class ).click(function (e) {
                                     e.preventDefault();
                                     e.stopPropagation();
+
+                                    if( attrs['settingsCall'] ) {
+                                        scope.$eval(attrs['settingsCall'])
+                                    }
+
                                     settings_function( ctrl );
                                     scope.$apply();
                                 })
@@ -117,6 +132,11 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                 $('<span>').addClass('fa').addClass('fa-trash').click(function (e) {
                                     e.preventDefault();
                                     e.stopPropagation();
+
+                                    if( attrs['deleteCall'] ) {
+                                        scope.$eval(attrs['deleteCall'])
+                                    }
+
                                     delete_function( ctrl );
 
                                     $timeout(function(){
@@ -150,6 +170,11 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                 $('<span>').addClass('fa').addClass('fa-gear').click(function (e) {
                                     e.preventDefault();
                                     e.stopPropagation();
+
+                                    if( attrs['settingsCall'] ) {
+                                        scope.$eval(attrs['settingsCall'])
+                                    }
+
                                     settings_function( ctrl );
                                     scope.$apply();
                                 })
@@ -157,6 +182,11 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                 $('<span>').addClass('fa').addClass('fa-trash').click(function (e) {
                                     e.preventDefault();
                                     e.stopPropagation();
+
+                                    if( attrs['deleteCall'] ) {
+                                        scope.$eval(attrs['deleteCall'])
+                                    }
+
                                     delete_function( ctrl );
 
                                     $timeout(function(){

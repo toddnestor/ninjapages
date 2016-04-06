@@ -3,63 +3,25 @@
 
         <div class="row m-b-lg">
             <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
-                <h6 class="text-muted text-uppercase">Business Talk</h6>
-                <h3  class="m-t-0">No plans. We just bump your plan whenever you need it.</h3>
+                <h6 class="text-muted text-uppercase">{{section.settings.tagline}}</h6>
+                <h3  class="m-t-0">{{section.settings.headline}}</h3>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-4 p-x m-b-lg">
+        <div class="row" ng-repeat="chunk in chunks">
+            <div class="{{chunk.length == 1 ? 'col-sm-offset-4 ':''}}{{chunk.length == 2 ? 'col-sm-offset-1 ':''}}col-sm-4 p-x m-b-lg" ng-repeat="price in chunk">
                 <div class="p-x">
-                    <h6 class="text-muted text-uppercase m-b">Personal</h6>
-                    <img class="m-b" src="assets/img/startup-15.svg">
-                    <p>Plenty of processing power for any personal projects, big or small.</p>
+                    <h6 class="text-muted text-uppercase m-b" style="margin-bottom: 0 !important;">{{price.name}}</h6>
+                    <span style="font-size: 5em;"><sup style="font-size: .3em;top: -1.6em;margin-right: 5px;">{{price.currency_symbol}}</sup>{{price.price}}</span><span style="font-weight: bold;">{{price.subtext}}</span>
+                    <p>{{price.description}}</p>
                 </div>
 
                 <ul class="list-unstyled list-bordered text-left m-y-md">
-                    <li class="p-y"><strong>10k</strong> monthly requests</li>
-                    <li class="p-y"><strong>9am-5pm</strong> technical supprt</li>
-                    <li class="p-y"><strong>Public</strong> API access</li>
+                    <li class="p-y" ng-repeat="feature in price.features"><strong>{{feature.name}}</strong> {{feature.description}}</li>
                 </ul>
 
-                <button class="btn btn-lg btn-primary btn-block">
-                    Start <span class="visible-lg-inline">a personal account</span>
-                </button>
-            </div>
-
-            <div class="col-sm-4 p-x m-b-lg">
-                <div class="p-x">
-                    <h6 class="text-muted text-uppercase m-b">Business</h6>
-                    <img class="m-b" src="assets/img/startup-16.svg">
-                    <p>The perfect sized plan for small businesses to get started.</p>
-                </div>
-
-                <ul class="list-unstyled list-bordered text-left m-y-md">
-                    <li class="p-y"><strong>100k</strong> monthly requests</li>
-                    <li class="p-y"><strong>24/7</strong> technical supprt</li>
-                    <li class="p-y"><strong>Public</strong> API access</li>
-                </ul>
-
-                <button class="btn btn-lg btn-primary btn-block">
-                    Start <span class="visible-lg-inline">a business account</span>
-                </button>
-            </div>
-
-            <div class="col-sm-4 p-x m-b-lg">
-                <div class="p-x">
-                    <h6 class="text-muted text-uppercase m-b">Corporate</h6>
-                    <img class="m-b" src="assets/img/startup-17.svg">
-                    <p>An unlimited plan that will scale infinitely to any size project.</p>
-                </div>
-
-                <ul class="list-unstyled list-bordered text-left m-y-md">
-                    <li class="p-y"><strong>Unlimited</strong> monthly requests</li>
-                    <li class="p-y"><strong>24/7</strong> technical supprt</li>
-                    <li class="p-y"><strong>Public & Private</strong> API access</li>
-                </ul>
-
-                <button class="btn btn-lg btn-primary btn-block">
-                    Start <span class="visible-lg-inline">a corporate account</span>
+                <button class="btn btn-lg btn-primary btn-block" style="color:{{price.button_font_color}} !important; border-color: {{price.button_border_color}} !important; background-color: {{price.button_background_color}} !important;">
+                    {{price.button_text}}
                 </button>
             </div>
         </div>
