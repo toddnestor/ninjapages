@@ -162,6 +162,27 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                     }
                 },
                 {
+                    type: 'rightImage',
+                    name: 'Right Image',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/51833f9ad767e77d58216df7410aa99b/right-image.png',
+                    options: {
+                        settings: [
+
+                        ]
+                    },
+                    settings: {
+                        section_background_color: '#ffffff',
+                        image: 'https://herc.objects.cdn.dream.io/uploads/5692f0b86b5f6f17647ee155674e6d31/startup-2.jpg',
+                        tag_text: 'Rich Information',
+                        header_text: 'Make informed decisions with historical & real time data.',
+                        description_text: 'We combine immediate real time events with rich historical data to help answer the toughest questions about retention, growth, and engagement.',
+                        col1_header: 'Data frequency',
+                        col1_text: 'We poll for data on a millisecond basis. You can react to new information in seconds rather than days. <a href="#" class="text-primary">Learn more.</a>',
+                        col2_header: 'Reliability & uptime',
+                        col2_text: 'We process our data across a massively distributed network of reliable servers to ensure 99.99% uptime, always. <a href="#" class="text-primary">Learn more</a>.'
+                    }
+                },
+                {
                     type: 'logoStrip',
                     name: 'Logo Strip',
                     thumbnail: 'https://herc.objects.cdn.dream.io/uploads/9a7ee6cdf5d20d1428e97dba266ffc55/logo-strip.png',
@@ -314,6 +335,23 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                     type: 'quote',
                     name: 'Quote',
                     thumbnail: 'https://herc.objects.cdn.dream.io/uploads/e2877acc91282cb0196f31bd8616c8ba/quote.png',
+                    options: {
+                        settings: [
+
+                        ]
+                    },
+                    settings: {
+                        section_background_color: '#ffffff',
+                        image: 'https://herc.objects.cdn.dream.io/uploads/c4a057bf4e5ba552f9f6aef750bd0c54/startup-3.jpg',
+                        quote_title: 'High Praise',
+                        quote_description: '"Go Analytics is amazing. Decisions that used to take weeks, now only takes minutes and is available to everyone on my team."',
+                        quoter: 'Cindy Smith, founder of Cool Startup'
+                    }
+                },
+                {
+                    type: 'reverse-quote',
+                    name: 'Reverse Quote',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/26f48fb22e5ee491d8cfecea12eea7af/reverse-quote.png',
                     options: {
                         settings: [
 

@@ -1,0 +1,27 @@
+<div ng-controller="SiteTemplatesStandardSectionLeftImageController" class="block block-secondary app-iphone-block" style="background-color: {{section.settings.section_background_color}};">
+    <div class="container">
+        <div class="row app-align-center">
+
+            <div class="col-sm-6">
+                <h6 class="text-muted text-uppercase">{{section.settings.tag_text}}</h6>
+                <h3 class="m-t-0">{{section.settings.header_text}}</h3>
+                <p class="lead m-b-md">{{section.settings.description_text}}</p>
+                <div class="row hidden-sm">
+                    <div class="col-sm-6 m-b-md">
+                        <h5 class="m-y-0">{{section.settings.col1_header}}</h5>
+                        <p ng-bind-html="safeHtml( section.settings.col1_text )"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5 class="m-y-0">{{section.settings.col2_header}}</h5>
+                        <p ng-bind-html="safeHtml( section.settings.col2_text )"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-5 col-sm-offset-1 hidden-xs">
+                <img class="app-iphone" src="{{section.settings.image}}" style="width: 100%;">
+            </div>
+        </div>
+
+    </div>
+</div>
