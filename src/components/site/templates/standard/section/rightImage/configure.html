@@ -7,11 +7,11 @@
                 <h3 class="m-t-0" config-settings ng-model="section.settings.display_tag" buttons="no" blur="submit" editable-text="section.settings.header_text">{{section.settings.header_text}}</h3>
                 <p class="lead m-b-md" config-settings ng-model="section.settings.display_tag" buttons="no" blur="submit" editable-text="section.settings.description_text">{{section.settings.description_text}}</p>
                 <div class="row hidden-sm">
-                    <div class="col-sm-6 m-b-md" config-settings ng-model="section.settings.display_tag">
+                    <div class="col-sm-6 m-b-md" config-settings ng-model="section.settings.display_tag" settings="{position: 'top'}">
                         <h5 class="m-y-0" buttons="no" blur="submit" editable-text="section.settings.col1_header">{{section.settings.col1_header}}</h5>
                         <p buttons="no" blur="submit" editable-textarea="section.settings.col1_text" ng-bind-html="safeHtml( section.settings.col1_text )"></p>
                     </div>
-                    <div class="col-sm-6" config-settings ng-model="section.settings.display_tag">
+                    <div class="col-sm-6" config-settings ng-model="section.settings.display_tag" settings="{position: 'top'}">
                         <h5 class="m-y-0" buttons="no" blur="submit" editable-text="section.settings.col2_header">{{section.settings.col2_header}}</h5>
                         <p buttons="no" blur="submit" editable-textarea="section.settings.col2_text" ng-bind-html="safeHtml( section.settings.col2_text )"></p>
                     </div>
