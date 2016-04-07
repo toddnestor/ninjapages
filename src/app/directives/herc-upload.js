@@ -17,7 +17,7 @@ app.directive('hercUpload', function ($uibModal, $parse) {
                 });
 
                 modalInstance.result.then(function (url) {
-                    if( model )
+                    if( model && url )
                     {
                         var parsed_model = $parse( model );
 
@@ -36,7 +36,7 @@ app.directive('hercUpload', function ($uibModal, $parse) {
 app.controller('MediaSelectorCtrl', function ($scope, $uibModalInstance, Upload, $timeout, Herc) {
 
     $scope.ok = function () {
-        $uibModalInstance.close(  );
+        $uibModalInstance.close();
     };
 
     $scope.cancel = function () {
