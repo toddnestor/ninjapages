@@ -1,39 +1,13 @@
 <div ng-controller="SiteTemplatesStandardSectionFooterController" class="block block-inverse app-footer" style="background-color: {{section.settings.section_background_color}};">
     <div class="container">
         <div class="row">
-            <div class="col-sm-5 m-b-md">
+            <div class="{{column.offset && column.offset != '0' ? 'col-sm-offset-' + column.offset + ' ' : ''}}col-sm-{{column.width}} m-b-md" ng-repeat="column in section.settings.columns">
                 <ul class="list-unstyled list-spaced">
-                    <li class="m-b"><h6 class="text-uppercase">About</h6></li>
-                    <li class="text-muted">
-                        We’ve been working on Go Analytics for the better part of a decade and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at <a href="mailto: themes@getbootstrap.com">themes@getbootstrap.com</a>.
+                    <li class="m-b"><h6 class="text-uppercase">{{column.name}}</h6></li>
+                    <li class="text-muted" ng-repeat="item in column.items">
+                        <span ng-if="item.type == 'text'">{{item.content}}</span>
+                        <a href="{{item.url}}" style="color: rgba(255,255,255,.7);" ng-if="item.type == 'link'">{{item.content}}</a>
                     </li>
-                </ul>
-            </div>
-            <div class="col-sm-2 col-sm-offset-1 m-b-md">
-                <ul class="list-unstyled list-spaced">
-                    <li class="m-b"><h6 class="text-uppercase">Product</h6></li>
-                    <li class="text-muted">Features</li>
-                    <li class="text-muted">Examples</li>
-                    <li class="text-muted">Tour</li>
-                    <li class="text-muted">Gallery</li>
-                </ul>
-            </div>
-            <div class="col-sm-2 m-b-md">
-                <ul class="list-unstyled list-spaced">
-                    <li class="m-b"><h6 class="text-uppercase">Apis</h6></li>
-                    <li class="text-muted">Rich data</li>
-                    <li class="text-muted">Simple data</li>
-                    <li class="text-muted">Real time</li>
-                    <li class="text-muted">Social</li>
-                </ul>
-            </div>
-            <div class="col-sm-2 m-b-md">
-                <ul class="list-unstyled list-spaced">
-                    <li class="m-b"><h6 class="text-uppercase">Legal</h6></li>
-                    <li class="text-muted">Terms</li>
-                    <li class="text-muted">Legal</li>
-                    <li class="text-muted">Privacy</li>
-                    <li class="text-muted">License</li>
                 </ul>
             </div>
         </div>

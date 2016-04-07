@@ -137,7 +137,101 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                         ]
                     },
                     settings: {
-                        section_background_color: '#262F36'
+                        section_background_color: '#262F36',
+                        columns: [
+                            {
+                                name: 'About',
+                                width: 5,
+                                offset: 0,
+                                items: [
+                                    {
+                                        type: 'text',
+                                        content: 'We\'ve been working on Go Analytics for the better part of a decade and are super proud of what we\'ve created. If you\'d like to learn more, or are interested in a job, contact us anytime at themes@getbootstrap.com.'
+                                    }
+                                ]
+                            },
+                            {
+                                name: 'Product',
+                                width: 2,
+                                offset: 1,
+                                items: [
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Features'
+                                    },
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Examples'
+                                    },
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Tour'
+                                    },
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Gallery'
+                                    }
+                                ]
+                            },
+                            {
+                                name: 'Apis',
+                                width: 2,
+                                offset: 0,
+                                items: [
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Rich Data'
+                                    },
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Simple data'
+                                    },
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Real time'
+                                    },
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Social'
+                                    }
+                                ]
+                            },
+                            {
+                                name: 'Legal',
+                                width: 2,
+                                offset: 0,
+                                items: [
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Terms'
+                                    },
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Legal'
+                                    },
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'Privacy'
+                                    },
+                                    {
+                                        type: 'link',
+                                        url: '#',
+                                        content: 'License'
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 },
                 {
