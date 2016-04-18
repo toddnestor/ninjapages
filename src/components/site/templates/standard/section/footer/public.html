@@ -6,7 +6,7 @@
                     <li class="m-b"><h6 class="text-uppercase" style="color: {{$parent.section.settings.column_header_color}};">{{column.name}}</h6></li>
                     <li class="text-muted" ng-repeat="item in column.items">
                         <span ng-if="item.type == 'text'" style="color: {{$parent.section.settings.column_item_color}};">{{item.content}}</span>
-                        <a href="{{item.url}}" style="color: rgba(255,255,255,.7);" ng-if="item.type == 'link'" style="color: {{$parent.section.settings.column_item_color}};">{{item.content}}</a>
+                        <a href="{{item.url}}" ng-if="item.type == 'link'" style="color: {{$parent.section.settings.column_item_color}};">{{item.content}}</a>
                     </li>
                 </ul>
             </div>
