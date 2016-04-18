@@ -1,14 +1,20 @@
-<div ng-controller="SiteTemplatesStandardSectionFooterController" class="block block-inverse app-footer" style="background-color: {{section.settings.section_background_color}};">
+<div ng-controller="SiteTemplatesStandardSectionFooterController" class="block block-inverse app-footer site-templates-standard-section-footer" style="background-color: {{section.settings.section_background_color}};">
     <div class="container">
         <div class="row">
-            <div class="{{column.offset && column.offset != '0' ? 'col-sm-offset-' + column.offset + ' ' : ''}}col-sm-{{column.width}} m-b-md" ng-repeat="column in section.settings.columns">
+            <div class="{{column.offset && column.offset != '0' ? 'col-sm-offset-' + column.offset + ' ' : ''}}col-sm-{{column.width}} m-b-md column-with-items" ng-repeat="column in section.settings.columns" config-settings settings="{position:'top','no-show':true}" ng-model="column" delete-function="removeMe" settings-function="columnSettings">
                 <ul class="list-unstyled list-spaced">
-                    <li class="m-b"><h6 class="text-uppercase">{{column.name}}</h6></li>
-                    <li class="text-muted" ng-repeat="item in column.items">
-                        <span ng-if="item.type == 'text'">{{item.content}}</span>
-                        <a href="{{item.url}}" style="color: rgba(255,255,255,.7);" ng-if="item.type == 'link'">{{item.content}}</a>
+                    <li class="m-b"><h6 class="text-uppercase" editable-text="column.name" blur="submit" buttons="no" style="color: {{$parent.section.settings.column_header_color}};">{{column.name}}</h6></li>
+                    <li class="text-muted" ng-repeat="item in column.items" config-settings ng-model="item" settings="{'no-show': true}" settings-function="itemSettings" delete-call="removeItem( item, column )">
+                        <span ng-if="item.type == 'text'" blur="submit" buttons="no" editable-textarea="item.content" style="color: {{$parent.section.settings.column_item_color}};">{{item.content}}</span>
+                        <span style="color: {{$parent.section.settings.column_item_color}};" ng-if="item.type == 'link'" blur="submit" buttons="no" editable-text="item.content">{{item.content}}</span>
                     </li>
+                    <li class="m-b add-item"><h6 style="cursor:pointer;" ng-click="addItem( column )">+ Add Item</h6></li>
                 </ul>
+            </div>
+        </div>
+        <div class="row add-column">
+            <div class="col-sm-12">
+                <h2 ng-click="addColumn()" style="cursor: pointer;">+ Add Column</h2>
             </div>
         </div>
     </div>

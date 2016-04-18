@@ -65,8 +65,6 @@ app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope,
             ]
         }
 
-        console.log('we do have a model of some sort: ', ctrl.$modelValue );
-
         $scope.settingsModal( ctrl.$modelValue, settings );
     }
 

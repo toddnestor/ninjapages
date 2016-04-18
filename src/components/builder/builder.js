@@ -133,16 +133,27 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                     thumbnail: 'https://herc.objects.cdn.dream.io/uploads/58d86cbf5f3551d42f8cca4f2a7cc8ff/footer.png',
                     options: {
                         settings: [
-
+                            {
+                                label: 'Column Header Color',
+                                key: 'column_header_color',
+                                type: 'color'
+                            },
+                            {
+                                label: 'Column Items Color',
+                                key: 'column_item_color',
+                                type: 'color'
+                            }
                         ]
                     },
                     settings: {
                         section_background_color: '#262F36',
+                        column_header_color: '#ffffff',
+                        column_item_color: 'rgba(255, 255, 255, 0.701961)',
                         columns: [
                             {
                                 name: 'About',
-                                width: 5,
-                                offset: 0,
+                                width: '5',
+                                offset: '0',
                                 items: [
                                     {
                                         type: 'text',
@@ -152,8 +163,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                             },
                             {
                                 name: 'Product',
-                                width: 2,
-                                offset: 1,
+                                width: '2',
+                                offset: '1',
                                 items: [
                                     {
                                         type: 'link',
@@ -179,8 +190,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                             },
                             {
                                 name: 'Apis',
-                                width: 2,
-                                offset: 0,
+                                width: '2',
+                                offset: '0',
                                 items: [
                                     {
                                         type: 'link',
@@ -206,8 +217,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                             },
                             {
                                 name: 'Legal',
-                                width: 2,
-                                offset: 0,
+                                width: '2',
+                                offset: '0',
                                 items: [
                                     {
                                         type: 'link',

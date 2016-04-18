@@ -3,10 +3,10 @@
         <div class="row">
             <div class="{{column.offset && column.offset != '0' ? 'col-sm-offset-' + column.offset + ' ' : ''}}col-sm-{{column.width}} m-b-md" ng-repeat="column in section.settings.columns">
                 <ul class="list-unstyled list-spaced">
-                    <li class="m-b"><h6 class="text-uppercase">{{column.name}}</h6></li>
+                    <li class="m-b"><h6 class="text-uppercase" style="color: {{$parent.section.settings.column_header_color}};">{{column.name}}</h6></li>
                     <li class="text-muted" ng-repeat="item in column.items">
-                        <span ng-if="item.type == 'text'">{{item.content}}</span>
-                        <a href="{{item.url}}" style="color: rgba(255,255,255,.7);" ng-if="item.type == 'link'">{{item.content}}</a>
+                        <span ng-if="item.type == 'text'" style="color: {{$parent.section.settings.column_item_color}};">{{item.content}}</span>
+                        <a href="{{item.url}}" style="color: rgba(255,255,255,.7);" ng-if="item.type == 'link'" style="color: {{$parent.section.settings.column_item_color}};">{{item.content}}</a>
                     </li>
                 </ul>
             </div>

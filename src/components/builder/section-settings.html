@@ -19,8 +19,7 @@
             </div>
             <div class="form-group" ng-repeat="setting in settings.settings track by $index">
                 <label>{{setting.label}}</label>
-                <!--<switch ng-if="setting.type=='switch'" ng-model="$parent.thing.settings[ setting.key ]"></switch>-->
-                <div class="builder">
+                <div class="builder" ng-if="setting.type == 'switch'">
                     <label class="switch">
                         <input ng-model="$parent.thing.settings[ setting.key ]" type="checkbox">
                         <span>
@@ -28,6 +27,16 @@
                         </span>
                     </label>
                 </div>
+                <spectrum-colorpicker ng-if="setting.type == 'color'" ng-model="$parent.thing.settings[ setting.key ]" options="{showInput: true, showAlpha: true}"></spectrum-colorpicker>
+                <br ng-if="setting.type == 'image'" />
+                <button ng-if="setting.type == 'image'" herc-upload ng-model="$parent.thing.settings[ setting.key ]">Choose</button>
+                <br ng-if="setting.type == 'image'" />
+                <img ng-if="setting.type == 'image' && $parent.thing.settings[ setting.key ]" src="{{$parent.thing.settings[ setting.key ]}}" style="max-width: 300px;" />
+                <input type="text" class="form-control" placeholder="Text" ng-model="$parent.thing.settings[ setting.key ]" ng-if="setting.type == 'text'" />
+                <textarea class="form-control" rows="3" ng-model="$parent.thing.settings[ setting.key ]" ng-if="setting.type == 'textarea'"></textarea>
+                <select class="form-control" rows="3" ng-model="$parent.thing.settings[ setting.key ]" ng-if="setting.type == 'select'">
+                    <option ng-repeat="option in setting.options" value="{{option.value}}">{{option.label}}</option>
+                </select>
             </div>
             <button type="button" ng-click="ok()" class="btn btn-default">Save</button>
         </form>
