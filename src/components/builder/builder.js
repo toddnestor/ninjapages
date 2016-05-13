@@ -473,7 +473,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
             ]
         };
 
-    $scope.currentTemplate = 'corporate';
+    $scope.currentTemplate = 'standard';
 
     $scope.currentSectionOptions = [];
 
