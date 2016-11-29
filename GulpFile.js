@@ -112,8 +112,7 @@ gulp.task('addnoroute', function () {
     for (key in name_bits) {
         controllerName += name_bits[key].charAt(0).toUpperCase() + name_bits[key].slice(1);
         page_title += name_bits[key].charAt(0).toUpperCase() + name_bits[key].slice(1) + ' ';
-    }
-    ;
+    };
 
     var className = name.split(".").join('-');
 

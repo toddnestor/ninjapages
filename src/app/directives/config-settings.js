@@ -47,6 +47,35 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                     settings_class = 'hidden';
                 }
 
+                var deleteCallBack = function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    if( attrs['deleteCall'] )
+                        scope.$eval( attrs['deleteCall'] )
+
+                    delete_function( ctrl );
+
+                    $timeout(function(){
+                        scope.$apply();
+                    })
+                    if( !settings['no-show'] ) {
+                        $(e.currentTarget).hide();
+                        $(e.currentTarget).closest('.config-buttons').find('.fa-eye').show();
+                    }
+                };
+
+                var showCallBack = function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    show_function( ctrl );
+                    $timeout(function(){
+                        scope.$apply();
+                    })
+                    $(e.currentTarget).hide();
+                    $(e.currentTarget).closest('.config-buttons').find('.fa-trash').show();
+                };
+
                 if( settings['single-element'] ) {
 
                         var original_positions = $(element[0]).position();
@@ -81,34 +110,9 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                     settings_function( ctrl );
                                 })
                             ).append(
-                                $('<span>').addClass('fa').addClass('fa-trash').click(function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-
-                                    if( attrs['deleteCall'] )
-                                        scope.$eval( attrs['deleteCall'] )
-
-                                    delete_function( ctrl );
-
-                                    $timeout(function(){
-                                        scope.$apply();
-                                    })
-                                    if( !settings['no-show'] ) {
-                                        $(e.currentTarget).hide();
-                                        $(e.currentTarget).closest('.config-buttons').find('.fa-eye').show();
-                                    }
-                                })
+                                $('<span>').addClass('fa').addClass('fa-trash').click(deleteCallBack)
                             ).append(
-                                $('<span>').addClass('fa').addClass('fa-eye').hide().click(function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    show_function( ctrl );
-                                    $timeout(function(){
-                                        scope.$apply();
-                                    })
-                                    $(e.currentTarget).hide();
-                                    $(e.currentTarget).closest('.config-buttons').find('.fa-trash').show();
-                                })
+                                $('<span>').addClass('fa').addClass('fa-eye').hide().click(showCallBack)
                             )
                         );
                 } else {
@@ -129,37 +133,9 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                     scope.$apply();
                                 })
                             ).append(
-                                $('<span>').addClass('fa').addClass('fa-trash').click(function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-
-                                    if( attrs['deleteCall'] ) {
-                                        scope.$eval(attrs['deleteCall'])
-                                    }
-
-                                    delete_function( ctrl );
-
-                                    $timeout(function(){
-                                        scope.$apply();
-                                    })
-                                    if( !settings['no-show'] ) {
-                                        $(e.currentTarget).hide();
-                                        $(e.currentTarget).closest('.config-buttons').find('.fa-eye').show();
-                                    }
-                                })
+                                $('<span>').addClass('fa').addClass('fa-trash').click(deleteCallBack)
                             ).append(
-                                $('<span>').addClass('fa').addClass('fa-eye').hide().click(function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    show_function( ctrl );
-
-                                    $timeout(function(){
-                                        scope.$apply();
-                                    })
-
-                                    $(e.currentTarget).hide();
-                                    $(e.currentTarget).closest('.config-buttons').find('.fa-trash').show();
-                                })
+                                $('<span>').addClass('fa').addClass('fa-eye').hide().click(showCallBack)
                             )
                         );
                     } else {
@@ -179,37 +155,9 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                                     scope.$apply();
                                 })
                             ).append(
-                                $('<span>').addClass('fa').addClass('fa-trash').click(function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-
-                                    if( attrs['deleteCall'] ) {
-                                        scope.$eval(attrs['deleteCall'])
-                                    }
-
-                                    delete_function( ctrl );
-
-                                    $timeout(function(){
-                                        scope.$apply();
-                                    })
-                                    if( !settings['no-show'] ) {
-                                        $(e.currentTarget).hide();
-                                        $(e.currentTarget).closest('.config-buttons').find('.fa-eye').show();
-                                    }
-                                })
+                                $('<span>').addClass('fa').addClass('fa-trash').click(deleteCallBack);
                             ).append(
-                                $('<span>').addClass('fa').addClass('fa-eye').hide().click(function (e) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    show_function( ctrl );
-
-                                    $timeout(function(){
-                                        scope.$apply();
-                                    })
-
-                                    $(e.currentTarget).hide();
-                                    $(e.currentTarget).closest('.config-buttons').find('.fa-trash').show();
-                                })
+                                $('<span>').addClass('fa').addClass('fa-eye').hide().click(showCallBack);
                             )
                         );
                     }
