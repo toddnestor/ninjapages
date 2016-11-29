@@ -63,10 +63,22 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                     name: 'Reverse Quote',
                     thumbnail: 'https://herc.objects.cdn.dream.io/uploads/26f48fb22e5ee491d8cfecea12eea7af/reverse-quote.png'
                 }
-            ]
+            ],
+						'bold': [
+							{
+									type: 'header',
+									name: 'Header',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
+							{
+									type: 'imageGrid',
+									name: 'Image Grid',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							}
+						]
         };
 
-    $scope.currentTemplate = 'standard';
+    $scope.currentTemplate = 'bold';
 
     $scope.currentSectionOptions = [];
 
@@ -86,6 +98,11 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
         theme: $scope.currentTemplate,
         sections: []
     };
+
+		$scope.updateTheme = function() {
+			$scope.content.theme = $scope.currentTemplate;
+			$scope.setCurrentSectionOptions();
+		}
 
     $scope.addSection = function( section ) {
         var new_section = angular.copy( section );

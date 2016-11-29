@@ -5,11 +5,10 @@ app.config(function($stateProvider){
 		.state("site.templates.bold",{
 			url: "/bold",
 			data: { pageTitle: 'Site Templates Bold ' },
-			templateUrl: "/templates/site/templates/bold/bold.html",
-			controller: "SiteTemplatesBoldController"
+			templateUrl: "/templates/site/templates/bold/bold.html"
 		})
-}); 
+});
 
 app.controller("SiteTemplatesBoldController", function ($scope, $rootScope, $state, $stateParams, Herc) {
-	//All your code goes here
+	$scope.content = $scope.getContent();
 });
