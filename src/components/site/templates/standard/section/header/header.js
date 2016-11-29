@@ -1,6 +1,52 @@
 var app = angular.module("app");
 
 app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope, $rootScope, $state, $stateParams, Herc, $uibModal) {
+	$scope.section.options = $scope.section.options || {
+			settings: [
+
+			]
+	};
+
+	$scope.section.settings = $scope.section.settings || {
+			button_text: 'go',
+			header_text: 'Analytics on demand.',
+			description: 'Stop installing bloated scripts that all track the exact same things. Install one that does everything.',
+			cta_text: 'Try it now',
+			cta_url: 'http://google.com',
+			cta_background_color: '#2595ff',
+			cta_border_color: '#0b89ff',
+			cta_font_color: '#ffffff',
+			section_background_image: 'https://herc.objects.cdn.dream.io/uploads/e315d8528b13ca0c3164dd1a9b45fc06/startup-1.jpg',
+			show_graph_overlay: true,
+			display_button: true,
+			display_header_text: true,
+			display_description: true,
+			display_cta: true,
+			menu_items: [
+					{
+							type: 'url',
+							destination: '/standard',
+							text: 'Standard',
+							color: '#ffffff',
+							'new-tab': false
+					},
+					{
+							type: 'url',
+							destination: '/minimal',
+							text: 'Minimal',
+							color: '#ffffff',
+							'new-tab': false
+					},
+					{
+							type: 'url',
+							destination: '/bold',
+							text: 'Bold',
+							color: '#ffffff',
+							'new-tab': false
+					}
+			]
+	};
+
 	$scope.removeMenuItem = function( ctrl ) {
         $scope.section.settings.menu_items = _.without( $scope.section.settings.menu_items, ctrl.$modelValue );
     }

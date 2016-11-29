@@ -1,6 +1,121 @@
 var app = angular.module("app");
 
 app.controller("SiteTemplatesStandardSectionFooterController", function ($scope, $rootScope, $state, $stateParams, Herc) {
+  $scope.section.options = $scope.section.options || {
+      settings: [
+          {
+              label: 'Column Header Color',
+              key: 'column_header_color',
+              type: 'color'
+          },
+          {
+              label: 'Column Items Color',
+              key: 'column_item_color',
+              type: 'color'
+          }
+      ]
+  };
+
+  $scope.section.settings = $scope.section.settings || {
+      section_background_color: '#262F36',
+      column_header_color: '#ffffff',
+      column_item_color: 'rgba(255, 255, 255, 0.701961)',
+      columns: [
+          {
+              name: 'About',
+              width: '5',
+              offset: '0',
+              items: [
+                  {
+                      type: 'text',
+                      content: 'We\'ve been working on Go Analytics for the better part of a decade and are super proud of what we\'ve created. If you\'d like to learn more, or are interested in a job, contact us anytime at themes@getbootstrap.com.'
+                  }
+              ]
+          },
+          {
+              name: 'Product',
+              width: '2',
+              offset: '1',
+              items: [
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Features'
+                  },
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Examples'
+                  },
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Tour'
+                  },
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Gallery'
+                  }
+              ]
+          },
+          {
+              name: 'Apis',
+              width: '2',
+              offset: '0',
+              items: [
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Rich Data'
+                  },
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Simple data'
+                  },
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Real time'
+                  },
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Social'
+                  }
+              ]
+          },
+          {
+              name: 'Legal',
+              width: '2',
+              offset: '0',
+              items: [
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Terms'
+                  },
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Legal'
+                  },
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'Privacy'
+                  },
+                  {
+                      type: 'link',
+                      url: '#',
+                      content: 'License'
+                  }
+              ]
+          }
+      ]
+  };
+
     $scope.removeMe = function( ctrl ) {
         $scope.section.settings.columns = _.without( $scope.section.settings.columns, ctrl.$modelValue );
     }
