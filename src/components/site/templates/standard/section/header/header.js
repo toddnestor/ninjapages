@@ -68,6 +68,21 @@ app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope,
         $scope.settingsModal( ctrl.$modelValue, settings );
     }
 
+		$scope.graphImgSettings = function( ctrl ) {
+        var settings = {
+            title: 'Graph Image Settings',
+            settings: [
+                {
+                    label: 'Url',
+                    key: 'something',
+                    type: 'image'
+                }
+            ]
+        }
+
+        $scope.settingsModal( ctrl.$modelValue, settings );
+    }
+
     $scope.hideGraphImg = function() {
         $scope.section.settings.show_graph_overlay = false;
     }

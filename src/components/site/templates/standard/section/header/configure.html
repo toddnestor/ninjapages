@@ -32,7 +32,7 @@
         </div>
     </nav>
 
-    <img class="app-graph" ng-if="section.settings.show_graph_overlay && section.settings.show_graph_overlay != '0'" src="https://herc.objects.cdn.dream.io/uploads/5fb8b31fe18186f590d1d0e0fa445944/startup-0.svg" config-settings settings="{'single-element': true}" delete-function="hideGraphImg" ng-model="section.settings.show_graph_overlay" show-function="showGraphImg">
+    <img class="app-graph" ng-if="section.settings.show_graph_overlay && section.settings.show_graph_overlay != '0'" src="https://herc.objects.cdn.dream.io/uploads/5fb8b31fe18186f590d1d0e0fa445944/startup-0.svg" config-settings settings="{'single-element': true}" settings-function="graphImgSettings" delete-function="hideGraphImg" ng-model="section.settings.show_graph_overlay" show-function="showGraphImg">
 
     <div class="block-xs-middle p-b-lg">
         <div class="container">
