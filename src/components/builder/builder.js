@@ -74,7 +74,32 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 									type: 'imageGrid',
 									name: 'Image Grid',
 									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
-							}
+							},
+							{
+									type: 'textRight',
+									name: 'Text Right',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
+							{
+									type: 'video',
+									name: 'Video',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
+							{
+									type: 'register',
+									name: 'Register',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
+							{
+									type: 'pricing',
+									name: 'Pricing',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
+							{
+									type: 'footer',
+									name: 'Footer',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
 						]
         };
 
