@@ -1,0 +1,719 @@
+<div class="site-templates-corporate" ng-controller="SiteTemplatesCorporateController">
+    <div id="wrapper">
+
+        <!-- header begin -->
+        <header class="site-header-1 site-header">
+            <!-- Main bar start -->
+            <div id="sticked-menu" class="main-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <!-- logo begin -->
+                            <div id="logo" class="pull-left">
+                                <a href="index.html">
+                                    <img src="images/logo.png" alt="" class="logo">
+                                </a>
+                            </div>
+                            <!-- logo close -->
+
+                            <!-- btn-mobile menu begin -->
+                            <a id="show-mobile-menu" class="btn-mobile-menu hidden-lg hidden-md"><i class="fa fa-bars"></i></a>
+                            <!-- btn-mobile menu close -->
+
+                            <!-- mobile menu begin -->
+                            <nav id="mobile-menu" class="site-mobile-menu hidden-lg hidden-md">
+                                <ul></ul>
+                            </nav>
+                            <!-- mobile menu close -->
+
+                            <!-- desktop menu begin -->
+                            <nav id="desktop-menu" class="site-desktop-menu hidden-xs hidden-sm">
+                                <ul class="clearfix">
+                                    <li class="active"><a href="index.html">Home</a>
+                                        <ul>
+                                            <li><a href="index.html">Homepage 1</a></li>
+                                            <li><a href="index2.html">Homepage 2</a></li>
+                                            <li><a href="index3.html">Homepage 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Features</a></li>
+                                    <li><a href="pages.html">Pages</a>
+                                        <ul>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="service.html">Services</a></li>
+                                            <li><a href="pricing.html">Pricing Tables</a></li>
+                                            <li><a href="element.html">Elements</a></li>
+                                            <li><a href="typography.html">Typography</a></li>
+                                            <li><a href="404.html">404 Page</a></li>
+                                            <li><a href="comingsoon.html">Coming Soon</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="projects.html">Portfolios</a>
+                                        <ul>
+                                            <li><a href="projects-3-cols.html">3 Columns</a></li>
+                                            <li><a href="projects-4-cols.html">4 Columns</a></li>
+                                            <li><a href="projects-5-cols.html">5 Columns</a></li>
+                                            <li><a href="project-detail.html">Single Project</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="blog.html">Blog</a>
+                                        <ul>
+                                            <li><a href="blog-list.html">Blog List</a></li>
+                                            <li><a href="blog-grid.html">Blog Grid</a></li>
+                                            <li><a href="blog-single.html">Blog Article</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                            <!-- desktop menu close -->
+
+                            <!-- Header Group Button Right begin -->
+                            <div class="header-buttons pull-right hidden-xs hidden-sm">
+
+                                <div class="header-contact">
+                                    <ul class="clearfix">
+                                        <li class="phone"><i class="fa fa-phone"></i> <span>0112-826-2789</span></li>
+                                        <li class="border-line">|</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Button Modal popup searchbox -->
+                                <div class="search-button">
+                                    <!-- Trigger the modal with a button -->
+                                    <a href="" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                </div>
+
+                                <!-- Top Cart -->
+                                <div class="cart-button">
+                                    <a href="#" class="dropdown-toggle cart-contents" data-toggle="dropdown" ><i class="fa fa-shopping-bag"></i> <span class="mini-cart-counter">3</span></a>
+                                    <div class="dropdown-menu top_cart_list_product">
+                                        <ul class="cart_list product_list_widget clearfix">
+                                            <li class="mini_cart_item">
+                                                <div class="img-thumb">
+                                                    <img alt="" class="attachment-shop_thumbnail" src="images/shop/thumb/product-thumb-1.jpg">
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a class="remove" href=""><i class="fa fa-times"></i></a>
+                                                    <a href="#">Bed Dream</a>
+                                                    <span class="quantity">1 ×
+                                                        <span class="amount">$600</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="mini_cart_item">
+                                                <div class="img-thumb">
+                                                    <img alt="" class="attachment-shop_thumbnail" src="images/shop/thumb/product-thumb-2.jpg">
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a class="remove" href=""><i class="fa fa-times"></i></a>
+                                                    <a href="#">Bed Gravida</a>
+                                                    <span class="quantity">2 ×
+                                                        <span class="amount">$550</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="mini_cart_item">
+                                                <div class="img-thumb">
+                                                    <img alt="" class="attachment-shop_thumbnail" src="images/shop/thumb/product-thumb-3.jpg">
+                                                </div>
+                                                <div class="product-detail">
+                                                    <a class="remove" href=""><i class="fa fa-times"></i></a>
+                                                    <a href="#">Bed Wood</a>
+                                                    <span class="quantity">1 ×
+                                                        <span class="amount">$450</span>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <p class="total"><strong>Subtotal:</strong> <span class="amount">$2,150</span></p>
+                                        <p class="buttons">
+                                            <a class="button wc-forward btn btn-primary" href="">View Cart</a>
+                                            <a class="button checkout wc-forward btn btn-secondary pull-right" href="">Checkout</a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Button Menu OffCanvas right -->
+                                <div class="navright-button">
+                                    <a href="" id="btn-offcanvas-menu"><i class="fa fa-bars"></i></a>
+                                </div>
+
+                            </div>
+                            <!-- Header Group Button Right close -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <div class="gray-line"></div>
+
+        <!-- Modal Search begin -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-dialog myModal-search">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form role="search" method="get" class="search-form" action="search.php">
+                            <input type="search" class="search-field" placeholder="Search here..." value="" title="" />
+                            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search close -->
+
+        <!-- Menu OffCanvas right begin -->
+        <div class="navright-button hidden-sm">
+            <div class="compact-menu-canvas" id="offcanvas-menu">
+                <h3>menu</h3><a id="btn-close-canvasmenu"><i class="fa fa-close"></i></a>
+                <nav>
+                    <ul class="clearfix">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pages.html">Pages</a></li>
+                        <li><a href="portfolio.html">Portfolios</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- Menu OffCanvas right close -->
+
+        <!-- slider -->
+        <div id="slider">
+            <!-- revolution slider begin -->
+            <div class="fullwidthbanner-container">
+                <div id="revolution-slider">
+                    <ul>
+                        <li data-transition="fade" data-slotamount="7" data-masterspeed="2500" data-delay="5000">
+                            <!--  BACKGROUND IMAGE -->
+                            <img src="img-rev-slider/bg-1.jpg" alt="">
+
+                            <div class="tp-caption lft custom-font-2"
+                                 data-x="center"
+                                 data-y="184"
+                                 data-speed="800"
+                                 data-start="800"
+                                 data-easing="easeInOutCubic">
+                                Next One Day
+                            </div>
+
+                            <div class="tp-caption sfb custom-font-1"
+                                 data-x="center"
+                                 data-y="250"
+                                 data-speed="800"
+                                 data-start="1400"
+                                 data-easing="easeInOutCubic">
+                                Good Ideas
+                            </div>
+
+                            <div class="tp-caption sfb"
+                                 data-x="center"
+                                 data-y="330"
+                                 data-speed="800"
+                                 data-start="1600"
+                                 data-easing="easeInOutCubic">
+                                <a class="btn btn-slider" href="#">Buy Theme</a>&nbsp;&nbsp;<a class="btn btn-border-slider" href="#">Read More</a>
+                            </div>
+                        </li>
+
+                        <li data-transition="fade" data-slotamount="7" data-masterspeed="2500" data-delay="5000">
+                            <!--  BACKGROUND IMAGE -->
+                            <img src="img-rev-slider/bg-3.jpg" alt="">
+
+                            <div class="tp-caption lft custom-font-2"
+                                 data-x="center"
+                                 data-y="184"
+                                 data-speed="800"
+                                 data-start="800"
+                                 data-easing="easeInOutCubic">
+                                We Are Make
+                            </div>
+
+                            <div class="tp-caption sfb custom-font-1"
+                                 data-x="center"
+                                 data-y="250"
+                                 data-speed="800"
+                                 data-start="1400"
+                                 data-easing="easeInOutCubic">
+                                The Best Theme
+                            </div>
+
+                            <div class="tp-caption sfb"
+                                 data-x="center"
+                                 data-y="330"
+                                 data-speed="800"
+                                 data-start="1600"
+                                 data-easing="easeInOutCubic">
+                                <a class="btn btn-slider" href="#">Buy Theme</a>&nbsp;&nbsp;<a class="btn btn-border-slider" href="#">Read More</a>
+                            </div>
+                        </li>
+
+                        <li data-transition="fade" data-slotamount="7" data-masterspeed="2500" data-delay="5000">
+                            <!--  BACKGROUND IMAGE -->
+                            <img src="img-rev-slider/bg-2.jpg" alt="">
+
+                            <div class="tp-caption lft custom-font-2"
+                                 data-x="center"
+                                 data-y="184"
+                                 data-speed="800"
+                                 data-start="800"
+                                 data-easing="easeInOutCubic">
+                                And You Will
+                            </div>
+
+                            <div class="tp-caption sfb custom-font-1"
+                                 data-x="center"
+                                 data-y="250"
+                                 data-speed="800"
+                                 data-start="1400"
+                                 data-easing="easeInOutCubic">
+                                Love Compact
+                            </div>
+
+                            <div class="tp-caption sfb"
+                                 data-x="center"
+                                 data-y="330"
+                                 data-speed="800"
+                                 data-start="1600"
+                                 data-easing="easeInOutCubic">
+                                <a class="btn btn-slider" href="#">Buy Theme</a>&nbsp;&nbsp;<a class="btn btn-border-slider" href="#">Read More</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- revolution slider close -->
+        </div>
+        <!-- slider close -->
+
+        <div class="clearfix"></div>
+
+        <!-- content begin -->
+        <div id="content" class="no-padding">
+
+            <!-- section begin -->
+            <section id="section-about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3">
+                            <img src="images/about/we-are-thumb.jpg" alt="about image" class="img-responsive">
+                        </div>
+                        <div class="col-md-5 col-sm-5">
+                            <div class="about-box">
+                                <h2>We are Compact</h2>
+                                <div class="tiny-border"></div>
+                                <p>Morbi vehicula a nibh in commodo. Aliquam quis dolor eget lectus pulvinar malesuada. Suspendisse eu rhoncus ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra,</p>
+                                <ul class="list-style-1">
+                                    <li>Donec malesuada urna porta tellus feugiat</li>
+                                    <li>Nullam consequat lacus non luctus finibus.</li>
+                                    <li>Interdum et malesuada fames ac ante</li>
+                                    <li>Nam justo ipsum, sagittis sed hendrerit ac</li>
+                                </ul>
+                                <div class="divider-single"></div>
+                                <a href="#" class="btn btn-primary btn-small">Get Started</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="feature-box">
+                                <h2>Our Features</h2>
+                                <div class="tiny-border"></div>
+                                <div class="feature">
+                                    <i class="fa fa-bar-chart"></i>
+                                    <h3>Mobile Ready</h3>
+                                    <p>Fusce at accumsan justo. Nulla lacus efficitur vel aliquam sed, fringilla sit amet neque.</p>
+                                </div>
+                                <div class="feature">
+                                    <i class="fa fa-diamond"></i>
+                                    <h3>Very Easy Customizie</h3>
+                                    <p>Donec malesuada urna porta tellus feugiat, ac tempor tortor ornare.</p>
+                                </div>
+                                <div class="feature no-margin-bottom">
+                                    <i class="fa fa-bullhorn"></i>
+                                    <h3>Free Icon Font Awesome</h3>
+                                    <p>Etiam eget neque lorem. Interdum et malesuada fames ac ante ipsum primis faucibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+            <!-- section begin -->
+            <section id="section-project" class="no-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="latest-projects clearfix">
+                                <div class="latest-projects-intro">
+                                    <h2>Latest Projects</h2>
+                                    <div class="tiny-border-light"></div>
+                                    <p>Pellentesque gravida diam orci, vitae venenatis est eleifend sed. Proin non pretium turpis</p>
+                                </div>
+                                <div class="latest-projects-wrapper">
+                                    <div id="latest-projects-items" class="latest-projects-items">
+                                        <div class="item">
+                                            <img src="images/projects/small-1.jpg" alt="" class="img-responsive">
+                                            <div class="project-details">
+                                                <p class="folio-title"><a href="#">Plan For Your Bussiness</a></p>
+                                                <p class="folio-cate"><i class="fa fa-tag"></i><a href="#">Finance</a>, <a href="#">Marketing</a></p>
+                                                <div class="folio-buttons">
+                                                    <a href="images/projects/medium-1.jpg" title="Plan For Your Bussiness" class="folio"><i class="fa fa-search"></i></a>
+                                                    <a href="#"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="images/projects/small-2.jpg" alt="" class="img-responsive">
+                                            <div class="project-details">
+                                                <p class="folio-title"><a href="#">Business Growth Solutions</a></p>
+                                                <p class="folio-cate"><i class="fa fa-tag"></i><a href="#">Finance</a>, <a href="#">Marketing</a></p>
+                                                <div class="folio-buttons">
+                                                    <a href="images/projects/medium-2.jpg" title="Business Growth Solutions" class="folio"><i class="fa fa-search"></i></a>
+                                                    <a href="#"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="images/projects/small-3.jpg" alt="" class="img-responsive">
+                                            <div class="project-details">
+                                                <p class="folio-title"><a href="#">Enterprise Development</a></p>
+                                                <p class="folio-cate"><i class="fa fa-tag"></i><a href="#">Finance</a>, <a href="#">Marketing</a></p>
+                                                <div class="folio-buttons">
+                                                    <a href="images/projects/medium-3.jpg" title="Enterprise Development" class="folio"><i class="fa fa-search"></i></a>
+                                                    <a href="#"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="images/projects/small-4.jpg" alt="" class="img-responsive">
+                                            <div class="project-details">
+                                                <p class="folio-title"><a href="#">Successful Business</a></p>
+                                                <p class="folio-cate"><i class="fa fa-tag"></i><a href="#">Finance</a>, <a href="#">Marketing</a></p>
+                                                <div class="folio-buttons">
+                                                    <a href="images/projects/medium-4.jpg" title="Successful Business" class="folio"><i class="fa fa-search"></i></a>
+                                                    <a href="#"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="images/projects/small-5.jpg" alt="" class="img-responsive">
+                                            <div class="project-details">
+                                                <p class="folio-title"><a href="#">Marketing Strategy</a></p>
+                                                <p class="folio-cate"><i class="fa fa-tag"></i><a href="#">Finance</a>, <a href="#">Marketing</a></p>
+                                                <div class="folio-buttons">
+                                                    <a href="images/projects/medium-5.jpg" title="Marketing Strategy" class="folio"><i class="fa fa-search"></i></a>
+                                                    <a href="#"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <img src="images/projects/small-6.jpg" alt="" class="img-responsive">
+                                            <div class="project-details">
+                                                <p class="folio-title"><a href="#">Effective Recruitment</a></p>
+                                                <p class="folio-cate"><i class="fa fa-tag"></i><a href="#">Finance</a>, <a href="#">Marketing</a></p>
+                                                <div class="folio-buttons">
+                                                    <a href="images/projects/medium-6.jpg" title="Effective Recruitment" class="folio"><i class="fa fa-search"></i></a>
+                                                    <a href="#"><i class="fa fa-link"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+            <!-- section begin -->
+            <section id="section-news">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="latest-blog-posts">
+                                <h2>Latest blog Posts</h2>
+                                <div class="compact-buttons">
+                                    <div class="latest-prev compact-prev"><i class="fa fa-angle-left"></i></div>
+                                    <div class="latest-next compact-next"><i class="fa fa-angle-right"></i></div>
+                                </div>
+                                <div class="tiny-border"></div>
+                                <div class="latest-news-items">
+                                    <div class="item">
+                                        <div class="latest-blog-post-img">
+                                            <img src="images/news/thumb/thumb-1.jpg" alt="image name">
+                                            <div class="latest-blog-post-date">
+                                                06 <span>May</span>
+                                            </div>
+                                        </div>
+                                        <div class="latest-blog-post-details">
+                                            <p class="title"><a href="#">Help your business to success</a></p>
+                                            <p>Morbi vehicula a nibh in commodo. Aliquam quis dolor eget lectus pulvinar eu rhoncus ligula. Ut leo mauris, molestie imperdiet consequat in, varius ac sapien.</p>
+                                            <div class="latest-blog-post-data">
+                                                <span class="tags"><i class="fa fa-tags"></i> <a href="#">Development,</a> <a href="#">Maketing</a></span>
+                                                <span class="btn-read"><a href="#"><i class="fa fa-plus-square"></i> Read more</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="latest-blog-post-img">
+                                            <img src="images/news/thumb/thumb-2.jpg" alt="image name">
+                                            <div class="latest-blog-post-date">
+                                                02 <span>May</span>
+                                            </div>
+                                        </div>
+                                        <div class="latest-blog-post-details">
+                                            <p class="title"><a href="#">Manage for collective creativity</a></p>
+                                            <p>Morbi vehicula a nibh in commodo. Aliquam quis dolor eget lectus pulvinar eu rhoncus ligula. Ut leo mauris, molestie imperdiet consequat in, varius ac sapien.</p>
+                                            <div class="latest-blog-post-data">
+                                                <span class="tags"><i class="fa fa-tags"></i> <a href="#">Development,</a> <a href="#">Maketing</a></span>
+                                                <span class="btn-read"><a href="#"><i class="fa fa-plus-square"></i> Read more</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="latest-blog-post-img">
+                                            <img src="images/news/thumb/thumb-3.jpg" alt="image name">
+                                            <div class="latest-blog-post-date">
+                                                22 <span>Mar</span>
+                                            </div>
+                                        </div>
+                                        <div class="latest-blog-post-details">
+                                            <p class="title"><a href="#">Why Designers Need Marketing Skills</a></p>
+                                            <p>Morbi vehicula a nibh in commodo. Aliquam quis dolor eget lectus pulvinar eu rhoncus ligula. Ut leo mauris, molestie imperdiet consequat in, varius ac sapien.</p>
+                                            <div class="latest-blog-post-data">
+                                                <span class="tags"><i class="fa fa-tags"></i> <a href="#">Development,</a> <a href="#">Maketing</a></span>
+                                                <span class="btn-read"><a href="#"><i class="fa fa-plus-square"></i> Read more</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <div class="latest-blog-post-img">
+                                            <img src="images/news/thumb/thumb-4.jpg" alt="image name">
+                                            <div class="latest-blog-post-date">
+                                                18 <span>Mar</span>
+                                            </div>
+                                        </div>
+                                        <div class="latest-blog-post-details">
+                                            <p class="title"><a href="#">10 Ways To Design For The Human Brain</a></p>
+                                            <p>Morbi vehicula a nibh in commodo. Aliquam quis dolor eget lectus pulvinar eu rhoncus ligula. Ut leo mauris, molestie imperdiet consequat in, varius ac sapien.</p>
+                                            <div class="latest-blog-post-data">
+                                                <span class="tags"><i class="fa fa-tags"></i> <a href="#">Development,</a> <a href="#">Maketing</a></span>
+                                                <span class="btn-read"><a href="#"><i class="fa fa-plus-square"></i> Read more</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="latest-blog-post-img">
+                                            <img src="images/news/thumb/thumb-5.jpg" alt="image name">
+                                            <div class="latest-blog-post-date">
+                                                08 <span>Feb</span>
+                                            </div>
+                                        </div>
+                                        <div class="latest-blog-post-details">
+                                            <p class="title"><a href="#">UX Design Trends For 2016</a></p>
+                                            <p>Morbi vehicula a nibh in commodo. Aliquam quis dolor eget lectus pulvinar eu rhoncus ligula. Ut leo mauris, molestie imperdiet consequat in, varius ac sapien.</p>
+                                            <div class="latest-blog-post-data">
+                                                <span class="tags"><i class="fa fa-tags"></i> <a href="#">Development,</a> <a href="#">Maketing</a></span>
+                                                <span class="btn-read"><a href="#"><i class="fa fa-plus-square"></i> Read more</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="latest-blog-post-img">
+                                            <img src="images/news/thumb/thumb-6.jpg" alt="image name">
+                                            <div class="latest-blog-post-date">
+                                                06 <span>Feb</span>
+                                            </div>
+                                        </div>
+                                        <div class="latest-blog-post-details">
+                                            <p class="title"><a href="#">Mobile UX And User Expectations</a></p>
+                                            <p>Morbi vehicula a nibh in commodo. Aliquam quis dolor eget lectus pulvinar eu rhoncus ligula. Ut leo mauris, molestie imperdiet consequat in, varius ac sapien.</p>
+                                            <div class="latest-blog-post-data">
+                                                <span class="tags"><i class="fa fa-tags"></i> <a href="#">Development,</a> <a href="#">Maketing</a></span>
+                                                <span class="btn-read"><a href="#"><i class="fa fa-plus-square"></i> Read more</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="testimonials-slider-wrapper">
+                                <h2>Testimonials</h2>
+                                <div class="compact-buttons">
+                                    <div class="testi-prev compact-prev"><i class="fa fa-angle-left"></i></div>
+                                    <div class="testi-next compact-next"><i class="fa fa-angle-right"></i></div>
+                                </div>
+                                <div class="tiny-border"></div>
+                                <div class="testimonials-slider">
+                                    <div class="item">
+                                        <div class="testi-boxes">
+                                            <blockquote>
+                                                Morbi auctor vel mauris facilisis lacinia. Aenean suscipit lorem leo, et hendrerit odio fermentum et. Donec ac dolor eros. Mauris arcu nunc, iaculis sit amet lacus iaculis, faucibus faucibus nunc. Vestibulum sit amet lacinia massa
+                                            </blockquote>
+                                            <div class="testi-info clearfix">
+                                                <img alt="" src="images/testimonial/thumb-1.png" class="img-circle">
+                                                <div class="testi-details">
+                                                    <span>Cheryl Cruz</span>
+                                                    Maketing Manager
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="testi-boxes">
+                                            <blockquote>
+                                                Morbi auctor vel mauris facilisis lacinia. Aenean suscipit lorem leo, et hendrerit odio fermentum et. Donec ac dolor eros. Mauris arcu nunc, iaculis sit amet lacus iaculis, faucibus faucibus nunc. Vestibulum sit amet lacinia massa
+                                            </blockquote>
+                                            <div class=" testi-info clearfix">
+                                                <img alt="" src="images/testimonial/thumb-2.png" class="img-circle">
+                                                <div class="testi-details">
+                                                    <span>John Walker</span>
+                                                    Developent
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="testi-boxes">
+                                            <blockquote>
+                                                Morbi auctor vel mauris facilisis lacinia. Aenean suscipit lorem leo, et hendrerit odio fermentum et. Donec ac dolor eros. Mauris arcu nunc, iaculis sit amet lacus iaculis, faucibus faucibus nunc. Vestibulum sit amet lacinia massa
+                                            </blockquote>
+                                            <div class="testi-info clearfix">
+                                                <img alt="" src="images/testimonial/thumb-3.png" class="img-circle">
+                                                <div class="testi-details">
+                                                    <span>Frank Furius</span>
+                                                    Art Director
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+            <!-- section begin -->
+            <section id="section-cta">
+                <div class="sep-background-mask"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="cal-to-action text-center">
+                                <span>We’ve Completed More Than <b>100+</b> project for our amazing clients, If you interested?</span>
+                                <a href="#" class="btn btn-border-light">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+        </div>
+        <!-- content close -->
+
+        <!-- footer begin -->
+        <footer class="footer-1 bg-color-1">
+
+            <!-- main footer begin -->
+            <div class="main-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="compact-widget">
+                                <div class="widget-inner">
+                                    <img class="logo-footer" src="images/logo-footer.png" alt="compact company">
+                                    <p>Compact is a clean PSD theme suitable for corporate, You can customize it very easy to fit your needs, semper suscipit metus accumsan at. Vestibulum et lacus urna. Nam luctus ac tortor eu</p>
+                                    <div class="social-icons clearfix">
+                                        <a href="#" class="facebook" ><i class="fa fa-facebook"></i></a>
+                                        <a href="#" class="twitter" ><i class="fa fa-twitter"></i></a>
+                                        <a href="#" class="google" ><i class="fa fa-google-plus"></i></a>
+                                        <a href="#" class="youtube" ><i class="fa fa-youtube-play"></i></a>
+                                        <a href="#" class="linkedin" ><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="compact-widget">
+                                <h3 class="widget-title">Features</h3>
+                                <div class="widget-inner">
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Story</a></li>
+                                        <li><a href="#">Term &amp; Conditions</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Sites Map</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="compact-widget">
+                                <h3 class="widget-title">Contact Us</h3>
+                                <div class="widget-inner">
+                                    <p>Address: 379 5th Ave  New York, NYC <br> 10018, United States</p>
+                                    <p>Phone: +(112) 345 6879</p>
+                                    <p>Fax: +(112) 345 8796</p>
+                                    <p>Email: contact@compact.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="compact-widget">
+                                <h3 class="widget-title">Newsletter</h3>
+                                <div class="widget-inner">
+                                    <div class="newsletter newsletter-widget">
+                                        <p>Stay informed about our news and events</p>
+                                        <form action="inc/newsletter.php" method="post">
+                                            <p><input class="newsletter-email" type="email" name="email" placeholder="Your email"><i class="fa fa-envelope-o"></i></p>
+                                            <p><input class="newsletter-submit" type="submit" value="Subscribe"></p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- main footer close -->
+
+            <!-- sub footer begin -->
+            <div class="sub-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            Copyright &copy; 2016 Designed by AuThemes. All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- sub footer close -->
+
+        </footer>
+        <!-- footer close -->
+
+    </div>
+
+    <a id="to-the-top" ><i class="fa fa-angle-up"></i></a>
+</div>

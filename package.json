@@ -1,7 +1,7 @@
 {
-  "name": "SocialNetworkCreator",
+  "name": "NinjaPages",
   "version": "0.0.1",
-  "description": "Social Network Creator",
+  "description": "Ninja Pages",
   "main": "index.js",
   "scripts": {
     "prestart": "npm install"
