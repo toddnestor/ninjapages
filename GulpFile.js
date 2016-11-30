@@ -98,6 +98,29 @@ gulp.task('add', function () {
     fs.writeFileSync(dir + "/" + url + ".less", '.' + className + ' {\n\n\/*less/css stuff can go in here*\/\n\n}');
 });
 
+gulp.task('section', function () {
+    var template = process.argv.slice(3)[1]
+    var name = process.argv.slice(3)[3];
+    var fs = require('fs');
+    var dir = 'src/components/site/templates/'  + template + '/section/' + name;
+    var url = name.split(".").pop();
+    var controllerName = `SiteTemplates`;
+
+    var name_bits = [template, 'section', name]
+
+    for (key in name_bits) {
+        controllerName += name_bits[key].charAt(0).toUpperCase() + name_bits[key].slice(1);
+    }
+
+    var className = name.split(".").join('-');
+
+    fs.mkdirSync(dir);
+    fs.writeFileSync(dir + "/" + url + ".js", 'var app = angular.module("app"); \n\napp.controller("' + controllerName + 'Controller", function ($scope, $rootScope, $state, $stateParams, Herc) {\n\t\/\/All your code goes here\n});');
+    fs.writeFileSync(dir + "/configure.html", '<div class="' + className + '" ng-controller="' + controllerName + '">\n\t<!-- put all the view stuff in here-->\n\t<ui-view></ui-view>\n</div>');
+    fs.writeFileSync(dir + "/public.html", '<div class="' + className + '" ng-controller="' + controllerName + '">\n\t<!-- put all the view stuff in here-->\n\t<ui-view></ui-view>\n</div>');
+    fs.writeFileSync(dir + "/" + url + ".less", '.' + className + ' {\n\n\/*less/css stuff can go in here*\/\n\n}');
+});
+
 gulp.task('addnoroute', function () {
     var name = process.argv.slice(3)[1];
     var fs = require('fs');
