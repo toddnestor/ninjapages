@@ -15,5 +15,26 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('HomeController', function ($scope, $stateParams, $rootScope, $state, $localStorage, Herc, pages ) {
+  if( !Herc.is_logged_in ) {
+    $state.go('site.login');
+  }
+
   $scope.pages = pages.reverse();
+
+  $scope.templates = [
+    {
+      name: 'Standard',
+      slug: 'standard',
+      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/a05a5b067e8a99376bfd73d3b228160a/bg1.jpg'
+    },
+    // {
+    //   name: 'Minimal Profile',
+    //   slug: 'profile1',
+    //   thumbnail: ''
+    // },
+  ];
+
+  $scope.newPage = function(template) {
+    $state.go('builder', {id: template});
+  }
 } );

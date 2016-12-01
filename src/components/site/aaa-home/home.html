@@ -121,36 +121,21 @@
                          <small class="text-muted">Click a template to start a new page</small>
                       </div>
                     <div class="row" style="padding:10px;">
-                      <div class="col-md-6">
+                      <div class="col-md-6" ng-repeat="template in templates" style="cursor: pointer;" ng-click="newPage(template.slug)">
                         <!-- START widget-->
                         <div class="panel widget">
-                           <img src="https://herc.objects.cdn.dream.io/uploads/a05a5b067e8a99376bfd73d3b228160a/bg1.jpg" alt="Image" class="img-responsive">
+                           <img src="{{template.thumbnail}}" alt="Image" class="img-responsive">
                            <div class="panel-body">
                               <div class="row row-table text-center">
                                  <div class="col-xs-12">
                                     <p>Template</p>
-                                    <h3 class="m0 text-primary">Standard</h3>
+                                    <h3 class="m0 text-primary">{{template.name}}</h3>
                                  </div>
                               </div>
                            </div>
                         </div>
                         <!-- END widget-->
                      </div>
-                     <div class="col-md-6">
-                       <!-- START widget-->
-                       <div class="panel widget">
-                          <img src="https://herc.objects.cdn.dream.io/uploads/a05a5b067e8a99376bfd73d3b228160a/bg1.jpg" alt="Image" class="img-responsive">
-                          <div class="panel-body">
-                             <div class="row row-table text-center">
-                                <div class="col-xs-12">
-                                   <p>Template</p>
-                                   <h3 class="m0 text-primary">Portfolio</h3>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                       <!-- END widget-->
-                    </div>
                     </div>
                   </div>
                </div>
