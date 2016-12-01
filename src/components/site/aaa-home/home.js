@@ -37,4 +37,9 @@ app.controller('HomeController', function ($scope, $stateParams, $rootScope, $st
   $scope.newPage = function(template) {
     $state.go('builder', {id: template});
   }
+
+  $scope.deletePage = function(page) {
+    page.remove();
+    $scope.pages = _.without($scope.pages, page);
+  }
 } );

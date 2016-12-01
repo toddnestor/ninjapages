@@ -27,6 +27,10 @@ app.config(function($stateProvider){
 });
 
 app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal, $sce, $timeout, content ) {
+	if( !Herc.is_logged_in ) {
+    $state.go('site.login');
+  }
+
 	$scope.content = content;
 
 	if( $scope.content.meta_data ) {
