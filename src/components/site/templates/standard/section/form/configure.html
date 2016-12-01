@@ -20,7 +20,12 @@
 								 Add Input
 						</div>
 
-						<button class="btn btn-default btn-lg btn-borderless" buttons="no" blur="submit" editable-text="section.settings.button_text">
+						<button class="btn btn-default btn-lg btn-borderless"
+									  buttons="no" blur="submit" editable-text="section.settings.button_text"
+										config-settings
+										ng-model="section.settings"
+										settings="{'no-show': true, 'no-delete': true, position: 'top'}"
+										settings-function="buttonSettings">
 							{{section.settings.button_text}}
 						</button>
 					</div>

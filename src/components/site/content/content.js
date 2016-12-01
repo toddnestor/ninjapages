@@ -7,13 +7,17 @@ app.config(function($stateProvider){
 			data: { pageTitle: 'Site Content ' },
 			templateUrl: "/templates/site/content/content.html",
 			controller: "SiteContentController",
-            resolve: {
-                content: function( $stateParams, Herc ) {
-                    return Herc.one('Content/getByPermalink', $stateParams.permalink).get();
-                }
-            }
+      resolve: {
+          content: function( $stateParams, Herc, $rootScope ) {
+						if( !$stateParams.permalink ) {
+							$stateParams.permalink = 'home';
+						}
+
+						return Herc.one('Content/getByPermalink', $stateParams.permalink).get();
+          }
+      }
 		})
-}); 
+});
 
 app.controller("SiteContentController", function ($scope, $rootScope, $state, $stateParams, Herc, content, $sce) {
 	$scope.content = content;

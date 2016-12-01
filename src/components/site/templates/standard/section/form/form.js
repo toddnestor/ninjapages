@@ -67,6 +67,26 @@ app.controller("SiteTemplatesStandardSectionFormController", function ($scope, $
 			$scope.settingsModal( ctrl.$modelValue, settings );
 	}
 
+	$scope.buttonSettings = function( ctrl ) {
+		var settings = {
+			title: 'Button Settings',
+			settings: [
+				{
+					label: 'id Attribute',
+					key: 'button_id',
+					type: 'text'
+				},
+				{
+					label: 'Scripts to run when button is clicked.',
+					key: 'button_click',
+					type: 'textarea'
+				}
+			]
+		}
+
+		$scope.settingsModal( ctrl.$modelValue, settings );
+	}
+
 	$scope.onButtonClick = function() {
 		eval($scope.section.settings.button_click);
 	}

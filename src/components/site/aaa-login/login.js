@@ -3,7 +3,7 @@ var app = angular.module( "app" );
 app.config(function ($stateProvider) {
     $stateProvider
         .state("site.login", {
-            url: "/login",
+            url: "/ninja/login",
             templateUrl: "/templates/site/aaa-login/login.html",
             controller: "FAQController"
         })

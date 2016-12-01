@@ -149,6 +149,10 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                         );
                     }
                 }
+
+                if( settings['no-delete'] ) {
+                  element.find('.fa-trash').hide();
+                }
             }, 500);
         }
     }

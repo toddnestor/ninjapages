@@ -21,8 +21,10 @@
                     <li class="p-y add-item-button" style="{{price.features && price.features.length > 0 ? 'display: none;' : ''}}cursor:pointer;text-align:center;color:darkred;" ng-click="addFeature( price )"><strong>Click to Add Feature</strong></li>
                 </ul>
 
-                <button class="btn btn-lg btn-primary btn-block" style="color:{{price.button_font_color}} !important; border-color: {{price.button_border_color}} !important; background-color: {{price.button_background_color}} !important;">
-                    <span buttons="no" blur="submit" editable-text="price.button_text">{{price.button_text}}</span>
+                <button class="btn btn-lg btn-primary btn-block"
+                        style="color:{{price.button_font_color}} !important; border-color: {{price.button_border_color}} !important; background-color: {{price.button_background_color}} !important;"
+                        buttons="no" blur="submit" editable-text="price.button_text">
+                        {{price.button_text}}
                 </button>
             </div>
             <div class="{{chunk.length == 1 ? 'col-sm-offset-1 ':''}}col-sm-4 p-x m-b-lg" ng-if="chunk.length < section.settings.prices_per_row">

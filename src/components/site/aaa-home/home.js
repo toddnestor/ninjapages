@@ -10,7 +10,5 @@ app.config(function ($stateProvider) {
 });
 
 app.controller('HomeController', function ($scope, $stateParams, $rootScope, $state, $localStorage, Herc ) {
-
-    if( !$scope.onSite() )
-        $state.go('site-creation');
+  
 } );

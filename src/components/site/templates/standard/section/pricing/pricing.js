@@ -38,7 +38,9 @@ app.controller("SiteTemplatesStandardSectionPricingController", function ($scope
               button_font_color: '#ffffff',
               button_font_size: 18,
               button_background_color: '#2595ff',
-              button_border_color: '#0b89ff'
+              button_border_color: '#0b89ff',
+              button_action: "",
+              button_url: ""
           },
           {
               background_color: 'transparent',
@@ -65,7 +67,9 @@ app.controller("SiteTemplatesStandardSectionPricingController", function ($scope
               button_font_color: '#ffffff',
               button_font_size: 18,
               button_background_color: '#2595ff',
-              button_border_color: '#0b89ff'
+              button_border_color: '#0b89ff',
+              button_action: "",
+              button_url: ""
           },
           {
               background_color: 'transparent',
@@ -92,7 +96,9 @@ app.controller("SiteTemplatesStandardSectionPricingController", function ($scope
               button_font_color: '#ffffff',
               button_font_size: 18,
               button_background_color: '#2595ff',
-              button_border_color: '#0b89ff'
+              button_border_color: '#0b89ff',
+              button_action: "",
+              button_url: ""
           }
       ]
   };

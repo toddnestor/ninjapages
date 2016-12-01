@@ -6,11 +6,35 @@ app.config(function($stateProvider){
 			url: "/builder/:id",
 			data: { pageTitle: 'Builder ' },
 			templateUrl: "/templates/builder/builder.html",
-			controller: "BuilderController"
+			controller: "BuilderController",
+			resolve: {
+				content: function( $stateParams, Herc, $rootScope ) {
+					if( $stateParams.id.match(/^[0-9]+$/) ) {
+						return Herc.one('Content', $stateParams.id).get();
+					} else {
+						return {
+							title: '',
+							permalink: '',
+							theme: $stateParams.id,
+							sections: [],
+							field_head_scripts: "",
+							field_footer_scripts: ""
+						};
+					}
+				}
+			}
 		})
 });
 
-app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal, $sce, $timeout ) {
+app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal, $sce, $timeout, content ) {
+	$scope.content = content;
+
+	if( $scope.content.meta_data ) {
+		angular.forEach($scope.content.meta_data, function(unused, key) {
+			$scope.content['field_' + key] = $scope.content.meta_data[key];
+		});
+	}
+
 	$scope.templates = {
             'standard': [
                 {
@@ -51,7 +75,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 								{
                     type: 'form',
                     name: 'Form',
-                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/9a7ee6cdf5d20d1428e97dba266ffc55/logo-strip.png'
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d34d371595af4a6f3bfeb425fe1850f8/2016-12-01_0606.png'
                 },
                 {
                     type: 'pricing',
@@ -108,15 +132,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 						]
         };
 
-		console.log('the state params: ', $stateParams.id);
-
-    $scope.currentTemplate = 'standard';
-
-		if( $stateParams.id.match(/^[0-9]+$/) ) {
-
-		} else {
-			$scope.currentTemplate = $stateParams.id;
-		}
+    $scope.currentTemplate = $scope.content.theme;
 
     $scope.currentSectionOptions = [];
 
@@ -129,15 +145,6 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
     }
 
     $scope.setCurrentSectionOptions();
-
-    $scope.content = {
-        title: '',
-        permalink: '',
-        theme: $scope.currentTemplate,
-        sections: [],
-				field_head_scripts: "",
-				field_footer_scripts: ""
-    };
 
 		$scope.updateTheme = function() {
 			$scope.content.theme = $scope.currentTemplate;
@@ -161,11 +168,18 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
     }
 
     $scope.save = function() {
-        Herc.all('Content').post( $scope.content ).then( function( response ) {
-            notify('Your content saved successfully!');
-            $scope.content.id = response.id;
-            $scope.content.permalink = response.permalink;
-        } );
+			if( $scope.content.id ) {
+				$scope.content.put().then( function( response ) {
+					notify('Your content saved successfully!');
+					$scope.content.permalink = response.permalink;
+				})
+			} else {
+				Herc.all('Content').post( $scope.content ).then( function( response ) {
+					notify('Your content saved successfully!');
+					$scope.content.id = response.id;
+					$scope.content.permalink = response.permalink;
+				} );
+			}
     }
 
     $scope.settingsModal = function( model, settings ) {
