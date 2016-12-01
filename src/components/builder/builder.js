@@ -48,6 +48,11 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
                     name: 'Logo Strip',
                     thumbnail: 'https://herc.objects.cdn.dream.io/uploads/9a7ee6cdf5d20d1428e97dba266ffc55/logo-strip.png'
                 },
+								{
+                    type: 'form',
+                    name: 'Form',
+                    thumbnail: 'https://herc.objects.cdn.dream.io/uploads/9a7ee6cdf5d20d1428e97dba266ffc55/logo-strip.png'
+                },
                 {
                     type: 'pricing',
                     name: 'Pricing',
@@ -103,7 +108,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 						]
         };
 
-    $scope.currentTemplate = 'bold';
+    $scope.currentTemplate = 'standard';
 
     $scope.currentSectionOptions = [];
 
@@ -121,7 +126,9 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
         title: '',
         permalink: '',
         theme: $scope.currentTemplate,
-        sections: []
+        sections: [],
+				field_head_scripts: "",
+				field_footer_scripts: ""
     };
 
 		$scope.updateTheme = function() {
@@ -173,6 +180,21 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
         }, function () {
 
         });
+    }
+
+		$scope.pageSettings = function() {
+        var settings = {
+            title: 'Page Settings',
+            settings: [
+                {
+                    label: 'Footer Scripts',
+                    key: 'field_footer_scripts',
+                    type: 'textarea'
+                }
+            ]
+        }
+
+        $scope.settingsModal( $scope.content, settings );
     }
 
     $scope.setPermalink = function() {

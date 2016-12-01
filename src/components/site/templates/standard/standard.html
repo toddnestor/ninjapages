@@ -2,4 +2,5 @@
     <div class="stage" id="stage">
         <ng-include src="'/templates/site/templates/standard/section/' + section.type + '/public.html'" ng-repeat="section in content.sections track by $index" />
     </div>
+    <scripts ng-model="content.meta_data.footer_scripts" />
 </div>

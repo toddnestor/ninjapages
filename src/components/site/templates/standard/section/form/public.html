@@ -1,4 +1,22 @@
-<div class="form" ng-controller="SiteTemplatesStandardSectionForm">
-	<!-- put all the view stuff in here-->
-	<ui-view></ui-view>
+<div ng-controller="SiteTemplatesStandardSectionFormController" class="block block-inverse block-secondary app-code-block" style="background-color: {{section.settings.section_background_color}};">
+	<div class="container">
+			<div class="row app-align-center">
+					<div class="col-sm-5 col-sm-push-7">
+						<div class="form-group" ng-repeat="input in section.settings.inputs">
+					    <label for="{{input.id}}">{{input.label}}</label>
+					    <input ng-if="['text','password','number','date','email'].indexOf(input.type) > -1" type="email" class="form-control" id="{{input.id}}" placeholder="{{input.placeholder}}" name="{{input.name}}">
+					  </div>
+
+						<button ng-click="onButtonClick()" class="btn btn-default btn-lg btn-borderless">
+							{{section.settings.button_text}}
+						</button>
+					</div>
+
+					<div class="col-sm-6 col-sm-pull-5">
+							<h6 class="text-muted text-uppercase">{{section.settings.tag}}</h6>
+							<h3 class="m-t-0">{{section.settings.heading}}</h3>
+							<p class="lead m-b-md text-muted">{{section.settings.description}}</p>
+					</div>
+			</div>
+	</div>
 </div>

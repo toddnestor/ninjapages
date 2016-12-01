@@ -36,14 +36,17 @@
                         <label for="template-chooser" style="padding-right: 20px;">Template</label>
                         <select class="form-control" id="template-chooser" ng-change="updateTheme()" ng-model="currentTemplate">
                           <option value="standard">Standard</option>
-                          <option value="bold">Bold</option>
+                          <!-- <option value="bold">Bold</option>
                           <option value="minimal">Minimal</option>
-                          <option value="corporate">Corporate</option>
+                          <option value="corporate">Corporate</option> -->
                         </select>
                     </div>
                   </form>
                 </li>
               </ul>
+              <div class="pull-right" style="padding-top: 10px;">
+                <span class="fa fa-gear fa-2x pointer" ng-click="pageSettings()" style="cursor:pointer;"></span>
+              </div>
             </div>
         </nav>
         <!-- END Top Navbar-->
@@ -51,23 +54,6 @@
         <aside class="aside">
             <!-- START Sidebar (left)-->
             <nav class="sidebar">
-                <!-- START user info-->
-                <div class="item user-block">
-                    <!-- User picture-->
-                    <div class="user-block-picture">
-                        <div class="user-block-status">
-                            <img src="app/img/user/02.jpg" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle">
-                            <div class="circle circle-success circle-lg"></div>
-                        </div>
-                        <!-- Status when collapsed-->
-                    </div>
-                    <!-- Name and Role-->
-                    <div class="user-block-info">
-                        <span class="user-block-name item-text">Welcome User</span>
-                        <span class="user-block-role">UX-Dev</span>
-                    </div>
-                </div>
-                <!-- END user info-->
                 <ul class="nav">
                     <li ng-repeat="section in currentSectionOptions track by $index" style="cursor:move !important;">
                         <a title="{{section.type}}" data-drag="true" ng-model="section" data-jqyoui-options="{revert: 'invalid', appendTo: '.builder', helper: 'clone'}" jqyoui-draggable="{index: {{$index}},animate:true, placeholder: 'keep', deepCopy: true}" class="no-submenu" style="cursor:move !important;" ng-click="addSection( section )">

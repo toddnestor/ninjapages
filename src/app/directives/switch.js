@@ -9,7 +9,7 @@ app.directive('switch', function carousel($rootScope, $timeout) {
             element.html( '<div class="builder"><label class="switch"><input ng-model="checkbox" type="checkbox"><span></span></label></div>' );
 
             scope.$watch( 'checkbox', function( newVal, oldVal ) {
-                console.log('anything changing? ', newVal, oldVal );
+                // console.log('anything changing? ', newVal, oldVal );
             } );
         }
     }
