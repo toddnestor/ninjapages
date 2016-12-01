@@ -39,6 +39,7 @@
             Herc.all('auth/login').post({email: email, password: password}).then(function(response){
                     if( response && response.id && response.access_token ) {
                         $localStorage.herc_user = response;
+                        Herc.is_logged_in = true;
 
                         $http.defaults.headers.common[ 'Authorization' ] = "Basic " + response.access_token;
 
