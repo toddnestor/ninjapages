@@ -16,6 +16,8 @@ The user can choose a title and permalink for the web page and save it.  It will
 
 Here is a brief demo video: [http://screencast.com/t/LkSC5OygYWYt](http://screencast.com/t/LkSC5OygYWYt)
 
+![web page builder](http://content.screencast.com/users/todd_nestor/folders/Jing/media/e2149e39-a90d-448e-b52d-6835c46e0bfb/2016-11-21_0321.png)
+
 ### Features
 
 Users Can:
