@@ -104,7 +104,7 @@ gulp.task('section', function () {
     var fs = require('fs');
     var dir = 'src/components/site/templates/'  + template + '/section/' + name;
     var url = name.split(".").pop();
-    var controllerName = `SiteTemplates`;
+    var controllerName = 'SiteTemplates';
 
     var name_bits = [template, 'section', name]
 
@@ -116,8 +116,8 @@ gulp.task('section', function () {
 
     fs.mkdirSync(dir);
     fs.writeFileSync(dir + "/" + url + ".js", 'var app = angular.module("app"); \n\napp.controller("' + controllerName + 'Controller", function ($scope, $rootScope, $state, $stateParams, Herc) {\n\t\/\/All your code goes here\n});');
-    fs.writeFileSync(dir + "/configure.html", '<div class="' + className + '" ng-controller="' + controllerName + '">\n\t<!-- put all the view stuff in here-->\n\t<ui-view></ui-view>\n</div>');
-    fs.writeFileSync(dir + "/public.html", '<div class="' + className + '" ng-controller="' + controllerName + '">\n\t<!-- put all the view stuff in here-->\n\t<ui-view></ui-view>\n</div>');
+    fs.writeFileSync(dir + "/configure.html", '<div class="' + className + '" ng-controller="' + controllerName + 'Controller">\n\t<!-- put all the view stuff in here-->\n\t<ui-view></ui-view>\n</div>');
+    fs.writeFileSync(dir + "/public.html", '<div class="' + className + '" ng-controller="' + controllerName + 'Controller">\n\t<!-- put all the view stuff in here-->\n\t<ui-view></ui-view>\n</div>');
     fs.writeFileSync(dir + "/" + url + ".less", '.' + className + ' {\n\n\/*less/css stuff can go in here*\/\n\n}');
 });
 
