@@ -3,7 +3,7 @@ var app = angular.module("app");
 app.config(function($stateProvider){
 	$stateProvider
 		.state("builder",{
-			url: "/builder",
+			url: "/builder/:id",
 			data: { pageTitle: 'Builder ' },
 			templateUrl: "/templates/builder/builder.html",
 			controller: "BuilderController"
@@ -108,7 +108,15 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 						]
         };
 
+		console.log('the state params: ', $stateParams.id);
+
     $scope.currentTemplate = 'standard';
+
+		if( $stateParams.id.match(/^[0-9]+$/) ) {
+
+		} else {
+			$scope.currentTemplate = $stateParams.id;
+		}
 
     $scope.currentSectionOptions = [];
 

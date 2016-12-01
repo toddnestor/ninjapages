@@ -37,7 +37,7 @@ app.controller('SiteCreationController', function ($scope, $stateParams, $rootSc
             subdomain: 'thisisagoodtest'
           },
           success: function(response) {
-            location.href = 'http://' + response.subdomain + '.ninjapages.' + location.host.split('.').pop() + '?access_token=' + response.access_token;
+            location.href = 'http://' + response.subdomain + '.ninjapages.' + location.host.split('.').pop() + '/?access_token=' + response.access_token;
           }
         });
       });

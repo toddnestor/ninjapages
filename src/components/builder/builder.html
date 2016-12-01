@@ -4,7 +4,7 @@
         <nav role="navigation" class="navbar navbar-default navbar-top navbar-fixed-top">
             <!-- START navbar header-->
             <div class="navbar-header">
-                <a href="index.html" class="navbar-brand" style="height:100%;padding-bottom:4px;">
+                <a href="/" class="navbar-brand" style="height:100%;padding-bottom:4px;">
                     <div class="brand-logo">
                         <img src="assets/img/ninja-pages.svg" alt="App Logo" class="img-responsive" style="max-height:50px; width: auto; float:left; margin-top:-7px;">
                     </div>
@@ -28,19 +28,6 @@
                       </div>
                       <button type="button" class="btn btn-success" ng-click="save()">Save</button>
                       <a type="button" class="btn btn-info" ng-if="content.id" href="/{{content.permalink}}" target="_blank">View</a>
-                  </form>
-                </li>
-                <li style="padding-top:10px;padding-left:10px;">
-                  <form class="form-inline">
-                    <div class="form-group">
-                        <label for="template-chooser" style="padding-right: 20px;">Template</label>
-                        <select class="form-control" id="template-chooser" ng-change="updateTheme()" ng-model="currentTemplate">
-                          <option value="standard">Standard</option>
-                          <!-- <option value="bold">Bold</option>
-                          <option value="minimal">Minimal</option>
-                          <option value="corporate">Corporate</option> -->
-                        </select>
-                    </div>
                   </form>
                 </li>
               </ul>

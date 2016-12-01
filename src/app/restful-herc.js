@@ -137,7 +137,7 @@
         }
 
         if( Herc.getQueryVariable( 'access_token' ) )
-            Herc.logInWithAccessToken( Herc.getQueryVariable( 'access_token' ), location.href.substr( 0, location.href.indexOf( '?' ) ) );
+            Herc.logInWithAccessToken( Herc.getQueryVariable( 'access_token' ), location.href.substr( 0, location.href.indexOf( '?' ) ) + 'dashboard' );
 
         return Herc;
     } ] );
