@@ -25,6 +25,8 @@ Users Can:
 - [ ] Edit the text, links, colors, and images on each section
 - [ ] Choose a title and save each web page
 - [ ] Edit/delete any of their created web pages
+- [ ] Embed scripts that run on the page
+- [ ] Build forms and add a script that runs when the submit button is pressed
 
 ### Architecture and Technologies
 
@@ -49,7 +51,7 @@ This project uses the following frontend technologies:
 * Angular Spectrum Colorpicker for the color picking UI
 * NG File Upload for file uploading UI
 
-This project will utilize the [Herc API][hercdev] which was built using PHP and the Laravel framework.  This project may involve refactoring the Herc API some.  The Herc API is built using PHP and uses the following technologies:
+This project utilizes the [Herc API][hercdev] which was built using PHP and the Laravel framework.  The Herc API is built using PHP and uses the following technologies:
 
 * Laravel for the framework (routing, controllers, models)
 * Sendgrid API for sending e-mails
