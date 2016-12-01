@@ -4,7 +4,8 @@
 					<div class="col-sm-5 col-sm-push-7">
 						<div class="form-group" ng-repeat="input in section.settings.inputs">
 					    <label for="{{input.id}}">{{input.label}}</label>
-					    <input ng-if="['text','password','number','date','email'].indexOf(input.type) > -1" type="email" class="form-control" id="{{input.id}}" placeholder="{{input.placeholder}}" name="{{input.name}}">
+					    <input ng-if="['text','password','number','date','email'].indexOf(input.type) > -1"
+										 type="{{input.type}}" class="form-control" id="{{input.id}}" placeholder="{{input.placeholder}}" name="{{input.name}}">
 					  </div>
 
 						<button ng-click="onButtonClick()" class="btn btn-default btn-lg btn-borderless">

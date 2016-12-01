@@ -27,7 +27,6 @@ app.controller("SiteTemplatesStandardSectionFormController", function ($scope, $
 	}
 
 	$scope.addInput = function() {
-		console.log('pushing a new input...');
 		$scope.section.settings.inputs.push({
 			type: 'text',
 			label: 'New Input',
