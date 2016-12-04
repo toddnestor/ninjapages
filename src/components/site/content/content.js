@@ -22,11 +22,11 @@ app.config(function($stateProvider){
 app.controller("SiteContentController", function ($scope, $rootScope, $state, $stateParams, Herc, content, $sce) {
 	$scope.content = content;
 
-    $scope.getContent = function() {
-        return $scope.content;
-    }
+  $scope.getContent = function() {
+      return $scope.content;
+  }
 
-    $scope.safeHtml = function( text ) {
-        return $sce.trustAsHtml( text );
-    }
+  $scope.safeHtml = function( text ) {
+      return $sce.trustAsHtml( text );
+  }
 });

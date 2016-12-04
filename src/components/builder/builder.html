@@ -33,6 +33,7 @@
               </ul>
               <div class="pull-right" style="padding-top: 10px;">
                 <span class="fa fa-gear fa-2x pointer" ng-click="pageSettings()" style="cursor:pointer;"></span>
+                <a href="#" ng-click="logout()" style="margin-left: 15px; font-weight: 700; line-height: 28px; vertical-align: middle; margin-top: -10px; display: inline-block;">Log out</a>
               </div>
             </div>
         </nav>
@@ -42,15 +43,21 @@
             <!-- START Sidebar (left)-->
             <nav class="sidebar">
                 <ul class="nav">
-                    <li ng-repeat="section in currentSectionOptions track by $index" style="cursor:move !important;">
-                        <a title="{{section.type}}" data-drag="true" ng-model="section" data-jqyoui-options="{revert: 'invalid', appendTo: '.builder', helper: 'clone'}" jqyoui-draggable="{index: {{$index}},animate:true, placeholder: 'keep', deepCopy: true}" class="no-submenu" style="cursor:move !important;" ng-click="addSection( section )">
-                            <span class="item-text" style="width: 100%;text-align: center;display: block;">{{section.name}}</span>
-                            <div style="max-width:300px;">
-                                <img class="img-responsive img-thumbnail" src="{{section.thumbnail}}" />
-                            </div>
-                        </a>
-                    </li>
-                    <!-- END Menu-->
+                  <li>
+                    <a href="/dashboard" class="no-submenu">
+                      <span class="fa fa-arrow-left"></span>
+                      Return to dashboard
+                    </a>
+                  </li>
+                  <li ng-repeat="section in currentSectionOptions track by $index" style="cursor:move !important;">
+                      <a title="{{section.type}}" data-drag="true" ng-model="section" data-jqyoui-options="{revert: 'invalid', appendTo: '.builder', helper: 'clone'}" jqyoui-draggable="{index: {{$index}},animate:true, placeholder: 'keep', deepCopy: true}" class="no-submenu" style="cursor:move !important;" ng-click="addSection( section )">
+                          <span class="item-text" style="width: 100%;text-align: center;display: block;">{{section.name}}</span>
+                          <div style="max-width:300px;">
+                              <img class="img-responsive img-thumbnail" src="{{section.thumbnail}}" />
+                          </div>
+                      </a>
+                  </li>
+                  <!-- END Menu-->
                 </ul>
             </nav>
             <!-- END Sidebar (left)-->

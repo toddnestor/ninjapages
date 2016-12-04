@@ -42,4 +42,19 @@ app.controller('HomeController', function ($scope, $stateParams, $rootScope, $st
     page.remove();
     $scope.pages = _.without($scope.pages, page);
   }
+
+  $scope.setAsHome = function(page) {
+    Herc.all('Content').customGET('setAsHome/' + page.id).then(function(response){
+      if( response.old_home ) {
+
+        var oldHome = _.find( $scope.pages, {id: response.old_home}) || _.find( $scope.pages, {id: parseInt(response.old_home)});
+
+        if( oldHome ) {
+          oldHome.permalink = page.permalink;
+        }
+      }
+
+      page.permalink = 'home';
+    });
+  }
 } );

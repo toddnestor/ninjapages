@@ -2,23 +2,24 @@
     <div class="wrapper">
         <!-- START Top Navbar-->
         <nav role="navigation" class="navbar navbar-default navbar-top navbar-fixed-top">
-            <!-- START navbar header-->
-            <div class="navbar-header">
-                <a href="/" class="navbar-brand" style="height:100%;padding-bottom:4px;">
-                    <div class="brand-logo">
-                        <img src="assets/img/ninja-pages.svg" alt="App Logo" class="img-responsive" style="max-height:50px; width: auto; float:left; margin-top:-7px;">
-                    </div>
-                    <div class="brand-logo-collapsed">
-                        <img src="assets/img/ninja-pages.svg" alt="App Logo" class="img-responsive" style="max-height:50px; width: auto; float:left; margin-top:-7px;">
-                    </div>
-                </a>
-            </div>
-            <!-- END navbar header-->
-            <div class="nav-wrapper">
-              <div class="pull-right" style="padding-top: 10px;">
-                <span class="fa fa-gear fa-2x pointer" ng-click="siteSettings()" style="cursor:pointer;"></span>
+          <!-- START navbar header-->
+          <div class="navbar-header">
+            <a href="/" class="navbar-brand" style="height:100%;padding-bottom:4px;">
+              <div class="brand-logo">
+                <img src="assets/img/ninja-pages.svg" alt="App Logo" class="img-responsive" style="max-height:50px; width: auto; float:left; margin-top:-7px;">
               </div>
+              <div class="brand-logo-collapsed">
+                <img src="assets/img/ninja-pages.svg" alt="App Logo" class="img-responsive" style="max-height:50px; width: auto; float:left; margin-top:-7px;">
+              </div>
+            </a>
+          </div>
+          <!-- END navbar header-->
+          <div class="nav-wrapper">
+            <div class="pull-right" style="padding-top: 10px;">
+              <span class="fa fa-gear fa-2x pointer" ng-click="siteSettings()" style="cursor:pointer;"></span>
+              <a href="#" ng-click="logout()" style="margin-left: 15px; font-weight: 700; line-height: 28px; vertical-align: middle; margin-top: -10px; display: inline-block;">Log out</a>
             </div>
+          </div>
         </nav>
         <!-- END Top Navbar-->
         <!-- START aside-->
@@ -96,14 +97,22 @@
                                 </td>
                                 <td>
                                   /{{page.permalink}}
+                                  <strong ng-if="page.permalink == 'home'">(Home page)</strong>
+                                  <a href="#" ng-hide="page.permalink == 'home'" ng-click="setAsHome(page)">Set as home page</a>
                                 </td>
                                 <td>
                                   {{moment(page.created_at).format('MM/DD/YYYY')}}
                                 </td>
                                 <td>
-                                  <a target="_blank" href="/{{page.permalink}}">View</a> |
-                                  <a href="/builder/{{page.id}}">Edit</a> |
-                                  <a href="#" ng-click="deletePage(page)">Delete</a>
+                                  <a target="_blank" href="/{{page.permalink}}" title="View" style="text-decoration: none; margin-right: 3px;">
+                                    <span class="fa fa-eye"></span>
+                                  </a>
+                                  <a href="/builder/{{page.id}}" title="Edit" style="text-decoration: none; margin-right: 3px;">
+                                    <span class="fa fa-pencil"></span>
+                                  </a>
+                                  <a href="#" ng-click="deletePage(page)" title="Delete" style="text-decoration: none; margin-right: 3px;">
+                                    <span class="fa fa-trash"></span>
+                                  </a>
                                 </td>
                               </tr>
                            </tbody>

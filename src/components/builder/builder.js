@@ -32,6 +32,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
     $state.go('site.login');
   }
 
+	$scope.logout = Herc.logout;
+
 	$scope.content = content;
 
 	if( $scope.content.meta_data ) {
