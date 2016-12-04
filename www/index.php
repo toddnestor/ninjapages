@@ -13,5 +13,10 @@
 <body class="with-top-navbar">
 <ui-view></ui-view>
 <script src="/assets/js/main.min.js"></script>
+<script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.slicknav.js"></script>
+<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="assets/js/scripts.js"></script>
 </body>
 </html>

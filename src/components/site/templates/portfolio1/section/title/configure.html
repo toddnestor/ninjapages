@@ -1,0 +1,20 @@
+<div class="title" ng-controller="SiteTemplatesPortfolio1SectionTitleController">
+	<!--start banner-->
+  <section class="banner home-banner" style="background-color: {{section.settings.section_background_color}}; background-image: url('{{section.settings.section_background_image}}');">
+    <div class="overlay" style="background-color: {{section.settings.overlay_color}};"></div>
+    <div class="banner-text text-center text-uppercase">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <h1
+                buttons="no" blur="submit"
+                editable-text="section.settings.title">
+                  {{section.settings.title}}
+                </h1>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!--end banner-->
+</div>

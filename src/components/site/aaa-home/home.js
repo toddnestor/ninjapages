@@ -27,11 +27,11 @@ app.controller('HomeController', function ($scope, $stateParams, $rootScope, $st
       slug: 'standard',
       thumbnail: 'https://herc.objects.cdn.dream.io/uploads/a05a5b067e8a99376bfd73d3b228160a/bg1.jpg'
     },
-    // {
-    //   name: 'Minimal Profile',
-    //   slug: 'profile1',
-    //   thumbnail: ''
-    // },
+    {
+      name: 'Minimal Portfolio',
+      slug: 'portfolio1',
+      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/a05a5b067e8a99376bfd73d3b228160a/bg1.jpg'
+    },
   ];
 
   $scope.newPage = function(template) {

@@ -136,6 +136,33 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 									name: 'Footer',
 									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
 							},
+						],
+						portfolio1: [
+							{
+									type: 'menu',
+									name: 'Menu',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
+							{
+									type: 'title',
+									name: 'Title',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
+							{
+									type: 'projects',
+									name: 'Projects',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
+							{
+									type: 'cta',
+									name: 'CTA',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
+							{
+									type: 'footer',
+									name: 'Footer',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+							},
 						]
         };
 
