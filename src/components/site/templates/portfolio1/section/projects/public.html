@@ -1,16 +1,16 @@
 <div class="projects" ng-controller="SiteTemplatesPortfolio1SectionProjectsController">
 	<!--start portfolio-->
-  <section class="portfolio">
+  <section class="portfolio" style="background-color: {{section.settings.section_background_color}}; background-image: url('{{section.settings.section_background_image}}');">
       <div class="container" isotope>
           <div class="row">
               <div class="col-md-10 col-md-offset-1">
                   <!-- Filters -->
                   <div class="portfolioFilter text-center">
                       <span>
-                          <a href="#" data-filter="*" class="current">All</a>
-                          <a href="#" data-filter=".design">Design</a>
-                          <a href="#" data-filter=".development">Development</a>
-                          <a href="#" data-filter=".branding">Branding</a>
+                        <a href="#" data-filter="*" class="current">All</a>
+                        <a href="#" data-filter=".{{classify(category)}}" ng-repeat="category in section.settings.categories track by $index">
+                          {{category}}
+                        </a>
                       </span>
                   </div>
               </div>
@@ -18,103 +18,28 @@
               <div class="col-md-10 col-md-offset-1">
                   <div class="row">
                       <div class="portfolioContainer">
-
-                          <div class="col-md-4 col-sm-6 col-xs-12 design development">
+                          <div class="col-md-4 col-sm-6 col-xs-12 {{classes(project.categories)}}" ng-repeat="project in section.settings.projects">
                               <div class="st-work">
-                                  <a href="single-portfolio.html"><img src="assets/images/portfolio/1.jpg" alt=""><div class="overlay"></div></a>
-                                  <div class="work-overlay text-center">
-                                      <a href="#" class="like-button"><i class="fa fa-heart-o"></i></a>
-                                      <h2><a href="single-portfolio.html">Digital Pen</a></h2>
-                                      <h3 class="portfolio-cat"><a href="#">Design</a></h3>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="col-md-4 col-sm-6 col-xs-12 development">
-                              <div class="st-work">
-                                  <a href="single-portfolio.html"><img src="assets/images/portfolio/2.jpg" alt=""><div class="overlay"></div></a>
-                                  <div class="work-overlay text-center">
-                                      <a href="#" class="like-button"><i class="fa fa-heart-o"></i></a>
-                                      <h2><a href="single-portfolio.html">Sabonete Liquid</a></h2>
-                                      <h3 class="portfolio-cat"><a href="#">Development</a></h3>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="col-md-4 col-sm-6 col-xs-12 design">
-                              <div class="st-work">
-                                  <a href="single-portfolio.html"><img src="assets/images/portfolio/3.jpg" alt=""><div class="overlay"></div></a>
-                                  <div class="work-overlay text-center">
-                                      <a href="#" class="like-button"><i class="fa fa-heart-o"></i></a>
-                                      <h2><a href="single-portfolio.html">Binary Art</a></h2>
-                                      <h3 class="portfolio-cat"><a href="#">Design</a></h3>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="col-md-4 col-sm-6 col-xs-12 development">
-                              <div class="st-work">
-                                  <a href="single-portfolio.html"><img src="assets/images/portfolio/4.jpg" alt=""><div class="overlay"></div></a>
-                                  <div class="work-overlay text-center">
-                                      <a href="#" class="like-button"><i class="fa fa-heart-o"></i></a>
-                                      <h2><a href="single-portfolio.html">New Hammer Pro</a></h2>
-                                      <h3 class="portfolio-cat"><a href="#">Development</a></h3>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="col-md-4 col-sm-6 col-xs-12 development">
-                              <div class="st-work">
-                                  <a href="single-portfolio.html"><img src="assets/images/portfolio/5.jpg" alt=""><div class="overlay"></div></a>
-                                  <div class="work-overlay text-center">
-                                      <a href="#" class="like-button"><i class="fa fa-heart-o"></i></a>
-                                      <h2><a href="single-portfolio.html">Broken Style Cup</a></h2>
-                                      <h3 class="portfolio-cat"><a href="#">Development</a></h3>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="col-md-4 col-sm-6 col-xs-12 branding">
-                              <div class="st-work">
-                                  <a href="single-portfolio.html"><img src="assets/images/portfolio/6.jpg" alt=""><div class="overlay"></div></a>
-                                  <div class="work-overlay text-center">
-                                      <a href="" class="like-button"><i class="fa fa-heart-o"></i></a>
-                                      <h2><a href="single-portfolio.html">Safe Water Can</a></h2>
-                                      <h3 class="portfolio-cat"><a href="#">Branding</a></h3>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="col-md-4 col-sm-6 col-xs-12 design">
-                              <div class="st-work">
-                                  <a href="single-portfolio.html"><img src="assets/images/portfolio/7.jpg" alt=""><div class="overlay"></div></a>
-                                  <div class="work-overlay text-center">
-                                      <a href="#" class="like-button"><i class="fa fa-heart-o"></i></a>
-                                      <h2><a href="single-portfolio.html">Modern Tea Cup</a></h2>
-                                      <h3 class="portfolio-cat"><a href="#">Design</a></h3>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="col-md-4 col-sm-6 col-xs-12 development">
-                              <div class="st-work">
-                                  <a href="single-portfolio.html"><img src="assets/images/portfolio/8.jpg" alt=""><div class="overlay"></div></a>
-                                  <div class="work-overlay text-center">
-                                      <a href="#" class="like-button"><i class="fa fa-heart-o"></i></a>
-                                      <h2><a href="single-portfolio.html">Gen Neon Light</a></h2>
-                                      <h3 class="portfolio-cat"><a href="#">Development</a></h3>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="col-md-4 col-sm-6 col-xs-12 development branding">
-                              <div class="st-work">
-                                  <a href="single-portfolio.html"><img src="assets/images/portfolio/9.jpg" alt=""><div class="overlay"></div></a>
-                                  <div class="work-overlay text-center">
-                                      <a href="#" class="like-button"><i class="fa fa-heart-o"></i></a>
-                                      <h2><a href="single-portfolio.html">Modern Room Light</a></h2>
-                                      <h3 class="portfolio-cat"><a href="#">Branding</a></h3>
-                                  </div>
+                                <a href="{{project.url}}" target="{{project.open_in_new_tab ? '_blank' : ''}}">
+                                  <img src="{{project.image_url}}" alt="">
+                                  <div class="overlay"></div>
+                                </a>
+                                <div class="work-overlay text-center">
+                                  <!-- <a href="#" class="like-button">
+                                    <i class="fa fa-heart-o"></i>
+                                  </a> -->
+                                  <h2>
+                                    <a href="single-portfolio.html">
+                                      {{project.name}}
+                                    </a>
+                                  </h2>
+                                  <h3 class="portfolio-cat">
+                                    <a href="#" ng-repeat="category in project.categories">
+                                      {{category}}
+                                      <span class="comma">, </span>
+                                    </a>
+                                  </h3>
+                                </div>
                               </div>
                           </div>
 
