@@ -23,7 +23,12 @@
 
                 <button class="btn btn-lg btn-primary btn-block"
                         style="color:{{price.button_font_color}} !important; border-color: {{price.button_border_color}} !important; background-color: {{price.button_background_color}} !important;"
-                        buttons="no" blur="submit" editable-text="price.button_text">
+                        buttons="no" blur="submit" editable-text="price.button_text"
+                        config-settings
+                        ng-model="price"
+                        settings-function="priceSettings"
+                        no-show
+                        no-delete>
                         {{price.button_text}}
                 </button>
             </div>

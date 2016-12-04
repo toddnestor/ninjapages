@@ -40,7 +40,8 @@ app.controller("SiteTemplatesStandardSectionPricingController", function ($scope
               button_background_color: '#2595ff',
               button_border_color: '#0b89ff',
               button_action: "",
-              button_url: ""
+              button_url: '',
+              button_scripts: ''
           },
           {
               background_color: 'transparent',
@@ -69,7 +70,8 @@ app.controller("SiteTemplatesStandardSectionPricingController", function ($scope
               button_background_color: '#2595ff',
               button_border_color: '#0b89ff',
               button_action: "",
-              button_url: ""
+              button_url: "",
+              button_scripts: ''
           },
           {
               background_color: 'transparent',
@@ -98,7 +100,8 @@ app.controller("SiteTemplatesStandardSectionPricingController", function ($scope
               button_background_color: '#2595ff',
               button_border_color: '#0b89ff',
               button_action: "",
-              button_url: ""
+              button_url: "",
+              button_scripts: ''
           }
       ]
   };
@@ -112,6 +115,10 @@ app.controller("SiteTemplatesStandardSectionPricingController", function ($scope
 
         $scope.reChunk();
     }
+
+    $scope.onButtonClick = function(scripts) {
+			eval(scripts);
+		}
 
     $scope.addPrice = function() {
         var new_price = {
@@ -139,12 +146,34 @@ app.controller("SiteTemplatesStandardSectionPricingController", function ($scope
             button_font_color: '#ffffff',
             button_font_size: 18,
             button_background_color: '#2595ff',
-            button_border_color: '#0b89ff'
+            button_border_color: '#0b89ff',
+            button_url: '',
+            button_scripts: ''
         };
 
         $scope.section.settings.prices.push( new_price );
 
         $scope.reChunk();
+    }
+
+    $scope.priceSettings = function( ctrl ) {
+        var settings = {
+            title: 'Price Button Settings',
+            settings: [
+                {
+                    label: 'Url',
+                    key: 'button_url',
+                    type: 'text'
+                },
+                {
+                    label: 'Scripts to run on click (optional)',
+                    key: 'button_scripts',
+                    type: 'textarea'
+                }
+            ]
+        }
+
+        $scope.settingsModal( ctrl.$modelValue, settings );
     }
 
     $scope.addFeature = function( price ) {

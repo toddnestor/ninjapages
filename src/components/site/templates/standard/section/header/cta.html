@@ -11,6 +11,10 @@
                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Url for CTA button" ng-model="thing.settings.cta_url">
             </div>
             <div class="form-group">
+                <label for="exampleInputEmail1">Scripts to run on click (optional)</label>
+                <textarea class="form-control" rows="3" ng-model="thing.settings.cta_scripts"></textarea>
+            </div>
+            <div class="form-group">
                 <label for="exampleInputEmail1">Button Background Color</label>
                 <spectrum-colorpicker ng-model="thing.settings.cta_background_color" options="{showInput: true, showAlpha: true}"></spectrum-colorpicker>
             </div>

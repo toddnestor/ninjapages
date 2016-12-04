@@ -60,21 +60,24 @@
         <section style="min-height: 995px;">
             <!-- START Page content-->
             <div class="content-wrapper site-templates-{{currentTemplate}}">
-                <div ng-if="content.sections && content.sections.length > 0" ui-sortable data-drop="true" ng-model="content.sections" jqyoui-droppable="{multiple:true, stack:false, onDrop: 'scrollToBottom'}" style="min-height: 150px;width:100%;" class="stage">
-                    <div ng-repeat="section in content.sections track by $index" class="template-section">
-                        <div class="section-settings">
-                            <span class="fa fa-trash pull-right" style="cursor:pointer;" ng-click="remove( section )"></span>
-                            <span class="fa fa-gear pull-right" style="cursor:pointer;" ng-click="sectionSettings( section, section.options )"></span>
-                            <span class="fa fa-copy pull-right" style="cursor:pointer;" ng-click="copy( section, $index )"></span>
-                            <span class="fa fa-arrow-down pull-right" ng-if="$index + 1 < $parent.content.sections.length" ng-click="moveDown( section, $index )" style="cursor:pointer;"></span>
-                            <span class="fa fa-arrow-up pull-right" ng-if="$index > 0" ng-click="moveUp( section, $index )" style="cursor:pointer;"></span>
-                        </div>
-                        <ng-include src="'/templates/site/templates/' + $parent.currentTemplate + '/section/' + section.type + '/configure.html'" />
-                    </div>
-                </div>
-                <div ng-if="!content.sections || content.sections.length == 0" data-drop="true" data-jqyoui-options="{accept: 'a'}" ng-model="content.sections" jqyoui-droppable="{multiple:true}" style="min-height: 150px;width:100%;border: 3px dashed blue; background-color: #fff;" class="stage">
-                  <h2 style="width:100%;text-align:center;line-height:150px;margin:0;">Drag sections here to add</h2>
-                </div>
+              <style>
+                {{content.field_custom_styles}}
+              </style>
+              <div ng-if="content.sections && content.sections.length > 0" ui-sortable data-drop="true" ng-model="content.sections" jqyoui-droppable="{multiple:true, stack:false, onDrop: 'scrollToBottom'}" style="min-height: 150px;width:100%;" class="stage">
+                  <div ng-repeat="section in content.sections track by $index" class="template-section">
+                      <div class="section-settings">
+                          <span class="fa fa-trash pull-right" style="cursor:pointer;" ng-click="remove( section )"></span>
+                          <span class="fa fa-gear pull-right" style="cursor:pointer;" ng-click="sectionSettings( section, section.options )"></span>
+                          <span class="fa fa-copy pull-right" style="cursor:pointer;" ng-click="copy( section, $index )"></span>
+                          <span class="fa fa-arrow-down pull-right" ng-if="$index + 1 < $parent.content.sections.length" ng-click="moveDown( section, $index )" style="cursor:pointer;"></span>
+                          <span class="fa fa-arrow-up pull-right" ng-if="$index > 0" ng-click="moveUp( section, $index )" style="cursor:pointer;"></span>
+                      </div>
+                      <ng-include src="'/templates/site/templates/' + $parent.currentTemplate + '/section/' + section.type + '/configure.html'" />
+                  </div>
+              </div>
+              <div ng-if="!content.sections || content.sections.length == 0" data-drop="true" data-jqyoui-options="{accept: 'a'}" ng-model="content.sections" jqyoui-droppable="{multiple:true}" style="min-height: 150px;width:100%;border: 3px dashed blue; background-color: #fff;" class="stage">
+                <h2 style="width:100%;text-align:center;line-height:150px;margin:0;">Drag sections here to add</h2>
+              </div>
             </div>
             <!-- END Page content-->
         </section>

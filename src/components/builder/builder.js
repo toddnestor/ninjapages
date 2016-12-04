@@ -17,6 +17,7 @@ app.config(function($stateProvider){
 							permalink: '',
 							theme: $stateParams.id,
 							sections: [],
+							field_custom_styles: "",
 							field_head_scripts: "",
 							field_footer_scripts: ""
 						};
@@ -182,6 +183,8 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 					notify('Your content saved successfully!');
 					$scope.content.id = response.id;
 					$scope.content.permalink = response.permalink;
+
+					Herc.restangularizeElement('', $scope.content, 'Content');
 				} );
 			}
     }
@@ -212,11 +215,16 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
         var settings = {
             title: 'Page Settings',
             settings: [
-                {
-                    label: 'Footer Scripts',
-                    key: 'field_footer_scripts',
-                    type: 'textarea'
-                }
+							{
+                  label: 'Custom Styles',
+                  key: 'field_custom_styles',
+                  type: 'textarea'
+              },
+              {
+                  label: 'Footer Scripts',
+                  key: 'field_footer_scripts',
+                  type: 'textarea'
+              }
             ]
         }
 

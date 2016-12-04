@@ -16,6 +16,7 @@ app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope,
 			cta_background_color: '#2595ff',
 			cta_border_color: '#0b89ff',
 			cta_font_color: '#ffffff',
+			cta_scripts: '',
 			section_background_image: 'https://herc.objects.cdn.dream.io/uploads/e315d8528b13ca0c3164dd1a9b45fc06/startup-1.jpg',
 			show_graph_overlay: true,
 			display_button: true,
@@ -152,6 +153,10 @@ app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope,
     $scope.toggleDisplayCta = function() {
         $scope.section.settings.display_cta = !$scope.section.settings.display_cta;
     }
+
+		$scope.onCtaClick = function() {
+			eval($scope.section.settings.cta_scripts);
+		}
 });
 
 app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, thing, settings) {

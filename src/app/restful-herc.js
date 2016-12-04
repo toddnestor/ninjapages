@@ -3,7 +3,7 @@
 
     Herc.factory( 'Herc', [ 'Restangular', '$localStorage', '$http', '$location', function( Restangular, $localStorage, $http, $location )
     {
-        //var api_url = 'http://homestead.app';
+        // var api_url = 'http://homestead.app';
         var api_url = 'https://api.hercdev.io';
         var api_key = 'a62d34e343718057b0787e1b3f1d542abcab35fe3f942d886e666fab824c';
 
@@ -52,6 +52,12 @@
                     if( typeof error_callback == 'function' )
                         error_callback(response);
                 });
+        }
+
+        Herc.logout = function() {
+          $localStorage.herc_user = null;
+          delete $http.defaults.headers.common[ 'Authorization' ];
+          location.href = '/login';
         }
 
         Herc.registerUser = function( email, name, password, password_confirmation, success_callback, error_callback ) {

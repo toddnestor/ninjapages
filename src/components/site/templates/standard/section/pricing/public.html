@@ -20,9 +20,12 @@
                     <li class="p-y" ng-repeat="feature in price.features"><strong>{{feature.name}}</strong> {{feature.description}}</li>
                 </ul>
 
-                <button class="btn btn-lg btn-primary btn-block" style="color:{{price.button_font_color}} !important; border-color: {{price.button_border_color}} !important; background-color: {{price.button_background_color}} !important;">
+                <a class="btn btn-lg btn-primary btn-block"
+                        style="color:{{price.button_font_color}} !important; border-color: {{price.button_border_color}} !important; background-color: {{price.button_background_color}} !important;"
+                        ng-click="onButtonClick(price.button_scripts)"
+                        href="{{price.button_url}}">
                     {{price.button_text}}
-                </button>
+                </a>
             </div>
         </div>
 
