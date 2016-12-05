@@ -1,10 +1,15 @@
-<div class="menu" ng-controller="SiteTemplatesPortfolio1SectionMenuController">
+<div class="portfolio-menu" ng-controller="SiteTemplatesPortfolio1SectionMenuController">
 	<!--start header-->
   <header class="header">
       <div class="container">
           <div class="row">
               <div class="col-md-10 col-md-offset-1">
-                  <div class="logo pull-left"><a href="index.html"><img src="assets/images/logo.png" alt="Neon"></a></div>
+                  <div class="logo pull-left">
+                    <a href="{{section.settings.logo_url}}" title="{{section.settings.logo_text}}">
+                      <img ng-if="section.settings.logo_type == 'image'" src="section.settings.logo_image" alt="{{section.settings.logo_text}}">
+                      <span ng-hide="section.settings.logo_type == 'image'">{{section.settings.logo_text}}</span>
+                    </a>
+                  </div>
                   <nav class="main-menu pull-right">
                       <ul class="menu-list">
                           <li><a href="index.html">Home</a></li>

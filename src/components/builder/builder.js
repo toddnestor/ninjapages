@@ -240,6 +240,12 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
         });
     }
 
+		$scope.settings = function( settings ) {
+			return function( ctrl ) {
+				$scope.settingsModal( ctrl.$modelValue, settings );
+			}
+    }
+
 		$scope.pageSettings = function() {
         var settings = {
             title: 'Page Settings',

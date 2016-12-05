@@ -25,7 +25,7 @@ app.controller('HomeController', function ($scope, $stateParams, $rootScope, $st
     {
       name: 'Standard',
       slug: 'standard',
-      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/a05a5b067e8a99376bfd73d3b228160a/bg1.jpg'
+      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/218ca340768739a028f6b6415edce91c/standard-template.png'
     },
     {
       name: 'Minimal Portfolio',
