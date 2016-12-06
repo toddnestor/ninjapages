@@ -49,8 +49,8 @@ app.controller("SiteTemplatesStandardSectionHeaderController", function ($scope,
 	};
 
 	$scope.removeMenuItem = function( ctrl ) {
-        $scope.section.settings.menu_items = _.without( $scope.section.settings.menu_items, ctrl.$modelValue );
-    }
+    $scope.section.settings.menu_items = _.without( $scope.section.settings.menu_items, ctrl.$modelValue );
+  }
 
     $scope.addMenuItem = function() {
         var color = '#ffffff';

@@ -130,20 +130,30 @@
                          <small class="text-muted">Click a template to start a new page</small>
                       </div>
                     <div class="row" style="padding:10px;">
-                      <div class="col-md-6" ng-repeat="template in templates" style="cursor: pointer;" ng-click="newPage(template.slug)">
-                        <!-- START widget-->
+                      <div class="col-md-12" ng-repeat="template in templates">
                         <div class="panel widget">
-                           <img src="{{template.thumbnail}}" alt="Image" class="img-responsive">
-                           <div class="panel-body">
-                              <div class="row row-table text-center">
-                                 <div class="col-xs-12">
-                                    <p>Template</p>
-                                    <h3 class="m0 text-primary">{{template.name}}</h3>
-                                 </div>
-                              </div>
-                           </div>
+                         <div class="row row-table row-flush">
+                            <div class="col-xs-5">
+                               <picture class="lateral-picture">
+                                  <img src="{{template.thumbnail}}" alt="">
+                               </picture>
+                            </div>
+                            <div class="col-xs-7 align-middle p-lg">
+                               <div class="pull-right">
+                                 <a href="javascript:void(0);" ng-click="newPage(template.slug)" class="btn btn-primary btn-sm">+ Create New Page</a>
+                                 <a href="{{template['demo-link']}}" target="_blank" class="btn btn-warning btn-sm">View Demo</a>
+                               </div>
+                               <p style="opacity:1; color: white;">
+                                 <span class="text-lg">16</span>Aug</p>
+                               <p>
+                                  <strong>{{template.name}}</strong>
+                               </p>
+                               <p>
+                                 {{template.description}}
+                               </p>
+                            </div>
+                          </div>
                         </div>
-                        <!-- END widget-->
                      </div>
                     </div>
                   </div>

@@ -141,12 +141,12 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 							{
 									type: 'menu',
 									name: 'Menu',
-									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/886435535c2ad20b1ab15c0fe1505a2f/menu.png'
 							},
 							{
 									type: 'title',
 									name: 'Title',
-									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/98d952a4d5bc5d7206e05c2cad31c542/title.png'
 							},
 							{
 									type: 'projects',
@@ -196,7 +196,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
     $scope.scrollToBottom = function() {
         $timeout( function() {
             $('html, body').animate({
-                scrollTop: $('.site-templates-standard').offset().top + $('.site-templates-standard').height()
+                scrollTop: $('.main-builder-area').offset().top + $('.main-builder-area').height()
             }, 1000);
         }, 100 )
     }

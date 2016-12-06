@@ -25,12 +25,16 @@ app.controller('HomeController', function ($scope, $stateParams, $rootScope, $st
     {
       name: 'Standard',
       slug: 'standard',
-      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/218ca340768739a028f6b6415edce91c/standard-template.png'
+      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/218ca340768739a028f6b6415edce91c/standard-template.png',
+      'demo-link': 'http://ninjapages.co/standard',
+      description: 'This is a versatile theme to create sales pages, informational pages, or even sign up pages with.'
     },
     {
       name: 'Minimal Portfolio',
       slug: 'portfolio1',
-      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/a05a5b067e8a99376bfd73d3b228160a/bg1.jpg'
+      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/a05a5b067e8a99376bfd73d3b228160a/bg1.jpg',
+      'demo-link': 'http://ninjapages.co/minimal-portfolio',
+      description: 'This theme was designed with portfolios in mind, however you it can be used to create other types of pages too.'
     },
   ];
 

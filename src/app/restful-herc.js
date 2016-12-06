@@ -57,7 +57,7 @@
         Herc.logout = function() {
           $localStorage.herc_user = null;
           delete $http.defaults.headers.common[ 'Authorization' ];
-          location.href = '/login';
+          location.href = '/ninja/login';
         }
 
         Herc.registerUser = function( email, name, password, password_confirmation, success_callback, error_callback ) {

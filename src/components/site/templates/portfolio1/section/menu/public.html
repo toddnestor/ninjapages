@@ -1,53 +1,31 @@
 <div class="portfolio-menu" ng-controller="SiteTemplatesPortfolio1SectionMenuController">
 	<!--start header-->
-  <header class="header">
+  <header class="header" style="background-color: {{section.settings.section_background_color}}; background-image: url('{{section.settings.section_background_image}}');">
       <div class="container">
           <div class="row">
               <div class="col-md-10 col-md-offset-1">
                   <div class="logo pull-left">
                     <a href="{{section.settings.logo_url}}" title="{{section.settings.logo_text}}">
-                      <img ng-if="section.settings.logo_type == 'image'" src="section.settings.logo_image" alt="{{section.settings.logo_text}}">
+                      <img ng-if="section.settings.logo_type == 'image'" src="{{section.settings.logo_image}}" alt="{{section.settings.logo_text}}" style="max-height: 50px;">
                       <span ng-hide="section.settings.logo_type == 'image'">{{section.settings.logo_text}}</span>
                     </a>
                   </div>
                   <nav class="main-menu pull-right">
-                      <ul class="menu-list">
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="about-us.html">About</a></li>
-                          <li class="menu-item-has-children"><a href="#">Pages</a>
-                              <ul class="sub-menu">
-                                  <li class="menu-item-has-children"><a href="index.html">Portfolio</a>
-                                      <ul class="sub-menu">
-                                          <li><a href="index.html">Grid Style</a></li>
-                                          <li><a href="index-two.html">Masnry Style</a></li>
-                                          <li><a href="single-portfolio.html">Single Portfolio</a></li>
-                                      </ul>
-                                  </li>
-                                  <li><a href="service.html">Service</a></li>
-                                  <li class="menu-item-has-children"><a href="contact.html">Contact</a>
-                                      <ul class="sub-menu">
-                                          <li><a href="contact.html">Contact Us</a></li>
-                                          <li><a href="contact-two.html">Get in Touch</a></li>
-                                      </ul>
-                                  </li>
-                                  <li class="menu-item-has-children"><a href="shop.html">Shop</a>
-                                      <ul class="sub-menu">
-                                          <li><a href="shop.html">Shop Page</a></li>
-                                          <li><a href="single-shop.html">Single Product</a></li>
-                                      </ul>
-                                  </li>
-                                  <li class="menu-item-has-children"><a href="blog.html">Blog</a>
-                                      <ul class="sub-menu">
-                                          <li><a href="blog.html">Blog Page</a></li>
-                                          <li><a href="single-blog.html">Single Post</a></li>
-                                      </ul>
-                                  </li>
-                              </ul>
+                    <ul class="menu-list">
+                      <li class="{{menu_item.menu_items.length ? 'menu-item-has-children' : ''}}" ng-repeat="menu_item in section.settings.menu_items">
+                        <a href="{{menu_item.destination}}" target="{{menu_item['new-tab'] ? '_blank' : ''}}">{{menu_item.text}}</a>
+                        <ul ng-if="menu_item.menu_items.length" class="sub-menu">
+                          <li class="{{sub_menu_item.menu_items.length ? 'menu-item-has-children' : ''}}" ng-repeat="sub_menu_item in menu_item.menu_items">
+                            <a href="{{sub_menu_item.destination}}" target="{{sub_menu_item['new-tab'] ? '_blank' : ''}}">{{sub_menu_item.text}}</a>
+                            <ul ng-if="sub_menu_item.menu_items.length" class="sub-menu">
+                              <li ng-repeat="sub_sub_menu_item in sub_menu_item.menu_items">
+                                <a href="{{sub_sub_menu_item.destination}}" target="{{sub_sub_menu_item['new-tab'] ? '_blank' : ''}}">{{sub_sub_menu_item.text}}</a>
+                              </li>
+                            </ul>
                           </li>
-                          <li><a href="shop.html">Shop</a></li>
-                          <li><a href="blog.html">Journal</a></li>
-                          <li><a href="contact.html">Connect</a></li>
-                      </ul>
+                        </ul>
+                      </li>
+                    </ul>
                   </nav>
                   <div class="menu-mobile"></div>
 
