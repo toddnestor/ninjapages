@@ -19,7 +19,8 @@
                         <a href="#" ng-click="addIcon()" class="add-social-icon">+ Add Icon</a>
                       </div>
                       <div class="copy-right-text"
-                           ng-bind-html="safeHtml( section.settings.copyright )"></div>
+                           ng-bind-html="safeHtml( section.settings.copyright )"
+                           editable-textarea="section.settings.copyright" buttons="no" blur="submit"></div>
                   </div>
               </div>
           </div>
