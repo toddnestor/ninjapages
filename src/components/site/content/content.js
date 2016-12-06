@@ -4,7 +4,7 @@ app.config(function($stateProvider){
 	$stateProvider
 		.state("site.content",{
 			url: "/:permalink",
-			data: { pageTitle: 'Site Content ' },
+			data: { pageTitle: '' },
 			templateUrl: "/templates/site/content/content.html",
 			controller: "SiteContentController",
       resolve: {

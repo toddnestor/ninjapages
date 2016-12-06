@@ -12,9 +12,11 @@
 											 		ng-if="section.settings.show_button"
 											 		class="btn btn-let-us-know text-uppercase"
 											 		editable-text="section.settings.button_text"
+													target="{{section.settings.new_tab ? '_blank' : ''}}"
 													buttons="no"
 													blur="submit"
-													config-settings="settings(buttonSettings)"
+													config-settings
+													settings-function="settings(buttonSettings)"
 													ng-model="section.settings"
 													style="border-bottom: 1px solid #5b5b5b;"
 													delete-function="hideButton">{{section.settings.button_text}}</a>

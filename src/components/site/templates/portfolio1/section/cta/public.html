@@ -6,8 +6,10 @@
                 <div class="col-md-10 col-md-offset-1">
 									<p>
 										 {{section.settings.text}}
-										 <a href="{{section.settings.button_url}}" ng-if="section.settings.show_button" class="btn btn-let-us-know text-uppercase"
-										 >
+										 <a href="{{section.settings.button_url}}"
+										 		target="{{section.settings.new_tab ? '_blank' : ''}}"
+												ng-if="section.settings.show_button" 
+												class="btn btn-let-us-know text-uppercase">
 											{{section.settings.button_text}}
 										 </a>
 									 </p>

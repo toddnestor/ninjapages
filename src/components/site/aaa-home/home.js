@@ -9,15 +9,30 @@ app.config(function ($stateProvider) {
             resolve: {
               pages: function( Herc ) {
                 return Herc.all('Content').getList();
+              },
+              site: function( Herc ) {
+                if( location.hostname === 'ninjapages.co' || location.hostname === 'ninjapages.dev' ) {
+                  return {};
+                } else {
+                  return Herc.one('SiteDetail').get();
+                }
               }
             }
         })
 });
 
-app.controller('HomeController', function ($scope, $stateParams, $rootScope, $state, $localStorage, Herc, pages ) {
+app.controller('HomeController', function ($scope, $stateParams, $rootScope, $state, $localStorage, Herc, $uibModal, pages, site ) {
   if( !Herc.is_logged_in ) {
     $state.go('site.login');
   }
+
+  $scope.site = site;
+
+  if( $scope.site.meta_data ) {
+		angular.forEach($scope.site.meta_data, function(unused, key) {
+			$scope.site['field_' + key] = $scope.site.meta_data[key];
+		});
+	}
 
   $scope.pages = pages.reverse();
 
@@ -60,5 +75,35 @@ app.controller('HomeController', function ($scope, $stateParams, $rootScope, $st
 
       page.permalink = 'home';
     });
+  }
+
+  $scope.settingsModal = function() {
+      var settings = {
+        title: 'Website Settings',
+        settings: [
+          {
+            label: 'Mapped Domain (make sure to add DNS record for IP 67.205.60.80)',
+            key: 'domain',
+            type: 'text'
+          }
+        ]
+      }
+
+      var modalInstance = $uibModal.open({
+          animation: true,
+          templateUrl: '/templates/builder/settings.html',
+          controller: 'ModalInstanceCtrl',
+          size: null,
+          resolve: {
+              thing: $scope.site,
+              settings: settings
+          }
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+        $scope.site.put();
+      }, function () {
+
+      });
   }
 } );

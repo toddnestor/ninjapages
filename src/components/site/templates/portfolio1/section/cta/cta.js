@@ -20,4 +20,20 @@ app.controller("SiteTemplatesPortfolio1SectionCtaController", function ($scope, 
 	$scope.hideButton = function() {
 		$scope.section.settings.show_button = false;
 	}
+
+	$scope.buttonSettings = {
+		title: 'Button Settings',
+		settings: [
+			{
+				label: 'Url',
+				key: 'button_url',
+				type: 'text'
+			},
+			{
+				label: 'Open in new tab',
+				key: 'new_tab',
+				type: 'switch'
+			}
+		]
+	}
 });
