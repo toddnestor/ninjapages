@@ -6,7 +6,12 @@ app.controller("SiteTemplatesPortfolio1SectionTitleController", function ($scope
 				{
 					label: 'Overlay Color',
 					key: 'overlay_color',
-					type: 'color'
+					type: 'color',
+				},
+				{
+					label: 'Padding',
+					key: 'padding',
+					type: 'number',
 				}
 			]
 	};
@@ -15,6 +20,7 @@ app.controller("SiteTemplatesPortfolio1SectionTitleController", function ($scope
 		section_background_color: '#ffffff',
 		section_background_image: '',
 		title: 'Change this title',
-		overlay_color: 'rgba(255,255,255,.5)'
+		overlay_color: 'rgba(255,255,255,.5)',
+		padding: 215
 	};
 });

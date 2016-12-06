@@ -22,6 +22,7 @@
                 <br ng-if="setting.type == 'image'" />
                 <img ng-if="setting.type == 'image' && $parent.thing[ setting.key ]" src="{{$parent.thing[ setting.key ]}}" style="max-width: 300px;" />
                 <input type="text" class="form-control" placeholder="Text" ng-model="$parent.thing[ setting.key ]" ng-if="setting.type == 'text'" />
+                <input type="number" class="form-control" placeholder="number" ng-model="$parent.thing.settings[ setting.key ]" ng-if="setting.type == 'number'" />
                 <textarea class="form-control" rows="3" ng-model="$parent.thing[ setting.key ]" ng-if="setting.type == 'textarea'"></textarea>
                 <select class="form-control" rows="3" ng-model="$parent.thing[ setting.key ]" ng-if="setting.type == 'select'">
                     <option ng-repeat="option in setting.options" value="{{option.value}}">{{option.label}}</option>
