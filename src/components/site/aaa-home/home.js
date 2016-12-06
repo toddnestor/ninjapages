@@ -32,7 +32,7 @@ app.controller('HomeController', function ($scope, $stateParams, $rootScope, $st
     {
       name: 'Minimal Portfolio',
       slug: 'portfolio1',
-      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/a05a5b067e8a99376bfd73d3b228160a/bg1.jpg',
+      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/43443e77640c4a03bec6ed05976ecf5d/minimal-portfolio.png',
       'demo-link': 'http://ninjapages.co/minimal-portfolio',
       description: 'This theme was designed with portfolios in mind, however you it can be used to create other types of pages too.'
     },

@@ -1,22 +1,25 @@
 <div class="footer" ng-controller="SiteTemplatesPortfolio1SectionFooterController">
 	<!--start footer-->
-  <footer class="footer">
+  <footer class="footer" style="background-color: {{section.settings.section_background_color}}; background-image: url('{{section.settings.section_background_image}}');">
       <div class="footer-bottom text-center">
           <div class="container">
               <div class="row">
                   <div class="col-md-10 col-md-offset-1">
-                      <p class="footer-address">
-                          239/2 North Kafrul<br>
-                          New York, NY 201890
+                      <p class="footer-address"
+                         style="line-height: 1;"
+                         ng-bind-html='safeHtml( section.settings.address.replace("\n", "<br />") )'
+                         editable-textarea="section.settings.address" buttons="no" blur="submit">
                       </p>
                       <div class="footer-social-icons">
-                          <a href="#"><i class="fa fa-twitter"></i></a>
-                          <a href="#"><i class="fa fa-facebook-f"></i></a>
-                          <a href="#"><i class="fa fa-google-plus"></i></a>
-                          <a href="#"><i class="fa fa-linkedin"></i></a>
-                          <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="{{icon.url}}" target="_blank" ng-repeat="icon in section.settings.social_icons"
+                           config-settings
+                           ng-model="icon"
+                           settings-function="settings(iconSettings)"
+                           delete-function="removeItem(section.settings, 'social_icons', icon)"><i class="fa {{social_icons[icon.type]}}"></i></a>
+                        <a href="#" ng-click="addIcon()" class="add-social-icon">+ Add Icon</a>
                       </div>
-                      <div class="copy-right-text">&copy; 2016 NEON, Designed by <a href="#">ShapedTheme</a> in Bangladesh</div>
+                      <div class="copy-right-text"
+                           ng-bind-html="safeHtml( section.settings.copyright )"></div>
                   </div>
               </div>
           </div>

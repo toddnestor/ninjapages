@@ -22,19 +22,57 @@ app.config(function($stateProvider){
 							field_footer_scripts: ""
 						};
 					}
+				},
+				clone: function() {
+					return false;
 				}
 			}
 		})
 });
 
-app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal, $sce, $timeout, content ) {
+app.config(function($stateProvider){
+	$stateProvider
+		.state("builder2",{
+			url: "/builder/:id/clone",
+			data: { pageTitle: 'Builder ' },
+			templateUrl: "/templates/builder/builder.html",
+			controller: "BuilderController",
+			resolve: {
+				content: function( $stateParams, Herc, $rootScope ) {
+					if( $stateParams.id.match(/^[0-9]+$/) ) {
+						return Herc.one('Content', $stateParams.id).get();
+					} else {
+						return {
+							title: '',
+							permalink: '',
+							theme: $stateParams.id,
+							sections: [],
+							field_custom_styles: "",
+							field_head_scripts: "",
+							field_footer_scripts: ""
+						};
+					}
+				},
+				clone: function() {
+					return true;
+				}
+			}
+		})
+});
+
+app.controller("BuilderController", function ($scope, $rootScope, $state, $stateParams, Herc, notify, $uibModal, $sce, $timeout, content, clone ) {
 	if( !Herc.is_logged_in ) {
     $state.go('site.login');
   }
 
+
 	$scope.logout = Herc.logout;
 
 	$scope.content = content;
+
+	if( clone ) {
+		delete $scope.content.id;
+	}
 
 	if( $scope.content.meta_data ) {
 		angular.forEach($scope.content.meta_data, function(unused, key) {
@@ -151,18 +189,23 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 							{
 									type: 'projects',
 									name: 'Projects',
-									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/dd06fb82e10b1b60472e44c495a97340/projects.png'
 							},
 							{
 									type: 'cta',
-									name: 'CTA',
-									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
+									name: 'Call To Action',
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/11e904ddc08ccd17ae3f9c1ec32f4eb9/cta.png'
+							},
+							{
+								type: 'project-detail',
+								name: 'Project Detail',
+								thumbnail: 'https://herc.objects.cdn.dream.io/uploads/b8f94999207fc0dadf8af9001a627c99/project-detail.png'
 							},
 							{
 									type: 'footer',
 									name: 'Footer',
-									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/d8718bd61190709d82976c53abcccef8/header.png'
-							},
+									thumbnail: 'https://herc.objects.cdn.dream.io/uploads/a1e08ccefb657523bd30c5498fb154a2/footer.png'
+							}
 						]
         };
 
@@ -214,6 +257,7 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 					$scope.content.permalink = response.permalink;
 
 					Herc.restangularizeElement('', $scope.content, 'Content');
+					window.history.replaceState({}, "Builder", '/builder/' + $scope.content.id );
 				} );
 			}
     }
@@ -221,6 +265,9 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
     $scope.settingsModal = function( model, settings ) {
         if( !settings )
             settings = {};
+
+				if( typeof settings === "function" )
+					settings = settings();
 
         var modalInstance = $uibModal.open({
             animation: true,
@@ -245,6 +292,12 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 				$scope.settingsModal( ctrl.$modelValue, settings );
 			}
     }
+
+		$scope.removeItem = function(parent, key, item) {
+			return function() {
+				parent[key] = _.without(parent[key], item);
+			}
+		}
 
 		$scope.pageSettings = function() {
         var settings = {

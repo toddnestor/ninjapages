@@ -153,6 +153,10 @@ app.directive('configSettings', function ($rootScope, $timeout, $parse) {
                 if( settings['no-delete'] ) {
                   element.find('.fa-trash').hide();
                 }
+
+                if( settings['no-settings'] ) {
+                  element.find('.fa-gear').hide();
+                }
             }, 500);
         }
     }

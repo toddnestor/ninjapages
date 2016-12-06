@@ -1,0 +1,71 @@
+<div class="portfolio-detail" ng-controller="SiteTemplatesPortfolio1SectionPortfolio-detailController">
+	<section class="single-portfolio" style="background-color: {{section.settings.section_background_color}}; background-image: url('{{section.settings.section_background_image}}');">
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-md-10 col-md-offset-1">
+	                <div class="portfolio-info text-center">
+										<span class="data-list" ng-repeat="datum in section.settings.data">
+											<span ng-if="datum.name"
+														editable-text="datum.name"
+														buttons="no" blur="submit">{{datum.name}}:</span>
+											<a href="{{datum.url ? datum.url : 'javascript:void(0)'}}"
+												 class="{{datum.url ? 'live-demo' : ''}}"
+												 editable-text="datum.text"
+												 buttons="no" blur="submit"
+												 config-settings
+												 ng-model="datum"
+												 settings-function="settings(datumSettings)"
+												 delete-function="removeItem(section.settings, 'data', datum)">
+												 {{datum.text}}
+											 </a>
+											<span class="separator">  |  </span>
+										</span>
+										<span class="data-list">
+											<a href="#" style="color: #0f0;" ng-click="addData()">+ Add Detail</a>
+											<span class="separator">  |  </span>
+										</span>
+									</div>
+
+	                <div class="portfolio-content">
+	                    <div class="portfolio-thumb text-center">
+	                        <img herc-upload ng-model="section.settings.image_url" src="{{section.settings.image_url}}" alt="">
+	                        <span class="caption"
+																editable-text="section.settings.caption"
+																blur="submit" buttons="no">{{section.settings.caption}}</span>
+	                    </div>
+
+	                    <h2 editable-text="section.settings.project_name" blur="submit" buttons="no">{{section.settings.project_name}}</h2>
+	                    <p ng-bind-html='safeHtml(section.settings.description.replace("\n","<br />"))'
+												 editable-textarea="section.settings.description"
+												 buttons="no" blur="submit"></p>
+
+	                    <div class="portfolio-navigation text-center">
+	                        <a href="{{section.settings.prev_project_url}}"
+														 class="pull-left"
+														 ng-model="section.settings"
+														 config-settings
+														 settings-function="settings(prevProjectSettings)"
+														 ng-if="section.settings.show_prev_proj"
+														 delete-function="removePrevProj"><i class="fa fa-long-arrow-left"></i> {{section.settings.prev_project_text}}</a>
+	                        <a href="{{section.settings.all_projects_url}}"
+														 ng-if="section.settings.all_projects_show"
+														 class="center"
+														 ng-model="section.settings"
+														 config-settings
+														 settings-function="settings(allProjectSettings)"
+														 delete-function="removeAllProj"><i class="fa fa-th"></i></a>
+	                        <a href="{{section.settings.next_project_url}}"
+														 class="pull-right"
+														 ng-model="section.settings"
+														 config-settings
+														 settings-function="settings(nextProjectSettings)"
+														 ng-if="section.settings.show_next_proj"
+														 delete-function="removeNextProj">{{section.settings.next_project_text}} <i class="fa fa-long-arrow-right"></i></a>
+	                    </div>
+	                </div>
+
+	            </div>
+	        </div>
+	    </div>
+	</section>
+</div>

@@ -26,6 +26,9 @@
                 <select class="form-control" rows="3" ng-model="$parent.thing[ setting.key ]" ng-if="setting.type == 'select'">
                     <option ng-repeat="option in setting.options" value="{{option.value}}">{{option.label}}</option>
                 </select>
+                <select class="form-control" rows="3" ng-model="$parent.thing[ setting.key ]" ng-if="setting.type == 'select-multiple'" multiple>
+                    <option ng-repeat="option in setting.options" value="{{option.value}}">{{option.label}}</option>
+                </select>
             </div>
             <button type="button" ng-click="ok()" class="btn btn-default">Save</button>
         </form>

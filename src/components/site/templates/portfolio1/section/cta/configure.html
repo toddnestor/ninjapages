@@ -1,10 +1,24 @@
 <div class="cta" ng-controller="SiteTemplatesPortfolio1SectionCtaController">
-	<footer class="footer">
+	<footer class="footer" style="background-color: {{section.settings.section_background_color}}; background-image: url('{{section.settings.section_background_image}}');">
     <div class="footer-top text-center">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <p>Need Similar Project? <a href="#" class="btn btn-let-us-know text-uppercase">Let us Know</a></p>
+                    <p>
+											<span editable-text="section.settings.text" buttons="no" blur="submit">
+												{{section.settings.text}}
+											</span>
+											 <a href="{{section.settings.button_url}}"
+											 		ng-if="section.settings.show_button"
+											 		class="btn btn-let-us-know text-uppercase"
+											 		editable-text="section.settings.button_text"
+													buttons="no"
+													blur="submit"
+													config-settings="settings(buttonSettings)"
+													ng-model="section.settings"
+													style="border-bottom: 1px solid #5b5b5b;"
+													delete-function="hideButton">{{section.settings.button_text}}</a>
+										 </p>
                 </div>
             </div>
         </div>
