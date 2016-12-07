@@ -7,7 +7,7 @@
                   <div class="col-md-10 col-md-offset-1">
                       <p class="footer-address"
                          style="line-height: 1;"
-                         ng-bind-html='safeHtml( section.settings.address.replace("\n", "<br />") )'>
+                         ng-bind-html='safeHtml( section.settings.address.replace(/\n/g, "<br />") )'>
                       </p>
                       <div class="footer-social-icons">
                         <a href="{{icon.url}}" target="_blank" ng-repeat="icon in section.settings.social_icons"><i class="fa {{social_icons[icon.type]}}"></i></a>
