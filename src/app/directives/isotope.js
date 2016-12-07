@@ -8,6 +8,7 @@ app.directive('isotope', function($parse, $timeout) {
 
             $container.isotope({
               filter: '*',
+              layoutMode:'masonry',
               animationOptions: {
                 duration: 750,
                 easing: 'linear',
