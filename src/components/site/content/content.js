@@ -30,4 +30,8 @@ app.controller("SiteContentController", function ($scope, $rootScope, $state, $s
   $scope.safeHtml = function( text ) {
       return $sce.trustAsHtml( text );
   }
+
+	$scope.brIfy = function(text) {
+		return text.replace(/\n/g, "<br />");
+	}
 });
