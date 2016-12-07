@@ -1,7 +1,7 @@
 <div class="projects" ng-controller="SiteTemplatesPortfolio1SectionProjectsController">
 	<!--start portfolio-->
   <section class="portfolio" style="background-color: {{section.settings.section_background_color}}; background-image: url('{{section.settings.section_background_image}}');">
-      <div class="container" isotope ng-model="section.settings.projects">
+      <div class="container" ng-model="section.settings.projects">
           <div class="row">
               <div class="col-md-10 col-md-offset-1">
                   <!-- Filters -->
@@ -29,8 +29,9 @@
                 <div class="row">
                   <div class="portfolioContainer">
                     <div class="col-md-4 col-sm-6 col-xs-12 {{classes(project.categories)}}" ng-repeat="project in section.settings.projects"
+                         style="height: 240px;"
                          config-settings
-                         settings="{'no-show': true}"
+                         settings="{'no-show': true, position: 'top'}"
                          settings-function="settings(projectSettings)"
                          delete-function="removeItem(section.settings, 'projects', project)"
                          ng-model="project">
