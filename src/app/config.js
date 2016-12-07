@@ -37,7 +37,7 @@ app.factory('httpRequestInterceptor', function ($localStorage, $location, $q) {
         },
         responseError: function(rejection) {
             if (rejection.status === 401) {
-                $location.path("/login");
+                $location.path("/ninja/login");
             }
             return $q.reject(rejection);
         }
@@ -75,8 +75,8 @@ app.factory('httpInterceptor', function ($q, $rootScope, $injector, $location) {
             if(rejection.status == 406){
                 return [];
             }
-            if (rejection.status == 401 && $location.path() != '/login'){
-                $location.path("/login");
+            if (rejection.status == 401 && $location.path() != '/ninja/login'){
+                $location.path("/ninja/login");
                 return [];
             } else {
 
