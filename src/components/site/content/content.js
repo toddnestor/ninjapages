@@ -21,6 +21,7 @@ app.config(function($stateProvider){
 
 app.controller("SiteContentController", function ($scope, $rootScope, $state, $stateParams, Herc, content, $sce) {
 	$scope.content = content;
+	window.scrollTo(0,0);
 
   $scope.getContent = function() {
       return $scope.content;
