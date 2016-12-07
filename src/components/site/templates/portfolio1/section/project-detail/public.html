@@ -18,7 +18,7 @@
                         </div>
 
                         <h2>{{section.settings.project_name}}</h2>
-                        <p ng-bind-html='safeHtml(section.settings.description.replace(/\n/g,"<br />"))'></p>
+                        <p ng-bind-html='safeHtml(brIfy(section.settings.description))'></p>
 
                         <div class="portfolio-navigation text-center">
                             <a href="{{section.settings.prev_project_url}}" class="pull-left"><i class="fa fa-long-arrow-left"></i> {{section.settings.prev_project_text}}</a>

@@ -70,6 +70,10 @@ app.controller("BuilderController", function ($scope, $rootScope, $state, $state
 
 	$scope.content = content;
 
+	$scope.brIfy = function(text) {
+		return text.replace(/\n/g, "<br />");
+	}
+
 	if( clone ) {
 		delete $scope.content.id;
 	}

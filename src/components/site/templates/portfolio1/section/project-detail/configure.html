@@ -35,7 +35,7 @@
 	                    </div>
 
 	                    <h2 editable-text="section.settings.project_name" blur="submit" buttons="no">{{section.settings.project_name}}</h2>
-	                    <p ng-bind-html='safeHtml(section.settings.description.replace(/\n/g,"<br />"))'
+	                    <p ng-bind-html='safeHtml(brIfy(section.settings.description) )'
 												 editable-textarea="section.settings.description"
 												 buttons="no" blur="submit"></p>
 

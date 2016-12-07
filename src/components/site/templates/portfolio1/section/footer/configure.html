@@ -7,7 +7,7 @@
                   <div class="col-md-10 col-md-offset-1">
                       <p class="footer-address"
                          style="line-height: 1;"
-                         ng-bind-html='safeHtml( section.settings.address.replace(/\n/g, "<br />") )'
+                         ng-bind-html='safeHtml( brIfy(section.settings.address) )'
                          editable-textarea="section.settings.address" buttons="no" blur="submit">
                       </p>
                       <div class="footer-social-icons">
