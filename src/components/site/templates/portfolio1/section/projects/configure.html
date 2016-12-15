@@ -36,7 +36,7 @@
                          delete-function="removeItem(section.settings, 'projects', project)"
                          ng-model="project">
                       <div class="st-work">
-                        <a href="{{project.url}}" target="{{project.open_in_new_tab ? '_blank' : ''}}">
+                        <a href="javascript:void(0)" target="{{project.open_in_new_tab ? '_blank' : ''}}">
                           <img src="{{project.image_url}}" alt="" style="height:216px;">
                           <div class="overlay"></div>
                         </a>
