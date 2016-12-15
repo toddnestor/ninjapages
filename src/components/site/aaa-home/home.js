@@ -51,6 +51,13 @@ app.controller('HomeController', function ($scope, $stateParams, $rootScope, $st
       'demo-link': 'http://ninjapages.co/minimal-portfolio',
       description: 'This theme was designed with portfolios in mind, however you it can be used to create other types of pages too.'
     },
+    {
+      name: 'Bold Marketing',
+      slug: 'bold',
+      thumbnail: 'https://herc.objects.cdn.dream.io/uploads/43443e77640c4a03bec6ed05976ecf5d/minimal-portfolio.png',
+      'demo-link': 'http://ninjapages.co/bold-marketing',
+      description: 'This theme gives provides a unique layout that stands out.'
+    },
   ];
 
   $scope.newPage = function(template) {
